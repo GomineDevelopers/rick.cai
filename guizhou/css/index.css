@@ -65,7 +65,7 @@
 }
 
 .block .block-body {
-    height: 16.2rem;
+    min-height: 16.2rem;
     background-color: #fff;
     padding: 0px;
     overflow: hidden;
