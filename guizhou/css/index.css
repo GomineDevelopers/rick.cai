@@ -1,0 +1,83 @@
+/*主*/
+.main {
+    background-color: #f5f5f5;
+    padding-bottom: 1.5rem;
+}
+
+.main .top-row {
+    padding-top: 1.5rem;
+}
+
+.main .bottom-row {
+    padding-top: 1.5rem;
+}
+
+.main .block {
+    border: 1px solid #ddd;
+}
+
+/*下面四个小块*/
+.block .block-header {
+    height: 2.8rem;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.block .block-header span {
+    font-size: 18px;
+    color: #333333;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 2rem;
+}
+
+.block .block-header .icon {
+    position: absolute;
+    width: 1.2rem;
+    height: 1.2rem;
+    top: 50%;
+    transform: translate(0, -50%);
+    left:0.5rem;
+}
+
+.block .block-header a {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 2rem;
+    color: #999999;
+}
+
+.block .block-header a img {
+    width: 0.8rem;
+    height: 0.8rem;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    margin-left: 0.2rem;
+}
+
+.block .block-body {
+    height: 13.2rem;
+    background-color: #fff;
+    padding: 0px;
+}
+
+/*新闻中心*/
+.block-body  .left-list {
+    width: 20%;
+    float: left;
+}
+
+.block-body  .right-list {
+    width: 80%;
+    float: left;
+}
+
+.block-body  nav a.active {
+    border-color: #dddddd;
+    background-color: #ffffff;
+    border-left: 4px solid #1C64AC;
+}
