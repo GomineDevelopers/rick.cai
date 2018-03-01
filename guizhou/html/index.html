@@ -8,47 +8,133 @@
     <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../css/bootstrap/bootstrap-grid.min.css">
     <link rel="stylesheet" href="../css/bootstrap/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/index.css">
     <title>贵州商会</title>
 </head>
 
 <body>
-<div class="container">
-    <a class="navbar-brand" href="#">Container</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07"
-            aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarsExample07">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown07" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown07">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </li>
-        </ul>
-        <form class="form-inline my-2 my-md-0">
-            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-        </form>
+<!--顶部-->
+<header class="fixed-top  header-style">
+    <div class="row">
+        <div class="col-sm-10 overflow header-top-label">
+            <div class="social-icons pull-right">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <i class="fa fa-caret-right"></i>  <a href="#"> 中文</a>
+                    </li>&nbsp;&nbsp;
+                    <li class="nav-item">
+                        <i class="fa fa-user-circle-o"></i> <a href="#">  登陆</a>&nbsp;|&nbsp;
+                        <a href="#">注册</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-</div>
+    <!--导航栏导航栏-->
+
+    <nav class="navbar navbar-expand-sm  center-block ">
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler bg-primary" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-fixed-top" id="collapsibleNavbar">
+            <ul class="navbar-nav nav nav-tabs  mx-auto  text-center nav-justified ">
+                <li class="nav-item">
+                    <a class="nav-item" href="#">
+                        <img src="../img/brand.png" alt="Logo">
+
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item" href="#">
+                        <img src="../img/world-trade.png" alt="Logo">
+
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-first-nome" href="#"></a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link " href="#">首页</a>
+                </li>
+                <!-- Dropdown -->
+                <li class="nav-item dropdown"role="presentation">
+                    <a class="nav-link dropdown" href="#"  data-toggle="dropdown">
+                        商会资讯
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">新闻资讯</a>
+                        <a class="dropdown-item" href="#">商会动态</a>
+                        <a class="dropdown-item" href="#">活动快报</a>
+                        <a class="dropdown-item" href="#">企业资讯</a>
+                    </div>
+                </li>
+                <!-- Dropdown -->
+                <li class="nav-item dropdown" role="presentation">
+                    <a class="nav-link dropdown" href="#"  data-toggle="dropdown">
+                        商贸服务
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                    </div>
+                </li>
+                <!-- Dropdown -->
+                <li class="nav-item dropdown" role="presentation">
+                    <a class="nav-link dropdown" href="#"  data-toggle="dropdown">
+                        展会
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                    </div>
+                </li>
+                <!-- Dropdown -->
+                <li class="nav-item dropdown " role="presentation">
+                    <a class="nav-link dropdown" href="#"  data-toggle="dropdown">
+                        出版物
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                    </div>
+                </li>
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown" href="#" data-toggle="dropdown">
+                        会员专区
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown" href="#"  data-toggle="dropdown">
+                        联系我们
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+    </nav>
+    <!--导航栏导航栏-->
+
+</header>
 <!--轮播图-->
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide mt-self" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -75,7 +161,7 @@
     <div class="row">
         <div class="col-md-2 col-lg-2"></div>
         <div class="col-md-5 col-lg-5 col-sm-12 top-row">
-            <div class="block">
+            <div class="block news-block">
                 <div class="block-header">
                     <img src="../img/news-icon.png" class="icon">
                     <span>新闻中心</span>
@@ -93,7 +179,8 @@
                     <div class="right-list">
                         <div class="tab-content-active" data-bind="foreach: news">
                             <div data-bind="visible:category_id() == $parent.selectedNewsId()">
-                                <img src="../img/point-icon.png"></img>  <span data-bind="text: title"></span> &nbsp;<span data-bind="text: create_time"></span>
+                                <img src="../img/point-icon.png"></img> <span data-bind="text: title"></span>
+                                &nbsp;<span data-bind="text: create_time"></span>
                             </div>
                         </div>
                     </div>
@@ -110,8 +197,9 @@
                 <div class="block-body">
                     <div class="list">
                         <div class="tab-content-active" data-bind="foreach: announces">
-                            <div >
-                                <img src="../img/point-icon.png"></img>  <span data-bind="text: title"></span> &nbsp;<span data-bind="text: create_time"></span>
+                            <div>
+                                <img src="../img/point-icon.png"></img> <span data-bind="text: title"></span>
+                                &nbsp;<span data-bind="text: create_time"></span>
                             </div>
                         </div>
                     </div>
@@ -123,13 +211,23 @@
     <div class="row">
         <div class="col-md-2 col-lg-2"></div>
         <div class="col-md-5 col-lg-5 col-sm-12 bottom-row">
-            <div class="block">
+            <div class="block introduction-block">
                 <div class="block-header">
                     <img src="../img/shanghui-icon.png" class="icon">
                     <span>商会介绍</span>
                 </div>
                 <div class="block-body">
-                    <div> 商会自2015年12月21日成立以来，始终秉承“联谊、互助、共赢发展”的宗旨 ,以“诚信贵商、智慧贵商”为核心价值观</div>
+                    <div class="left-list">
+                        <img src="../img/intro.png">
+                    </div>
+                    <div class="right-list">
+                        <div class="intro-text"> 商会自2015年12月21日成立以来，始终秉承“联谊、互助、共赢发展”的宗旨 ,以“诚信贵商、智慧贵商”为核心价值观；以“结天下儒商，创四海之业”为品牌目标。</div>
+                        <div class="intro-text"> 本着“自愿入会、自聘人员、自筹经费、自理会务”的办会原则，实行“自我管理、自我服务、自我约束、自我教育”来建设和发展,商会的丰富多彩的活动、团结合作的氛围。</div>
+                        <div class="intro-text"> <strong>致力于为会员企业创建交流平台、寻求商贸合作机会；弘扬贵州文化与贵商精神；</strong></div>
+                    </div>
+                    <div class="list">
+                        <a href="#">更多<img src="../img/arrow-icon.png"></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -148,6 +246,18 @@
     </div>
 </div>
 
+<footer class="nav navbar navbar-expand-sm navbar-fixed-bottom nav-footer mx-auto">
+    <ul class=" nav-footer-item">
+        <li class="nav-item">贵州国际商会</li>
+        <li class="nav-item">邮政编码：850002</li>
+        <li class="nav-item">Tel：0851-88665029／88555448 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fax：0851-88555655 </li>
+
+        <li class="nav-item">地址：贵阳市云岩区延安中路48号世贸广场B区2203室</li>
+    </ul>
+    <div class="erweima">
+        <img src="../img/erweima.png"/>
+    </div>
+</footer>
 
 <!-- Optional JavaScript -->
 <script src="../js/jquery/jquery-3.3.1.min.js"></script>

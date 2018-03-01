@@ -1,1 +1,109 @@
+body {
+    font-family: Microsoft YaHei;
+}
 
+.header-style {
+    background-color: #FFFFFF;
+    height: 5.4rem;
+}
+
+.header-style a {
+    color: black;
+}
+
+.header-style .navbar-expand-sm {
+    background: white;
+}
+
+.header-top-label {
+    margin-top: 0.5rem;
+}
+
+.social-icons {
+    margin-right: 1.5rem;
+}
+
+.nav-footer {
+    /*height: 10.625rem;*/
+    background-color: #3b4157;
+    color: #808080;
+}
+
+.nav-footer-item {
+    margin-left: 16%;
+    padding: 1rem;
+    list-style: none;
+}
+
+.erweima {
+    margin-left: 30%;
+}
+
+.nav-link {
+    width: 7rem;
+}
+
+.nav-link:first:hover {
+    background-color: white !important;
+}
+
+.nav-item a:hover {
+    color: white;
+    background-color: #49649f;
+}
+
+.nav-link-first-nome:hover {
+    background-color: white !important;
+    cursor: initial;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 83%;
+    left: 0rem;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 5rem;
+    padding: .5rem 0;
+    margin: .125rem 0 0;
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    list-style: none;
+    background-color: #49649f;
+    background-clip: padding-box;
+    border: none;
+    width: 7rem;
+    height: 9rem;
+}
+
+.dropdown-menu a:hover {
+    color: white;
+    text-align: left;
+    list-style: none;
+    background-color: #49649f;
+}
+
+.nav-tabs {
+    border-bottom: 0px solid #ddd;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    color: white;
+    background-color: #49649f;
+    border-color: #ddd #ddd #fff;
+}
+
+.nav-tabs .nav-link {
+    border: none;
+}
+
+.nav-tabs .nav-link {
+    border: 0px solid transparent;
+}
+
+.nav > li:hover .dropdown-menu {
+    display: block;
+}

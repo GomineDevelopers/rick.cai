@@ -1,3 +1,7 @@
+.mt-self{
+    margin-top: 5.4rem;
+}
+
 /*主*/
 .main {
     background-color: #f5f5f5;
@@ -39,7 +43,7 @@
     height: 1.2rem;
     top: 50%;
     transform: translate(0, -50%);
-    left:0.5rem;
+    left: 0.5rem;
 }
 
 .block .block-header a {
@@ -48,6 +52,7 @@
     transform: translate(0, -50%);
     right: 2rem;
     color: #999999;
+    font-size: 15px;
 }
 
 .block .block-header a img {
@@ -60,24 +65,73 @@
 }
 
 .block .block-body {
-    height: 13.2rem;
+    height: 16.2rem;
     background-color: #fff;
     padding: 0px;
+    overflow: hidden;
+    position: relative;
 }
 
 /*新闻中心*/
-.block-body  .left-list {
+.news-block .left-list {
     width: 20%;
     float: left;
 }
 
-.block-body  .right-list {
+.news-block .right-list {
     width: 80%;
     float: left;
 }
 
-.block-body  nav a.active {
+.news-block nav a.active {
     border-color: #dddddd;
     background-color: #ffffff;
     border-left: 4px solid #1C64AC;
+}
+
+/*商会介绍*/
+
+@media (max-width: 768px) {
+    .introduction-block .left-list {
+        width: 100% !important;
+    }
+
+    .introduction-block .right-list {
+        width: 100% !important;
+    }
+}
+
+.introduction-block .left-list {
+    width: 40%;
+    float: left;
+    text-align: center;
+}
+
+.introduction-block .right-list {
+    width: 60%;
+    float: left;
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+    text-align: justify;
+}
+
+.introduction-block .left-list img {
+    width: 80%;
+    padding-top: 1rem;
+}
+
+.introduction-block .intro-text {
+    padding-top: 1rem;
+    font-size: 14px;
+    text-indent: 1.5rem;
+    line-height: 1.4rem;
+}
+
+.introduction-block .list a {
+    position: absolute;
+    bottom: 3%;
+    transform: translate(0, -50%);
+    right: 2rem;
+    color: #999999;
+    font-size: 15px;
 }
