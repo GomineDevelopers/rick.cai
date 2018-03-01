@@ -22,13 +22,13 @@ body{
 }
 
 .nav-footer-item {
-	margin-left: 20%;
+	
 	padding: 1rem;
 	list-style: none;
 }
 
 .erweima {
-	margin-left: 34%;
+	margin-left: 50%;
 }
 
 .nav-link {
@@ -98,6 +98,16 @@ body{
 	/*border-bottom-left-radius: .25rem;
 	border-bottom-right-radius: .25rem;*/
 }
+.dropdown-menu a:hover {
+	color: white;
+	text-align: center;
+	list-style: none;
+	background-color: #49649f;
+	/*border-bottom-left-radius: .25rem;
+	border-bottom-right-radius: .25rem;*/
+	
+}
+
 .nav-nav-width{
 	min-width: 77.875rem;
 	max-width: 87.5rem;
@@ -127,8 +137,19 @@ body{
 
 .nav>li:hover .dropdown-menu {
 	display: block;
+	background-color:#49649f ;
 }
-
+.nav>li:hover .dropdown {
+	display: block;
+	color: white;
+	background-color:#49649f ;
+}
+.nav>li:hover .nav-item {
+	background-color:#49649f ;
+}
+.dropdown-menu:hover:focus{
+	
+}
 
 
 
