@@ -4,7 +4,7 @@
 	<head>
 		<!-- Required meta tags -->
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1, ">
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
 		<link rel="stylesheet" href="../css/bootstrap/bootstrap-grid.min.css">
@@ -55,12 +55,11 @@
 				</div>
 				<div class="container-fluid">
 					<div class="row justify-content-center">
-						
 
 						<nav class="navbar navbar-expand-sm   fixed-top text-dark row-nav">
-							<div class=" row container-fluid mx-auto ">
+							<div class=" row container mx-auto ">
 
-								<div class="col-lg-5">
+								<div class="col-lg-6">
 									<div class="pull-right ">
 										<a href="#" class="navbar-brand">
 											<img src="../img/brand.png" alt="logo">
@@ -77,11 +76,11 @@
 
 								</div>
 
-								<div class="col-lg-7 pull-left nav-items">
+								<div class="col-lg-6 pull-left nav-items">
 									<!-- Links -->
 
 									<div class="collapse navbar-collapse navbar-fixed-top" id="collapsibleNavbar">
-										<ul class=" nav nav-tabs justify-content-center mx-auto  nav-justified text-nowrap ">
+										<ul class=" nav navbar-nav  nav-tabs justify-content-center  nav-justified text-nowrap  mx-auto">
 
 											<li class="nav-item" role="presentation">
 												<a class="nav-link " href="#">首页</a>
@@ -121,7 +120,7 @@
 												</ul>
 											</li>
 											<!-- Dropdown -->
-											<li class="nav-item dropdown " >
+											<li class="nav-item dropdown ">
 												<a class="nav-link dropdown" href="#" id="navbardrop" data-toggle="dropdown">
 													出版物
 												</a>
@@ -198,23 +197,33 @@
 						<div class="block-header">
 							<img src="../img/news-icon.png" class="icon">
 							<span>新闻中心</span>
-							<a href="#">更多<img src="../img/arrow-icon.png"></a>
+							<a href="#">更多 <i class="fa fa-angle-double-right"></i></a>
 						</div>
 						<div class="block-body">
-							<div class="left-list">
-								<div data-bind="foreach: cates">
-									<div data-bind="click:$parent.changeSelectedNews ">
+							<div class="  left-list">
+								<div  data-bind="foreach: cates">
+									<div class="tab-div-style" data-bind="click:$parent.changeSelectedNews ">
 										<a href="#" data-bind="text: title, css:{ 'tab-active':id() == $parent.selectedNewsId()}"></a>
 									</div>
 								</div>
 							</div>
-							<div class="right-list">
+							<div class=" right-list" style="background-color: gray;height: 200px;">
 								<div class="tab-content-active" data-bind="foreach: news">
 									<div data-bind="visible:category_id() == $parent.selectedNewsId()">
 										<img src="../img/point-icon.png"></img> <span data-bind="text: title"></span> &nbsp;
 										<span data-bind="text: create_time"></span>
+										
 									</div>
 								</div>
+								<ul class="list-group">
+										<a href="#" class="list-group-item list-group-item-action"><i class="fa fa-circle fa-fw text-secondary"></i>&nbsp;First item</a>
+										<a href="#" class="list-group-item list-group-item-action"><i class="fa fa-circle fa-fw text-secondary"></i>&nbsp;First item</a>
+										<a href="#" class="list-group-item list-group-item-action"><i class="fa fa-circle fa-fw text-secondary"></i>&nbsp;First item</a>
+										<a href="#" class="list-group-item list-group-item-action"><i class="fa fa-circle fa-fw text-secondary"></i>&nbsp;First item</a>
+										<a href="#" class="list-group-item list-group-item-action"><i class="fa fa-circle fa-fw text-secondary"></i>&nbsp;First item</a>
+										<a href="#" class="list-group-item list-group-item-action"><i class="fa fa-circle fa-fw text-secondary"></i>&nbsp;First item</a>
+										
+									</ul>
 							</div>
 						</div>
 					</div>
@@ -224,15 +233,15 @@
 						<div class="block-header">
 							<img src="../img/broadcast-icon.png" class="icon">
 							<span>最新公告</span>
-							<a href="#">更多<img src="../img/arrow-icon.png"></a>
+							<a href="#">更多 <i class="fa fa-angle-double-right"></i></a>
 						</div>
 						<div class="block-body">
 							<div class="list">
 								<div class="tab-content-active" data-bind="foreach: announces">
-									<div>
-										<img src="../img/point-icon.png"></img> <span data-bind="text: title"></span> &nbsp;
-										<span data-bind="text: create_time"></span>
-									</div>
+									<ul class="list-group">
+										<a href="#" class="list-group-item list-group-item-action"><i class="fa fa-circle fa-fw text-secondary"></i>&nbsp;First item</a>
+
+									</ul>
 								</div>
 							</div>
 						</div>
@@ -258,7 +267,7 @@
 								<div class="intro-text"> <strong>致力于为会员企业创建交流平台、寻求商贸合作机会；弘扬贵州文化与贵商精神；</strong></div>
 							</div>
 							<div class="list">
-								<a href="#">更多<img src="../img/arrow-icon.png"></a>
+								<a href="#">更多 <i class="fa fa-angle-double-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -269,8 +278,71 @@
 							<img src="../img/shangmaofuwu-icon.png" class="icon">
 							<span>商贸服务</span>
 						</div>
-						<div class="block-body">
+						<div class="block-body ">
+							<div class="container-fluid">
 
+								<div class="row mx-auto">
+									
+								<div class="col-md-5 new-pics mx-auto">
+										<a class="text-nowrap"><img src="../img/news-pic-1.png" />&nbsp;&nbsp;金融服务
+										</a>
+									</div>
+									<div class="col-md-1">
+										
+									</div>
+									<div class="col-md-5 new-pics mx-auto">
+										<a class="text-nowrap"><img src="../img/news-pic-1.png" />&nbsp;&nbsp; 金融服务
+										</a>
+									</div>
+									
+								</div>
+								<div class="row mx-auto">
+									
+								<div class="col-md-5 new-pics mx-auto">
+										<a class="text-nowrap"><img src="../img/news-pic-1.png" />&nbsp;&nbsp;金融服务
+										</a>
+									</div>
+									<div class="col-md-1">
+										
+									</div>
+									<div class="col-md-5 new-pics mx-auto">
+										<a class="text-nowrap"><img src="../img/news-pic-1.png" />&nbsp;&nbsp; 金融服务
+										</a>
+									</div>
+									
+								</div>
+								<div class="row mx-auto">
+									
+								<div class="col-md-5 new-pics mx-auto">
+										<a class="text-nowrap"><img src="../img/news-pic-1.png" />&nbsp;&nbsp;金融服务
+										</a>
+									</div>
+									<div class="col-md-1">
+										
+									</div>
+									<div class="col-md-5 new-pics mx-auto">
+										<a class="text-nowrap"><img src="../img/news-pic-1.png" />&nbsp;&nbsp; 金融服务
+										</a>
+									</div>
+									
+								</div>
+								<div class="row mx-auto">
+									
+								<div class="col-md-5 new-pics mx-auto">
+										<a class="text-nowrap"><img src="../img/news-pic-1.png" />&nbsp;&nbsp;金融服务
+										</a>
+									</div>
+									<div class="col-md-1">
+										
+									</div>
+									<div class="col-md-5 new-pics mx-auto">
+										<a class="text-nowrap"><img src="../img/news-pic-1.png" />&nbsp;&nbsp; 金融服务
+										</a>
+									</div>
+									
+								</div>
+								
+							</div>
 						</div>
 					</div>
 				</div>
@@ -279,25 +351,24 @@
 		</div>
 
 		<footer class="nav navbar navbar-expand-sm navbar-fixed-bottom nav-footer ">
-            <div class="row container mx-auto">
-            	<div class="col-md-6 mx-auto">
-            		 <ul class=" nav-footer-item ">
+			<div class="row container mx-auto">
+				<div class="col-md-6 mx-auto">
+					<ul class=" nav-footer-item ">
 						<li class="nav-item">贵州国际商会</li>
 						<li class="nav-item">邮政编码：850002</li>
 						<li class="nav-item">Tel：0851-88665029／88555448 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fax：0851-88555655 </li>
-		
+
 						<li class="nav-item">地址：贵阳市云岩区延安中路48号世贸广场B区2203室</li>
 						<li class="nav-item">贵州国际商会</li>
 					</ul>
-            	</div>
-            	<div class="col-md-6 mx-auto">
-	            	<div class="erweima">
-					<img src="../img/erweima.png" />
-				    </div>
-            	</div>
-            </div>
-			
-			
+				</div>
+				<div class="col-md-6 mx-auto">
+					<div class="erweima">
+						<img src="../img/erweima.png" />
+					</div>
+				</div>
+			</div>
+
 		</footer>
 
 		<!-- Optional JavaScript -->

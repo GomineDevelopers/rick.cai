@@ -1,3 +1,6 @@
+
+			
+
 var indexViewModel = function () {
     var self = this;
     self.cates = ko.observableArray([]);

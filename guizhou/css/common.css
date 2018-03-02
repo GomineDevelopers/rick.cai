@@ -28,7 +28,7 @@ body{
 }
 
 .erweima {
-	margin-left: 50%;
+	margin-left: 90%;
 }
 
 .nav-link {
@@ -40,6 +40,7 @@ body{
 }
 .nav-items{
 	min-width:45rem ;
+	
 }
 .justify-content-center{
 	max-width: 56rem;
