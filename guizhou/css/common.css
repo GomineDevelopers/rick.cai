@@ -2,6 +2,10 @@ body {
     font-family: Microsoft YaHei;
 }
 
+.mt-self{
+    margin-top: 6.4rem;
+}
+
 .header-style {
     background-color: #FFFFFF;
     height: 5.4rem;
@@ -17,6 +21,14 @@ body {
 
 .header-top-label {
     margin-top: 0.5rem;
+}
+
+.light-black{
+    color: #717171 !important;
+}
+
+.weak-light-black{
+    color: #848484 !important;
 }
 
 .social-icons {
