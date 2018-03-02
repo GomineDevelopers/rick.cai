@@ -1,8 +1,7 @@
 var indexViewModel = function () {
     var self = this;
     self.cates = ko.observableArray([]);
-    self.newsSH = ko.observableArray([]);
-    self.newsZH = ko.observableArray([]);
+    self.news = ko.observableArray([]);
     self.selectedNewsId = ko.observable(2);
     self.changeSelectedNews = function (v) {
         self.selectedNewsId(v.id());
@@ -12,20 +11,14 @@ var indexViewModel = function () {
 }
 
 var iModel = new indexViewModel();
-
-//获取新闻中心-商会动态
-var getNewsSH = new Promise(function (resolve, reject) {
-    var pageInfo = {
-        limit: 6,
-        page: 1,
-        category: 2
-    };
-    $.get("http://192.168.0.191/home/content/newlists", pageInfo, function (returnData) {
+//获取新闻中心
+var getNews = new Promise(function (resolve, reject) {
+    $.get("http://192.168.0.191/home/content/newlists", function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.cate && returnData.data.cate.length > 0) {
                 iModel.cates = ko.mapping.fromJS(returnData.data.cate);
             }
-            if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
+            if (returnData.data && returnData.data.list && returnData.data.list.length > 0) {
                 var mappingList = {
                     'create_time': {
                         create: function (options) {
@@ -43,7 +36,7 @@ var getNewsSH = new Promise(function (resolve, reject) {
                         }
                     }
                 }
-                iModel.newsSH = ko.mapping.fromJS(returnData.data.list, mappingList);
+                iModel.news = ko.mapping.fromJS(returnData.data.list, mappingList);
             }
             resolve("success");
         }
@@ -53,45 +46,6 @@ var getNewsSH = new Promise(function (resolve, reject) {
         }
     });
 });
-
-//获取新闻中心-展会动态
-var getNewsZH = new Promise(function (resolve, reject) {
-    var pageInfo = {
-        limit: 6,
-        page: 1,
-        category: 3
-    };
-    $.get("http://192.168.0.191/home/content/newlists", pageInfo, function (returnData) {
-        if (returnData.code && returnData.code == '200') {
-            if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
-                var mappingList = {
-                    'create_time': {
-                        create: function (options) {
-                            return CommonTools.formatDate(options.data);
-                        }
-                    },
-                    'title': {
-                        create: function (options) {
-                            if (options.data.length <= 20) {
-                                return options.data;
-                            }
-                            else {
-                                return options.data.substring(0, 20) + "...";
-                            }
-                        }
-                    }
-                }
-                iModel.newsZH = ko.mapping.fromJS(returnData.data.list, mappingList);
-            }
-            resolve("success");
-        }
-        else {
-            reject("failed");
-            console.log("新闻中心获取有错误");
-        }
-    });
-});
-
 
 //获取最新公告
 var getAnnounce = new Promise(function (resolve, reject) {
@@ -127,7 +81,7 @@ var getAnnounce = new Promise(function (resolve, reject) {
 });
 
 $(function () {
-    Promise.all([getNewsSH, getNewsZH, getAnnounce]).then(function () {
+    Promise.all([getNews, getAnnounce]).then(function () {
         ko.applyBindings(iModel);
     });
 });
