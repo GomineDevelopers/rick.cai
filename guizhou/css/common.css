@@ -6,6 +6,7 @@ body {
     margin-top: 6.4rem;
 }
 
+/*头部*/
 .header-style {
     background-color: #FFFFFF;
     height: 5.4rem;
@@ -42,6 +43,7 @@ body {
     color: #808080;
 }
 
+/*底部*/
 .nav-footer-item {
     padding: 1rem;
     list-style: none;
@@ -168,3 +170,4 @@ body {
     background-color: white;
 }
 
+/*sitemap*/
