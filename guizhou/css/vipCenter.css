@@ -1,0 +1,28 @@
+.breadcrumb{
+	background-color: white !important;
+}
+.content-warp {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: .75rem 1rem;
+    margin-bottom: 1rem;
+
+   
+}
+.card{
+	border-radius: 0;
+}
+.card-img-top {
+    width: 100%;
+   border-top-left-radius: 0;
+   border-top-right-radius: 0; 
+}
+.card-img-wrap{
+	width: 84%;
+	margin: 0 auto;
+	margin-top: 1.6rem;
+	
+}
