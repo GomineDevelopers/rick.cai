@@ -44,11 +44,9 @@ var indexViewModel = function () {
         if (self.currentPage() - min >= 2) {
             min = self.currentPage() - 2;
         }
-
         if (max - self.currentPage() >= 2) {
             max = self.currentPage() + 2;
         }
-
         //头尾
         if (self.currentPage() <= 3 && self.totalPage() <= 5) {
             max = self.totalPage();
@@ -56,11 +54,9 @@ var indexViewModel = function () {
         else if (self.currentPage() <= 3 && self.totalPage() > 5) {
             max = 5;
         }
-
         if (self.totalPage() - self.currentPage() <= 2 && self.totalPage() - 4 > 0) {
             min = self.totalPage() - 4;
         }
-
         var temp = [];
         for (var i = min; i <= max; i++) {
             temp.push({pageNumber: i});
@@ -158,12 +154,10 @@ var updateNews = function () {
     });
 }
 
-
 $(function () {
     getNews.then(function () {
         ko.applyBindings(iModel);
-    }).catch(function(e) {
-        debugger;
+    }).catch(function (e) {
         ko.applyBindings(iModel);
     });
 });

@@ -7,13 +7,14 @@
 }
 
 .block-footer {
-    padding-top:1rem;
+    padding-top: 1rem;
     width: 100%;
 }
 
 .media {
     padding-top: 1rem;
     padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
 }
 
 .media-body {
@@ -24,8 +25,9 @@
     padding: 0 0.25rem 0.25rem;
 }
 
-.media {
-    border-bottom: 1px solid rgba(0, 0, 0, .125);
+.media img {
+    width: 180px;
+    height: 100px;
 }
 
 .block .block-header {
