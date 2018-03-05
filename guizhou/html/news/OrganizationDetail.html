@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="../../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/news/home.css">
+    <link rel="stylesheet" type="text/css" href="../../css/OrganizationDetail.css"/>
+    <title>贵州商会</title>
+</head>
+
+<body>
+<!--顶部-->
+<header class="fixed-top  header-style">
+    <div class="row">
+        <div class="col-sm-10 overflow header-top-label">
+            <div class="social-icons pull-right">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <i class="fa fa-caret-right light-black"></i> <a href="#" class="light-black"> 中文</a>
+                    </li>&nbsp;&nbsp;
+                    <li class="nav-item">
+                        <i class="fa fa-user-circle-o weak-light-black"></i>
+                        <a href="#" class="light-black"> 登陆</a><span class="light-black">&nbsp;|&nbsp;</span>
+                        <a href="#" class="light-black">注册</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--导航栏导航栏-->
+
+    <nav class="navbar navbar-expand-sm  center-block header-menu">
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler bg-primary" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-fixed-top" id="collapsibleNavbar">
+            <ul class="navbar-nav   nav-tabs  mx-auto  text-center nav-justified text-nowrap  mx-auto">
+                <li class="nav-item">
+                    <a class="nav-item" href="#">
+                        <img src="../../img/brand.png" alt="Logo">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item" href="#">
+                        <img src="../../img/world-trade.png" alt="Logo">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-first-nome" href="#"></a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link " href="#">首页</a>
+                </li>
+                <!-- Dropdown -->
+                <li class="nav-item dropdown" role="presentation">
+                    <a class="nav-link dropdown" href="#" data-toggle="dropdown">
+                        商会资讯
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">新闻资讯</a>
+                        <a class="dropdown-item" href="#">商会动态</a>
+                        <a class="dropdown-item" href="#">活动快报</a>
+                        <a class="dropdown-item" href="#">企业资讯</a>
+                    </div>
+                </li>
+                <!-- Dropdown -->
+                <li class="nav-item dropdown" role="presentation">
+                    <a class="nav-link dropdown" href="#" data-toggle="dropdown">
+                        商贸服务
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                    </div>
+                </li>
+                <!-- Dropdown -->
+                <li class="nav-item dropdown" role="presentation">
+                    <a class="nav-link dropdown" href="#" data-toggle="dropdown">
+                        展会
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                    </div>
+                </li>
+                <!-- Dropdown -->
+                <li class="nav-item dropdown " role="presentation">
+                    <a class="nav-link dropdown" href="#" data-toggle="dropdown">
+                        出版物
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                    </div>
+                </li>
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown" href="#" data-toggle="dropdown">
+                        会员专区
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown" href="#" data-toggle="dropdown">
+                        联系我们
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+    <!--导航栏导航栏-->
+
+</header>
+<!--内容-->
+<div class="mt-self">
+    <!--<div class="container">
+        <div class="row">
+            <div class="tab-content-active" data-bind="foreach: news">
+                <div>
+                    <span data-bind="text: title"></span>
+                    &nbsp;<span data-bind="text: create_time"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination" data-bind="foreach: pages">
+                    <li><span data-bind="pageNumber()"></span></li>
+                    <li class="page-item "
+                        data-bind="click:$parent.decreasePage,visible:pageNumber()==$parent.minPage(),css:{disabled :$parent.currentPage()==1 }">
+                        <a
+                                class="page-link" href="#">&lt;</a></li>
+                    <li class="page-item"
+                        data-bind="event: { click: $parent.setCurrentPage.bind($data, pageNumber()) },css:{active:pageNumber()== $parent.currentPage()}">
+                        <a class="page-link" href="#"><span data-bind="text:pageNumber"></span></a>
+                    </li>
+                    <li class="page-item"
+                        data-bind="click:$parent.increasePage ,visible:pageNumber()==$parent.maxPage(),css:{disabled :$parent.currentPage()==$parent.totalPage()}">
+                        <a
+                                class="page-link" href="#">&gt;</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>-->
+    <!--会员风采-->
+
+  <!--会员风采-->
+
+		<div class="container-fluid  content-warp" style="margin-top: 7rem;">
+			<div class="row col-md-8 mx-auto">
+				<div class="col-md-2 ">
+					<ol class="breadcrumb">
+						<li>
+							<a href="#">联系我们</a>
+						</li>
+						<li>
+							<a href="#">&nbsp;&nbsp;<i class="fa fa-angle-right fa-lg "></i>&nbsp;&nbsp;</a>
+						</li>
+						<li class="active"><a href="#">商会简介</a></li>
+					</ol>
+					
+				</div>
+
+			</div>
+			<div class="row col-md-8 mx-auto bg-white intro-text-detail ">
+				  
+				 
+				<img src="../../img/intropic.png"class="embed-responsive mx-auto img-position" />
+				<p>
+					贵州国际商会，经贵州市民政局注册登记批准成为具有法人资格的社会团体组织，接受贵州市人民政府合作交流办公室指导。商会指导联系杭州、宁波、温州、台州、绍兴、金华、湖州、舟山、丽水、嘉兴、衢州等11个地区商会。商会下设女企业家联谊会、房地产联合会、青年人才联合会、青年企业家协会等直属分会，设立组织人事、计划财务、回乡投资、行业自律等专项委员会。
+
+据不完全统计，目前在沪浙商企业有10多万家。商会现有直属会员1500多家，团体会员7000多家，会员企业遍布现代服务业、制造业、零售和商业贸易、医药、教育、地产、高科技、互联网、金融与投资等多个行业和领域，其中有上百家海内外上市公司和行业龙头企业。 
+
+徐匡迪、黄孟复、厉无畏等国家前领导人，法国前总统德斯坦、英国前首相布莱尔、美国前财长保尔森等国外知名人士，马云、王石、南存辉、朱云来、周其仁、钱颖一、余秋雨、觉醒法师等知名企业家和社会各界嘉宾担任第九届理事会主席团荣誉顾问。
+
+				</p>
+				<p>1.以制度建设为依托，完善专项委员会职能及分片区服务会员机制，建立健全商会联席会议制度</p>
+				<p>2.全面整合社会资源，筹建浙商中心，成立浙商基金会，搭建中小企业服务平台，拓展商会工作空间</p>
+				<p>3.以文化建设为重点，打造浙商商学院，强化《新浙商》杂志、网站、微信、工作动态等宣传平台，举办商会三十周年庆典.</p>
+				<p>4.以交流活动为平台，打造商会品牌活动、专题活动，大力推进对外交流活动，积极推广社会慈善公益活动，带动商会工作全面活跃。</p>
+			</div>
+			
+		</div>
+		
+</div>
+</div>
+<!--底部-->
+<footer class="nav navbar navbar-expand-sm navbar-fixed-bottom nav-footer ">
+    <div class="row container mx-auto">
+        <div class="col-md-6 mx-auto">
+            <ul class=" nav-footer-item ">
+                <li class="nav-item">贵州国际商会</li>
+                <li class="nav-item">邮政编码：850002</li>
+                <li class="nav-item">Tel：0851-88665029／88555448 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Fax：0851-88555655
+                </li>
+
+                <li class="nav-item">地址：贵阳市云岩区延安中路48号世贸广场B区2203室</li>
+            </ul>
+        </div>
+        <div class="col-md-6 mx-auto">
+            <div class="pull-right">
+                <img src="../../img/erweima.png"/>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Optional JavaScript -->
+<script src="../../js/jquery/jquery-3.3.1.min.js"></script>
+<script src="../../js/bootstrap/popper.min.js"></script>
+<script src="../../js/bootstrap/bootstrap.min.js"></script>
+<script src="../../js/knockout/knockout-3.4.2.js"></script>
+<script src="../../js/knockout/knockout.mapping-latest.js"></script>
+<script src="../../js/common.js"></script>
+<script src="../../js/polyfill.js"></script>
+<script src="../../js/news/home.js" defer="defer"></script>
+</body>
+</html>
