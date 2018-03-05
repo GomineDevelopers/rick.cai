@@ -2,6 +2,10 @@ body {
     font-family: Microsoft YaHei;
 }
 
+.mt-self {
+    margin-top: 6.4rem;
+}
+
 .header-style {
     background-color: #FFFFFF;
     height: 5.4rem;
@@ -17,6 +21,15 @@ body {
 
 .header-top-label {
     margin-top: 0.5rem;
+    margin-bottom: 1px;
+}
+
+.light-black {
+    color: #717171 !important;
+}
+
+.weak-light-black {
+    color: #848484 !important;
 }
 
 .social-icons {
@@ -30,21 +43,31 @@ body {
 }
 
 .nav-footer-item {
-    margin-left: 16%;
     padding: 1rem;
     list-style: none;
 }
 
 .erweima {
-    margin-left: 30%;
+    margin-left: 90%;
 }
 
 .nav-link {
-    width: 7rem;
+    width: 6rem;
 }
 
-.nav-link:first:hover {
-    background-color: white !important;
+.nav-logos {
+    width: 30.3125px;
+
+}
+
+.nav-items {
+    min-width: 45rem;
+
+}
+
+.justify-content-center {
+    max-width: 56rem;
+
 }
 
 .nav-item a:hover {
@@ -74,13 +97,24 @@ body {
     background-color: #49649f;
     background-clip: padding-box;
     border: none;
-    width: 7rem;
-    height: 9rem;
+    width: 6rem;
+    border-radius: 0;
 }
 
 .dropdown-menu a:hover {
     color: white;
     text-align: left;
+    list-style: none;
+    background-color: #49649f;
+}
+
+.dropdown-item {
+    padding: .25rem 1rem;
+}
+
+.dropdown-menu a {
+    color: white;
+    text-align: center;
     list-style: none;
     background-color: #49649f;
 }
@@ -102,8 +136,41 @@ body {
 
 .nav-tabs .nav-link {
     border: 0px solid transparent;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .nav > li:hover .dropdown-menu {
     display: block;
+    background-color: #49649f;
 }
+
+.nav > li:hover .dropdown {
+    display: block;
+    color: white;
+    background-color: #49649f;
+}
+
+.nav > li:hover .nav-item {
+    background-color: #49649f;
+}
+
+.nav-nav-width {
+    min-width: 77.875rem;
+    max-width: 87.5rem;
+}
+
+.nav-pills .nav-link.active,
+.show > .nav-pills .nav-link {
+    color: #fff;
+    background-color: #49649f;
+}
+
+.row-nav {
+    margin-top: 1.75rem;
+    padding-bottom: 1rem;
+    background-color: white;
+}
+

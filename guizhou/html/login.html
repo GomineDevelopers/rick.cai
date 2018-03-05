@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>零食商贩－登录</title>
+</head>
+<body>
+<div class="login-view">
+    <div class="login-wrapper" ng-controller="loginCtrl">
+        <div class="login-box">
+            <div class="login-title">
+                <div class="company-name">
+                    <span>零食商贩</span>
+                </div>
+                <div class="systme-name">
+                    <span>Snack Petty Vendor</span>
+                </div>
+            </div>
+            <div class="login-form">
+                <div class="form-group form-input">
+                    <input type="text" class="normal-input" id="user-name" placeholder="用户名">
+                    <div class="common-error-tips"><div></div></div>
+                </div>
+                <div class="form-group form-input">
+                    <input type="password" class="normal-input" id="user-pwd" placeholder="密码">
+                    <div class="common-error-tips"><div></div></div>
+                </div>
+                <div class="form-group form-btn">
+                    <input type="button" class="normal-btn" id="login" value="登录">
+                </div>
+                <div class="form-group form-btn">
+                    <input type="button" class="normal-btn" id="getData" value="请求">
+                </div>
+                <div class="form-group form-btn">
+                    <input type="button" class="normal-btn" id="logout" value="注销 ">
+                </div>
+                <div class="form-group form-forget">
+                    <label class="error-tips">登录失败</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../js/jquery/jquery-3.3.1.min.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/login.js" defer="defer"></script>
+</html>

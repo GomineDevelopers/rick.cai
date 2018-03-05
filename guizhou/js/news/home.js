@@ -1,25 +1,85 @@
 var indexViewModel = function () {
     var self = this;
     self.cates = ko.observableArray([]);
-    self.newsSH = ko.observableArray([]);
-    self.newsZH = ko.observableArray([]);
+    self.news = ko.observableArray([]);
     self.selectedNewsId = ko.observable(2);
+    self.pages = ko.observableArray([]);
+    self.currentPage = ko.observable(1);
+    self.totalPage = ko.observable(1);
+    self.minPage = ko.observable(1);
+    self.maxPage = ko.observable(1);
     self.changeSelectedNews = function (v) {
         self.selectedNewsId(v.id());
     }
+    //分页相关
+    self.increasePage = function () {
+        if (self.currentPage() < self.totalPage()) {
+            self.currentPage(self.currentPage() + 1);
+            self.updatePages();
+            updateNews();
+        }
+    }
 
-    self.announces = ko.observableArray([]);
+    self.decreasePage = function () {
+        if (self.currentPage() > 1) {
+            self.currentPage(self.currentPage() - 1);
+            self.updatePages();
+            updateNews();
+        }
+    }
+
+    self.setCurrentPage = function (pageNumber) {
+        if (pageNumber >= 1 && pageNumber <= self.totalPage()) {
+            self.currentPage(pageNumber);
+            self.updatePages();
+            updateNews();
+        }
+    }
+
+    self.updatePages = function () {
+        var min = 1;
+        var max = self.totalPage();
+        //中间的情况
+        if (self.currentPage() - min >= 2) {
+            min = self.currentPage() - 2;
+        }
+
+        if (max - self.currentPage() >= 2) {
+            max = self.currentPage() + 2;
+        }
+
+        //头尾
+        if (self.currentPage() <= 3 && self.totalPage() <= 5) {
+            max = self.totalPage();
+        }
+        else if (self.currentPage() <= 3 && self.totalPage() > 5) {
+            max = 5;
+        }
+
+        if (self.totalPage() - self.currentPage() <= 2 && self.totalPage() - 4 > 0) {
+            min = self.totalPage() - 4;
+        }
+
+        var temp = [];
+        for (var i = min; i <= max; i++) {
+            temp.push({pageNumber: i});
+        }
+        self.minPage(min);
+        self.maxPage(max);
+        ko.mapping.fromJS(temp, {}, iModel.pages);
+    }
 }
 
 var iModel = new indexViewModel();
+//获取新闻中心
 
-//获取新闻中心-商会动态
-var getNewsSH = new Promise(function (resolve, reject) {
+var getNews = new Promise(function (resolve, reject) {
     var pageInfo = {
-        limit: 6,
-        page: 1,
-        category: 2
+        limit: 2,
+        page: iModel.currentPage(),
+        category: 3
     };
+
     $.get("http://192.168.0.191/home/content/newlists", pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.cate && returnData.data.cate.length > 0) {
@@ -43,7 +103,11 @@ var getNewsSH = new Promise(function (resolve, reject) {
                         }
                     }
                 }
-                iModel.newsSH = ko.mapping.fromJS(returnData.data.list, mappingList);
+                iModel.news = ko.mapping.fromJS(returnData.data.list.data, mappingList);
+            }
+            if (returnData.data && returnData.data.list && returnData.data.list.total) {
+                iModel.totalPage(returnData.data.list.last_page);
+                iModel.updatePages();
             }
             resolve("success");
         }
@@ -54,12 +118,10 @@ var getNewsSH = new Promise(function (resolve, reject) {
     });
 });
 
-//获取新闻中心-展会动态
-var getNewsZH = new Promise(function (resolve, reject) {
+var updateNews = function () {
     var pageInfo = {
-        limit: 6,
-        page: 1,
-        category: 3
+        limit: 2,
+        page: iModel.currentPage()
     };
     $.get("http://192.168.0.191/home/content/newlists", pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
@@ -81,53 +143,18 @@ var getNewsZH = new Promise(function (resolve, reject) {
                         }
                     }
                 }
-                iModel.newsZH = ko.mapping.fromJS(returnData.data.list, mappingList);
+                ko.mapping.fromJS(returnData.data.list.data, mappingList, iModel.news);
             }
-            resolve("success");
         }
         else {
-            reject("failed");
             console.log("新闻中心获取有错误");
         }
     });
-});
+}
 
-
-//获取最新公告
-var getAnnounce = new Promise(function (resolve, reject) {
-    $.get("http://192.168.0.191/home/content/announlists", function (returnData) {
-        if (returnData.code && returnData.code == '200') {
-            if (returnData.data && returnData.data.list && returnData.data.list.length > 0) {
-                var mappingList = {
-                    'create_time': {
-                        create: function (options) {
-                            return CommonTools.formatDate(options.data);
-                        }
-                    },
-                    'title': {
-                        create: function (options) {
-                            if (options.data.length <= 20) {
-                                return options.data;
-                            }
-                            else {
-                                return options.data.substring(0, 20) + "...";
-                            }
-                        }
-                    }
-                }
-                iModel.announces = ko.mapping.fromJS(returnData.data.list, mappingList);
-            }
-            resolve("success");
-        }
-        else {
-            reject("failed");
-            console.log("最新公告获取有错误");
-        }
-    });
-});
 
 $(function () {
-    Promise.all([getNewsSH, getNewsZH, getAnnounce]).then(function () {
+    getNews.then(function () {
         ko.applyBindings(iModel);
     });
 });

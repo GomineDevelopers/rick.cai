@@ -1,6 +1,4 @@
-.mt-self{
-    margin-top: 5.4rem;
-}
+
 
 /*主*/
 .main {
@@ -65,7 +63,7 @@
 }
 
 .block .block-body {
-    height: 16.2rem;
+    min-height: 18rem;
     background-color: #fff;
     padding: 0px;
     overflow: hidden;
@@ -128,10 +126,20 @@
 }
 
 .introduction-block .list a {
-    position: absolute;
-    bottom: 3%;
-    transform: translate(0, -50%);
-    right: 2rem;
     color: #999999;
     font-size: 15px;
+    padding: 1rem 2rem;
+}
+
+/*最新公告*/
+.announce-block .item{
+    height: 3rem;
+}
+
+.announce-block .item .title{
+    background: #999999;
+}
+
+.announce-block .item .date{
+   background: #999999;
 }
