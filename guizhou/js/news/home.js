@@ -10,6 +10,8 @@ var indexViewModel = function () {
     self.maxPage = ko.observable(1);
     self.changeSelectedNews = function (v) {
         self.selectedNewsId(v.id());
+        self.currentPage(1);
+        updateNews();
     }
     //分页相关
     self.increasePage = function () {
@@ -31,7 +33,6 @@ var indexViewModel = function () {
     self.setCurrentPage = function (pageNumber) {
         if (pageNumber >= 1 && pageNumber <= self.totalPage()) {
             self.currentPage(pageNumber);
-            self.updatePages();
             updateNews();
         }
     }
@@ -75,9 +76,9 @@ var iModel = new indexViewModel();
 
 var getNews = new Promise(function (resolve, reject) {
     var pageInfo = {
-        limit: 2,
+        limit: 5,
         page: iModel.currentPage(),
-        category: 3
+        category: 2
     };
 
     $.get("http://192.168.0.191/home/content/newlists", pageInfo, function (returnData) {
@@ -120,11 +121,16 @@ var getNews = new Promise(function (resolve, reject) {
 
 var updateNews = function () {
     var pageInfo = {
-        limit: 2,
-        page: iModel.currentPage()
+        limit: 5,
+        page: iModel.currentPage(),
+        category: iModel.selectedNewsId(),
     };
     $.get("http://192.168.0.191/home/content/newlists", pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
+            if (returnData.data && returnData.data.list && returnData.data.list.total) {
+                iModel.totalPage(returnData.data.list.last_page);
+                iModel.updatePages();
+            }
             if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
                 var mappingList = {
                     'create_time': {
@@ -155,6 +161,9 @@ var updateNews = function () {
 
 $(function () {
     getNews.then(function () {
+        ko.applyBindings(iModel);
+    }).catch(function(e) {
+        debugger;
         ko.applyBindings(iModel);
     });
 });
