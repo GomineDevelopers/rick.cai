@@ -24,11 +24,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/news/home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="45" column="9" lean-forward="false" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+            <state relative-caret-position="171">
+              <caret line="107" column="13" lean-forward="false" selection-start-line="104" selection-start-column="11" selection-end-line="107" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -38,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/html/news/home.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="184">
-              <caret line="200" column="62" lean-forward="false" selection-start-line="200" selection-start-column="57" selection-end-line="200" selection-end-column="62" />
+              <caret line="188" column="90" lean-forward="false" selection-start-line="188" selection-start-column="90" selection-end-line="188" selection-end-column="90" />
               <folding>
                 <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="e#1073#1079#0" expanded="true" />
@@ -46,8 +46,8 @@
                 <element signature="e#1294#1300#0" expanded="true" />
                 <element signature="e#1301#1307#0" expanded="true" />
                 <element signature="n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#9773#9777#1" expanded="true" />
-                <element signature="e#10397#10401#1" expanded="true" />
+                <element signature="e#9776#9780#1" expanded="true" />
+                <element signature="e#10400#10404#1" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -72,11 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/news/home.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="374">
+              <caret line="29" column="10" lean-forward="false" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -129,10 +129,10 @@
       <find>获取新闻中心</find>
       <find>prom</find>
       <find>getNews</find>
-      <find>pages</find>
       <find>totalPage</find>
       <find>updateNews</find>
       <find>updatePages</find>
+      <find>pages</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -142,9 +142,9 @@
         <option value="$PROJECT_DIR$/css/index.css" />
         <option value="$PROJECT_DIR$/html/index.html" />
         <option value="$PROJECT_DIR$/css/common.css" />
-        <option value="$PROJECT_DIR$/css/news/home.css" />
-        <option value="$PROJECT_DIR$/html/news/home.html" />
         <option value="$PROJECT_DIR$/js/news/home.js" />
+        <option value="$PROJECT_DIR$/html/news/home.html" />
+        <option value="$PROJECT_DIR$/css/news/home.css" />
       </list>
     </option>
   </component>
@@ -278,7 +278,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46226000" />
+    <option name="totallyTimeSpent" value="46468000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -686,14 +686,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/news/home.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
@@ -702,10 +694,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/news/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="107" column="13" lean-forward="false" selection-start-line="104" selection-start-column="11" selection-end-line="107" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/html/news/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
-          <caret line="200" column="62" lean-forward="false" selection-start-line="200" selection-start-column="57" selection-end-line="200" selection-end-column="62" />
+          <caret line="188" column="90" lean-forward="false" selection-start-line="188" selection-start-column="90" selection-end-line="188" selection-end-column="90" />
           <folding>
             <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="e#1073#1079#0" expanded="true" />
@@ -713,16 +713,16 @@
             <element signature="e#1294#1300#0" expanded="true" />
             <element signature="e#1301#1307#0" expanded="true" />
             <element signature="n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#9773#9777#1" expanded="true" />
-            <element signature="e#10397#10401#1" expanded="true" />
+            <element signature="e#9776#9780#1" expanded="true" />
+            <element signature="e#10400#10404#1" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/news/home.js">
+    <entry file="file://$PROJECT_DIR$/css/news/home.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="45" column="9" lean-forward="false" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+        <state relative-caret-position="374">
+          <caret line="29" column="10" lean-forward="false" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
           <folding />
         </state>
       </provider>
