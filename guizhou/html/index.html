@@ -35,7 +35,7 @@
     </div>
     <!--导航栏导航栏-->
 
-    <nav class="navbar navbar-expand-sm  center-block ">
+    <nav class="navbar navbar-expand-sm  center-block header-menu">
         <!-- Toggler/collapsibe Button -->
         <button class="navbar-toggler bg-primary" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="fa fa-bars"></span>
@@ -45,13 +45,11 @@
                 <li class="nav-item">
                     <a class="nav-item" href="#">
                         <img src="../img/brand.png" alt="Logo">
-
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-item" href="#">
                         <img src="../img/world-trade.png" alt="Logo">
-
                     </a>
                 </li>
                 <li class="nav-item">
@@ -159,8 +157,8 @@
 <!--主页四块-->
 <div class="container-fluid main ">
     <div class="row">
-        <div class="col-md-2 col-lg-2"></div>
-        <div class="col-md-5 col-lg-5 col-sm-12 top-row">
+        <div class="col-md-1 col-lg-2"></div>
+        <div class="col-md-6 col-lg-5 col-sm-12 top-row">
             <div class="block news-block">
                 <div class="block-header">
                     <img src="../img/news-icon.png" class="icon">
@@ -170,32 +168,32 @@
                 <div class="block-body">
                     <div class="left-list">
                         <div data-bind="foreach: cates">
-                            <div data-bind="click:$parent.changeSelectedNews ">
-                                <a href="#"
-                                   data-bind="text: title, css:{ 'tab-active':id() == $parent.selectedNewsId()}"></a>
+                            <div data-bind="click:$parent.changeSelectedNews">
+                                <div data-bind="css:{ 'tab-item-first':$index()==0,'tab-item-active':id() == $parent.selectedNewsId()}"
+                                     class="tab-item"><span data-bind="text: title"></span></div>
                             </div>
                         </div>
                     </div>
-                    <div class="right-list">
-                        <div class="tab-content-active"
-                             data-bind="foreach: newsSH , visible:2 == selectedNewsId()">
-                            <div>
-                                <img src="../img/point-icon.png"></img> <span data-bind="text: title"></span>
-                                &nbsp;<span data-bind="text: create_time"></span>
+                    <div class=" right-list">
+                        <div data-bind="foreach: newsSH , visible:2 == selectedNewsId()">
+                            <div class="item">
+                                <span class="title">  <img src="../img/point-icon.png"></img> <span
+                                        data-bind="text: title"></span></span>
+                                &nbsp;<span class="date" data-bind="text: create_time"></span>
                             </div>
                         </div>
-                        <div class="tab-content-active"
-                             data-bind="foreach: newsZH,visible:3 == selectedNewsId()">
-                            <div>
-                                <img src="../img/point-icon.png"></img> <span data-bind="text: title"></span>
-                                &nbsp;<span data-bind="text: create_time"></span>
+                        <div data-bind="foreach: newsZH,visible:3 == selectedNewsId()">
+                            <div class="item">
+                                <span class="title">  <img src="../img/point-icon.png"></img> <span
+                                        data-bind="text: title"></span></span>
+                                &nbsp;<span class="date" data-bind="text: create_time"></span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-3 col-lg-3 col-sm-12 top-row">
+        <div class="col-md-4 col-lg-3 col-sm-12 top-row">
             <div class="block announce-block">
                 <div class="block-header">
                     <img src="../img/broadcast-icon.png" class="icon">
@@ -203,20 +201,21 @@
                     <a href="#">更多<img src="../img/arrow-icon.png"></a>
                 </div>
                 <div class="block-body">
-                    <div class="tab-content-active" data-bind="foreach: announces">
+                    <div class="item-cover" data-bind="foreach: announces">
                         <div class="item">
-                            <img src="../img/point-icon.png"></img> <span data-bind="text: title"></span>
-                            &nbsp;<span data-bind="text: create_time"></span>
+                            <span class="title"> <img src="../img/point-icon.png"></img> <span
+                                    data-bind="text: title"></span></span>
+                            &nbsp;<span class="date" data-bind="text: create_time"></span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-2 col-lg-2"></div>
+        <div class="col-md-1 col-lg-2"></div>
     </div>
     <div class="row">
-        <div class="col-md-2 col-lg-2"></div>
-        <div class="col-md-5 col-lg-5 col-sm-12 bottom-row">
+        <div class="col-md-1 col-lg-2"></div>
+        <div class="col-md-6 col-lg-5 col-sm-12 bottom-row">
             <div class="block introduction-block">
                 <div class="block-header">
                     <img src="../img/shanghui-icon.png" class="icon">
@@ -241,18 +240,73 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3 col-lg-3 col-sm-12 bottom-row">
-            <div class="block">
+        <div class="col-md-4 col-lg-3 col-sm-12 bottom-row">
+            <div class="block service-block">
                 <div class="block-header">
                     <img src="../img/shangmaofuwu-icon.png" class="icon">
                     <span>商贸服务</span>
                 </div>
                 <div class="block-body">
-
+                    <div class="row mx-auto">
+                        <div class="col-md-6 col-sm-12 ">
+                            <div class="text-nowrap item">
+                                <img src="../img/news-pic-1.png"/>
+                                <span class="title">金融服务</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 ">
+                            <div class="text-nowrap item">
+                                <img src="../img/news-pic-1.png"/>
+                                <span class="title">金融服务</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mx-auto">
+                        <div class="col-md-6 col-sm-12 ">
+                            <div class="text-nowrap item">
+                                <img src="../img/news-pic-1.png"/>
+                                <span class="title">金融服务</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 ">
+                            <div class="text-nowrap item">
+                                <img src="../img/news-pic-1.png"/>
+                                <span class="title">金融服务</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mx-auto">
+                        <div class="col-md-6 col-sm-12 ">
+                            <div class="text-nowrap item">
+                                <img src="../img/news-pic-1.png"/>
+                                <span class="title">金融服务</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 ">
+                            <div class="text-nowrap item">
+                                <img src="../img/news-pic-1.png"/>
+                                <span class="title">金融服务</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mx-auto">
+                        <div class="col-md-6 col-sm-12 ">
+                            <div class="text-nowrap item">
+                                <img src="../img/news-pic-1.png"/>
+                                <span class="title">金融服务</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 ">
+                            <div class="text-nowrap item">
+                                <img src="../img/news-pic-1.png"/>
+                                <span class="title">金融服务</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-2 col-lg-2"></div>
+        <div class="col-md-1 col-lg-2"></div>
     </div>
 </div>
 

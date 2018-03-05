@@ -1,5 +1,5 @@
 body {
-    font-family: Microsoft YaHei;
+    font-family: "Microsoft YaHei"
 }
 
 .mt-self {
@@ -62,15 +62,9 @@ body {
 
 .nav-items {
     min-width: 45rem;
-
 }
 
-.justify-content-center {
-    max-width: 56rem;
-
-}
-
-.nav-item a:hover {
+.header-menu .nav-item a:hover {
     color: white;
     background-color: #49649f;
 }
