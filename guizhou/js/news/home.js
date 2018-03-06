@@ -126,6 +126,7 @@ var updateNews = function () {
         page: iModel.currentPage(),
         category: iModel.selectedNewsId(),
     };
+
     $.get("http://192.168.0.191/home/content/newlists", pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.total) {
@@ -164,3 +165,4 @@ $(function () {
         ko.applyBindings(iModel);
     })
 });
+

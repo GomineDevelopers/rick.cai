@@ -3,6 +3,7 @@ var indexViewModel = function () {
     self.cates = ko.observableArray([]);
     self.newsSH = ko.observableArray([]);
     self.newsZH = ko.observableArray([]);
+    self.carousel = ko.observableArray([]);
     self.selectedNewsId = ko.observable(2);
     self.changeSelectedNews = function (v) {
         self.selectedNewsId(v.id());
@@ -12,6 +13,23 @@ var indexViewModel = function () {
 }
 
 var iModel = new indexViewModel();
+
+//获取轮播图片
+var getCarousel = new Promise(function (resolve, reject) {
+    $.get("http://192.168.0.191/home/content/banner", function (returnData) {
+        if (returnData.code && returnData.code == '200') {
+            if (returnData.data && returnData.data.list && returnData.data.list.length > 0) {
+                iModel.carousel = ko.mapping.fromJS(returnData.data.list);
+                debugger
+            }
+            resolve("success");
+        }
+        else {
+            reject("failed");
+            console.log("轮播图片获取有错误");
+        }
+    });
+});
 
 //获取新闻中心-商会动态
 var getNewsSH = new Promise(function (resolve, reject) {
@@ -127,7 +145,7 @@ var getAnnounce = new Promise(function (resolve, reject) {
 });
 
 $(function () {
-    Promise.all([getNewsSH, getNewsZH, getAnnounce]).then(function () {
+    Promise.all([getNewsSH, getNewsZH, getAnnounce, getCarousel]).then(function () {
         ko.applyBindings(iModel);
     });
 });
