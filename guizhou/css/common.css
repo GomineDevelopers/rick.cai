@@ -191,11 +191,11 @@ html,body {
 
 .breadcrumb-item + .breadcrumb-item::before {
     content: ">" !important;
-    color: #999999 !important;
+    color: #444a4e !important;
 }
 
 .breadcrumb .breadcrumb-item a {
-    color: #999999;
+    color: #444a4e;
 }
 
 .breadcrumb .active a {
