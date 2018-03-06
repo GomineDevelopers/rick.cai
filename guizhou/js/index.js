@@ -20,7 +20,6 @@ var getCarousel = new Promise(function (resolve, reject) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.length > 0) {
                 iModel.carousel = ko.mapping.fromJS(returnData.data.list);
-                debugger
             }
             resolve("success");
         }
