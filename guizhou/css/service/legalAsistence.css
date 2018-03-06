@@ -110,6 +110,7 @@ a{
     padding: 15px;
 }
 .panel-heading {
+	height:2.8rem;
     padding: 10px 15px;
     border-bottom: 1px solid #ddd;
     border-top-left-radius: 0px;
@@ -120,4 +121,10 @@ a{
 }
 .no-padding-right{
 	padding-right: 0px !important;
+}
+.item-cover >.item{
+	height: 2rem;
+    font-size: 14px;
+    padding: 1rem 0.5rem 1rem 0.2rem;
+    white-space: nowrap;
 }
