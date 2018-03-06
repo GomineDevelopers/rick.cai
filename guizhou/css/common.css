@@ -15,17 +15,6 @@ html,body {
 }
 
 /*头部*/
-
-@media (min-width: 1200px) {
-    .navbar-expand-sm .navbar-collapse {
-        display: -webkit-box !important;
-        display: -ms-flexbox !important;
-        display: flex !important;
-        -ms-flex-preferred-size: auto;
-        flex-basis: auto;
-    }
-}
-
 .header-style {
     background-color: #FFFFFF;
     height: 5.4rem;
@@ -198,10 +187,6 @@ html,body {
 .breadcrumb-item + .breadcrumb-item::before {
     content: ">" !important;
     color: #999999 !important;
-}
-
-.breadcrumb .breadcrumb-item  {
-    float: left;
 }
 
 .breadcrumb .breadcrumb-item a {
