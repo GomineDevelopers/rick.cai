@@ -14,6 +14,7 @@
 
 .main .block {
     border: 1px solid #ddd;
+    
 }
 
 /*下面四个小块*/
@@ -69,6 +70,9 @@
 }
 
 /*新闻中心*/
+.news-block{
+	min-width: 31.07rem;
+}
 .news-block .left-list {
     width: 20%;
     float: left;
@@ -118,12 +122,13 @@
     height: 1rem;
     padding-left: 0.1rem;
     display: inline-block;
-    width: 80%;
+    /*width: 80%;*/
 }
 
 .news-block .item .date {
     color: #999999;
-    padding-right: 0.5rem;
+    /*padding-right: 0.5rem;*/
+    float: right;
 }
 
 /*商会介绍*/
@@ -141,7 +146,7 @@
 .introduction-block .left-list {
     width: 40%;
     float: left;
-    text-align: center;
+    padding-left: 1.34rem;
 }
 
 .introduction-block .right-list {
@@ -153,7 +158,7 @@
 }
 
 .introduction-block .left-list img {
-    width: 80%;
+    /*width: 80%;*/
     padding-top: 1rem;
 }
 
@@ -171,6 +176,9 @@
 }
 
 /*最新公告*/
+.announce-block{
+	min-width:26.375rem ;
+}
 .announce-block .item-cover {
     padding-left: 0.8rem;
 }
@@ -188,12 +196,13 @@
     height: 1rem;
     padding-left: 0.1rem;
     display: inline-block;
-    width: 80%;
+/*    width: 80%;*/
 }
 
 .announce-block .item .date {
     color: #999999;
-    padding-right: 0.5rem;
+    /*padding-right: 0.5rem;*/
+    float: right;
 }
 
 /*商贸服务*/
