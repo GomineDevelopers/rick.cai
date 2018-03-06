@@ -133,8 +133,8 @@
 </header>
 <!--内容-->
 <div class="mt-self">
-    <!--会员风采-->
-    <div class="container-fluid  content-warp">
+    <!--breadcrumb-->
+    <div class="container-fluid  content-warp body-background">
         <div class="row col-md-8 mx-auto">
             <div>
                 <ol class="breadcrumb">
@@ -184,7 +184,7 @@
             <div class="block-body">
                 <div class="left-list">
                     <div class="media-list news-block" data-bind="foreach: news">
-                        <div class="media">
+                        <div class="media" data-bind="click: $parent.goDetail">
                             <a class="media-left" href="#">
                                 <img class="media-object"  data-bind="attr: { src: img,}" alt="通用的占位符图像">
                             </a>

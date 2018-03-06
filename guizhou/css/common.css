@@ -1,10 +1,17 @@
-body {
+html,body {
     font-family: "Microsoft YaHei";
     font-weight: 500;
+    height: 100%;
+    padding: 0;
+    margin: 0;
 }
 
+
+.body-background{
+    background-color: #f5f5f5;
+}
 .mt-self {
-    margin-top: 6.4rem;
+    padding-top: 6.4rem;
 }
 
 /*头部*/

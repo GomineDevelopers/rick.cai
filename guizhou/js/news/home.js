@@ -8,10 +8,15 @@ var indexViewModel = function () {
     self.totalPage = ko.observable(1);
     self.minPage = ko.observable(1);
     self.maxPage = ko.observable(1);
+    //改变新闻类型
     self.changeSelectedNews = function (v) {
         self.selectedNewsId(v.id());
         self.currentPage(1);
         updateNews();
+    }
+    // 去新闻详情页
+    self.goDetail = function (v) {
+        window.location.href = "./newsDetail.html?newsid=" + v.id();
     }
     //分页相关
     self.increasePage = function () {
@@ -157,7 +162,5 @@ var updateNews = function () {
 $(function () {
     getNews.then(function () {
         ko.applyBindings(iModel);
-    }).catch(function (e) {
-        ko.applyBindings(iModel);
-    });
+    })
 });

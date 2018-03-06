@@ -1,0 +1,16 @@
+.body-background {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 0 0.75rem 2rem;
+}
+
+.nd-header {
+    margin-top: 1.5rem;
+}
+
+#auto-content {
+    width: 100%;
+}
