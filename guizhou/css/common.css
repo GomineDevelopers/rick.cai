@@ -118,7 +118,7 @@ html,body {
 
 .dropdown-menu a:hover {
     color: white;
-    text-align: left;
+    text-align: center;
     list-style: none;
     background-color: #49649f;
 }
