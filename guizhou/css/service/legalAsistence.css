@@ -128,3 +128,7 @@ a{
     padding: 1rem 0.5rem 1rem 0.2rem;
     white-space: nowrap;
 }
+.date{
+	float: right;
+	color: #999999;
+}
