@@ -22,7 +22,6 @@ var getNewsDetail = new Promise(function (resolve, reject) {
                     },
                     'author': {
                         create: function (options) {
-                            debugger;
                             return "发布人: " + options.data;
                         }
                     },

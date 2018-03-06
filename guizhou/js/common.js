@@ -83,6 +83,14 @@ CommonTools.getQueryVariable = function (variable) {
     return (false);
 }
 
+$(function () {
+    var topHeight = $('.fixed-top').outerHeight();
+    $('.mt-self').css({
+        'paddingTop': topHeight + 'px'
+    })
+
+});
+
 
 
 
