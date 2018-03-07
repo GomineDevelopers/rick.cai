@@ -1,12 +1,20 @@
 .container-fluid {
     background-color: #f5f5f5;
 }
+.body-background {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 0 0.75rem 2rem;
+}
+
 .content-warp{
 	margin-top: 1rem;
 }
 
 .mt-self{
-  background-color: #f5f5f5;	
   background-color: #f5f5f5;
 }
 
@@ -50,7 +58,6 @@
 }
 .item-cover >.item{
     font-size: 14px;
-    padding: 1rem 0.5rem 1rem 0.2rem;
     padding: 5px 5px;
     white-space: nowrap;
 }
