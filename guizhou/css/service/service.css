@@ -67,13 +67,16 @@
     font-size: 14px;
     padding: 5px 0;
     white-space: nowrap;
-    position: absolute;
-    bottom: 5px;
 }
 .date{
 	float: right;
 	color: #999999;
 }
+.item-more{
+    position: absolute;
+    bottom: 5px;
+}
+
 .item-more a{
 	color: #999999;
 }
