@@ -36,9 +36,12 @@
     border-color: #ddd;
 }
 
+.two-rows .panel-body {
+   min-height: 16rem;
+}
+
 .panel-body {
     padding: 0.9375rem;
-    min-height: 16rem;
     position: relative;
 }
 

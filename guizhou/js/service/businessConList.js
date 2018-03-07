@@ -1,5 +1,10 @@
+var categoryId = CommonTools.getQueryVariable("categoryId");
+
+var categoryName = decodeURIComponent(CommonTools.getQueryVariable("categoryName"));
+
 var businessConListViewModel = function () {
     var self = this;
+    self.categoryName = categoryName;
     self.businessConList = ko.observableArray([]);
     self.pages = ko.observableArray([]);
     self.currentPage = ko.observable(1);
@@ -63,23 +68,25 @@ var businessConListViewModel = function () {
 
 var bclModel = new businessConListViewModel();
 
-var getBusinessConList = new Promise(function (resolve,reject) {
+
+var getBusinessConList = new Promise(function (resolve, reject) {
     var pageInfo = {
-        limit:5,
-        page:bclModel.currentPage(),
+        limit: 5,
+        page: bclModel.currentPage(),
     };
 
-    $.get("http://192.168.0.191/home/content/businesscate/category/12",pageInfo,function (returnData) {
-        if(returnData.code && returnData.code == '200'){
-            if(returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length>0){
+
+    $.get("http://192.168.0.191/home/content/businesscate/category/" + categoryId, pageInfo, function (returnData) {
+        if (returnData.code && returnData.code == '200') {
+            if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
                 var mappingList = {
                     "create_time": {
                         create: function (options) {
                             return CommonTools.formatDate(options.data);
                         }
                     },
-                    "title":{
-                        create:function (options) {
+                    "title": {
+                        create: function (options) {
                             if ($(window).width() < 768) {
                                 if (options.data.length <= 20) {
                                     return options.data;
@@ -87,7 +94,7 @@ var getBusinessConList = new Promise(function (resolve,reject) {
                                 else {
                                     return options.data.substring(0, 20) + "...";
                                 }
-                            }else{
+                            } else {
                                 if (options.data.length <= 50) {
                                     return options.data;
                                 }
@@ -98,14 +105,14 @@ var getBusinessConList = new Promise(function (resolve,reject) {
                         }
                     }
                 }
-                bclModel.businessConList  = ko.mapping.fromJS(returnData.data.list.data,mappingList)
+                bclModel.businessConList = ko.mapping.fromJS(returnData.data.list.data, mappingList)
             }
             if (returnData.data && returnData.data.list && returnData.data.list.total) {
                 bclModel.totalPage(returnData.data.list.last_page);
                 bclModel.updatePages();
             }
             resolve("success");
-        }else{
+        } else {
             reject("failed");
             console.log("常见问题列表获取有错误");
         }
