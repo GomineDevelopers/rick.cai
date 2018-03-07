@@ -61,3 +61,7 @@
 .item-more a{
 	color: #999999;
 }
+/*出证入证正文页面*/
+.nd-header{
+    margin-top: 1.5rem;
+}

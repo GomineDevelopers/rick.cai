@@ -28,6 +28,7 @@ var getChuzhengDetail = new Promise(function (resolve,reject) {
                 }
                 czdModel = ko.mapping.fromJS(returnData.data.data, mappingList);
             }
+            resolve("success");
         }else{
             reject("failed");
             console.log("出证入证详情获取有错误");
