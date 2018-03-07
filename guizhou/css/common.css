@@ -197,3 +197,7 @@ html,body {
 .breadcrumb .active a {
     color: #49649f !important;
 }
+
+#auto-content{
+    width: 100%;
+}
