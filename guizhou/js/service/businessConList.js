@@ -71,7 +71,7 @@ var bclModel = new businessConListViewModel();
 
 var getBusinessConList = new Promise(function (resolve, reject) {
     var pageInfo = {
-        limit: 1,
+        limit: 10,
         page: bclModel.currentPage(),
     };
 
@@ -121,10 +121,10 @@ var getBusinessConList = new Promise(function (resolve, reject) {
 
 var updateBusinessCon = function () {
     var pageInfo = {
-        limit: 1,
+        limit: 10,
         page: bclModel.currentPage(),
     };
-    $.get("http://192.168.0.191/home/content/certiflist", pageInfo, function (returnData) {
+    $.get("http://192.168.0.191/home/content/businesscate/category/" + categoryId , pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.total) {
                 bclModel.totalPage(returnData.data.list.last_page);
