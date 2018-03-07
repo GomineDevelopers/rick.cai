@@ -1,0 +1,12 @@
+.contac-list{
+	padding: 1rem;
+	border-bottom: 1px solid #ddd;
+	
+}
+.panel-body{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.contac-list:last-child{
+	border-bottom: none;
+}
