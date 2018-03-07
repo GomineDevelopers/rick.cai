@@ -1,19 +1,22 @@
-a{
-	text-decoration: none !important;
-	}
-	
 .container-fluid {
     background-color: #f5f5f5;
-  
 }
+.body-background {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 0 0.75rem 2rem;
+}
+
 .content-warp{
 	margin-top: 1rem;
 }
-.mt-self{
- min-height: 55rem;
-  background-color: #f5f5f5;	
-}
 
+.mt-self{
+  background-color: #f5f5f5;
+}
 
 .panel-default {
     border-color: #ddd;
@@ -43,6 +46,10 @@ a{
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
 }
+.panel-footer {
+    width:  100%;
+    background:  #f5f5f5;
+}
 .no-padding-left{
 	padding-left: 0 !important;
 }
@@ -50,9 +57,8 @@ a{
 	padding-right: 0px !important;
 }
 .item-cover >.item{
-	height: 2rem;
     font-size: 14px;
-    padding: 1rem 0.5rem 1rem 0.2rem;
+    padding: 5px 5px;
     white-space: nowrap;
 }
 .date{
@@ -61,4 +67,8 @@ a{
 }
 .item-more a{
 	color: #999999;
+}
+/*出证入证正文页面*/
+.nd-header{
+    margin-top: 1.5rem;
 }
