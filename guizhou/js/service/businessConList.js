@@ -17,7 +17,7 @@ var businessConListViewModel = function () {
         if (self.currentPage() < self.totalPage()) {
             self.currentPage(self.currentPage() + 1);
             self.updatePages();
-            updateNews();
+            updateBusinessCon();
         }
     }
 
@@ -25,14 +25,14 @@ var businessConListViewModel = function () {
         if (self.currentPage() > 1) {
             self.currentPage(self.currentPage() - 1);
             self.updatePages();
-            updateNews();
+            updateBusinessCon();
         }
     }
 
     self.setCurrentPage = function (pageNumber) {
         if (pageNumber >= 1 && pageNumber <= self.totalPage()) {
             self.currentPage(pageNumber);
-            updateNews();
+            updateBusinessCon();
         }
     }
 
@@ -71,7 +71,7 @@ var bclModel = new businessConListViewModel();
 
 var getBusinessConList = new Promise(function (resolve, reject) {
     var pageInfo = {
-        limit: 5,
+        limit: 1,
         page: bclModel.currentPage(),
     };
 
@@ -119,15 +119,15 @@ var getBusinessConList = new Promise(function (resolve, reject) {
     });
 });
 
-var updateNews = function () {
+var updateBusinessCon = function () {
     var pageInfo = {
-        limit: 5,
+        limit: 1,
         page: bclModel.currentPage(),
     };
     $.get("http://192.168.0.191/home/content/certiflist", pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.total) {
-                bclczModel.totalPage(returnData.data.list.last_page);
+                bclModel.totalPage(returnData.data.list.last_page);
                 bclModel.updatePages();
             }
             if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
