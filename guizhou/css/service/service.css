@@ -17,7 +17,7 @@ a{
 }
 
 .panel {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 0px;
@@ -31,11 +31,11 @@ a{
 }
 
 .panel-body {
-    padding: 15px;
+    padding: 0.9375rem;
 }
 .panel-heading {
 	height:2.8rem;
-    padding: 10px 15px;
+    padding: 0.625rem 0.9375rem;
     border-bottom: 1px solid #ddd;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
