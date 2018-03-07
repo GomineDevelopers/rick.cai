@@ -84,11 +84,21 @@ var getChuZhengList = new Promise(function (resolve, reject) {
                     },
                     'title': {
                         create: function (options) {
-                            if (options.data.length <= 20) {
-                                return options.data;
+                            if ($(window).width() < 768) {
+                                if (options.data.length <= 20) {
+                                    return options.data;
+                                }
+                                else {
+                                    return options.data.substring(0, 20) + "...";
+                                }
                             }
                             else {
-                                return options.data.substring(0, 20) + "...";
+                                if (options.data.length <= 50) {
+                                    return options.data;
+                                }
+                                else {
+                                    return options.data.substring(0, 50) + "...";
+                                }
                             }
                         }
                     }
@@ -128,11 +138,21 @@ var updateNews = function () {
                     },
                     'title': {
                         create: function (options) {
-                            if (options.data.length <= 20) {
-                                return options.data;
+                            if ($(window).width() < 768) {
+                                if (options.data.length <= 20) {
+                                    return options.data;
+                                }
+                                else {
+                                    return options.data.substring(0, 20) + "...";
+                                }
                             }
                             else {
-                                return options.data.substring(0, 20) + "...";
+                                if (options.data.length <= 50) {
+                                    return options.data;
+                                }
+                                else {
+                                    return options.data.substring(0, 50) + "...";
+                                }
                             }
                         }
                     }
@@ -141,7 +161,7 @@ var updateNews = function () {
             }
         }
         else {
-            console.log("新闻中心获取有错误");
+            console.log("出证认证获取有错误");
         }
     });
 }
