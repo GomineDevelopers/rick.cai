@@ -5,6 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../../css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/bootstrap/bootstrap-grid.min.css">
@@ -12,9 +13,9 @@
 
     <link rel="stylesheet" href="../../css/font-awesome.min.css">
     <link rel="stylesheet" href="../../css/common.css">
-    <link rel="stylesheet" href="../../css/contact/shanghuijianjie.css">
+    <link rel="stylesheet" href="../../css/contact/youqinglianjie.css">
 
-    <title>商会简介</title>
+    <title>友情链接</title>
 </head>
 <body>
 <!--顶部-->
@@ -114,7 +115,7 @@
 </header>
 
 <!--内容-->
-<div class="mt-self" style="padding-top: 134px;">
+<div class="mt-self">
     <div class="container-fluid  content-warp body-background">
         <div class="row col-md-8 mx-auto">
             <div>
@@ -123,16 +124,15 @@
                         <a href="#">联系我们</a>
                     </li>
                     <li class="breadcrumb-item active">
-                        <a href="#">商会简介</a>
+                        <a href="#">友情链接</a>
                     </li>
                 </ol>
             </div>
         </div>
         <div class="row col-md-8 mx-auto bg-white intro-text-detail ">
-            <div class="container ">
-                <img src="../../img/intro.png">
+            <div id="auto-content" data-bind="foreach: links">
+                <a data-bind="attr: { href: url }" target="_blank"><span data-bind="text:title"></span></a>
             </div>
-            <div data-bind="html:content" id="auto-content"></div>
         </div>
     </div>
 </div>
@@ -166,6 +166,7 @@
 <script src="../../js/knockout/knockout.mapping-latest.js"></script>
 <script src="../../js/common.js"></script>
 <script src="../../js/polyfill.js"></script>
-<script src="../../js/contact/shanghuijianjie.js" defer="defer"></script>
+<script src="../../js/contact/youqinglianjie.js" defer="defer"></script>
+
 </body>
 </html>
