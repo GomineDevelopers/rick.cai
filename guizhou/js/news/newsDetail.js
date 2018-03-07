@@ -1,13 +1,4 @@
-var newsDetailViewModel = function () {
-    var self = this;
-    self.title = ko.observable("");
-    self.author = ko.observable("");
-    self.date = ko.observable("");
-    self.detail = ko.observable("");
-    self.content = ko.observable("");
-}
-
-var ndModel = new newsDetailViewModel();
+var ndModel = {};
 
 var getNewsDetail = new Promise(function (resolve, reject) {
     var url = "http://192.168.0.191/home/content/newdetail/id/" + CommonTools.getQueryVariable("newsid")
@@ -20,7 +11,7 @@ var getNewsDetail = new Promise(function (resolve, reject) {
                             return "发布时间: " + CommonTools.formatDate(options.data);
                         }
                     },
-                    'author': {
+                    'username': {
                         create: function (options) {
                             return "发布人: " + options.data;
                         }
