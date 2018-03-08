@@ -16,6 +16,27 @@ CommonTools.formatDate = function (date, showDetail) {
         return year + "-" + month + "-" + date1;
 }
 
+CommonTools.formatText = function (text) {
+    if ($(window).width() < 768) {
+        if (text.length <= 20) {
+            return text;
+        }
+        else {
+            return text.substring(0, 20) + "...";
+        }
+    }
+    else {
+        if (text.length <= 50) {
+            return text;
+        }
+        else {
+            return text.substring(0, 50) + "...";
+        }
+    }
+}
+
+
+
 CommonTools.getData = function (params) {
     if (!params.type) {
         params.type = 'get';
