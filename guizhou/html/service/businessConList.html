@@ -131,7 +131,7 @@
         </div>
 
         <div class="row col-md-8 mx-auto">
-            <!--出证认证-->
+            <!--业务咨询之常见问题-->
             <div class="col-md-12 no-padding-left">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -142,7 +142,7 @@
                         <div class="item-cover" data-bind="foreach: businessConList" id="auto-content">
                             <div class="item">
                                 <span class="title"><img src="../../img/point-icon.png"></span>
-                                <a data-bind="attr:{ href : '#?id='+id()}">
+                                <a data-bind="attr:{ href : './businessConDetail.html?id='+id()}">
                                     <span data-bind="text: title"></span></a>
                                 &nbsp;<span class="date pull-right" data-bind="text: create_time"></span>
                             </div>
