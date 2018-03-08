@@ -1,11 +1,6 @@
-var businessConDetailViewModel = function () {
-    var self = this;
-    self.title = ko.observable("");
-    self.date = ko.observable("");
-    self.content = ko.observable("");
-}
+var categoryName = decodeURIComponent(CommonTools.getQueryVariable("categoryName"));
 
-var bcdModel = new businessConDetailViewModel();
+var bcdModel = {};
 
 var getBusinessConDetail = new Promise(function (resolve,reject) {
     var url = "http://192.168.0.191/home/content/businessdetail/id/"+CommonTools.getQueryVariable('id');
