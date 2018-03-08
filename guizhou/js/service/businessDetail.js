@@ -27,16 +27,10 @@ var getBusinessDetail = new Promise(function (resolve, reject) {
     });
 });
 
-function getAutoHeight() {
-    var height = $(window).height() - $('.mt-self').outerHeight() - $('.nav-footer').outerHeight() + $('#auto-content').outerHeight();
-    $('#auto-content').css({
-        'minHeight': height + 'px'
-    })
-}
 
 $(function () {
     getBusinessDetail.then(function () {
         ko.applyBindings(bcdModel);
-        getAutoHeight();
+        CommonTools.getAutoHeight($('#auto-content'));
     })
 });

@@ -113,7 +113,7 @@
 <!--内容-->
 <div class="mt-self">
     <!--业务咨询-->
-    <div class="container-fluid  content-warp">
+    <div class="container-fluid ">
         <div class="row col-md-8 mx-auto">
             <div>
                 <ol class="breadcrumb">
@@ -132,7 +132,7 @@
                     <div class="panel-heading">
                         <h5 class="panel-title" data-bind="text:businessList1().category_name()"></h5>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body auto-content" class="">
                         <div class="item-cover">
                             <div data-bind="foreach: businessList1().list()">
                                 <div class="item">
@@ -154,7 +154,7 @@
                     <div class="panel-heading">
                         <h5 class="panel-title" data-bind="text:businessList2().category_name()"></h5>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body auto-content" id="auto-content">
                         <div class="item-cover">
                             <div data-bind="foreach: businessList2().list()">
                                 <div class="item">

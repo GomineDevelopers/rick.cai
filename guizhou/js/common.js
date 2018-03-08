@@ -35,8 +35,6 @@ CommonTools.formatText = function (text) {
     }
 }
 
-
-
 CommonTools.getData = function (params) {
     if (!params.type) {
         params.type = 'get';
@@ -102,6 +100,15 @@ CommonTools.getQueryVariable = function (variable) {
         }
     }
     return (false);
+}
+
+CommonTools.getAutoHeight = function (div) {
+    if (div) {
+        var height = $(window).height() - $('.mt-self').outerHeight() - $('.nav-footer').outerHeight() + div.outerHeight();
+        div.css({
+            'minHeight': height + 'px'
+        })
+    }
 }
 
 $(function () {

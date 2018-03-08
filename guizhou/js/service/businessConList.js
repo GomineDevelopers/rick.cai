@@ -138,16 +138,9 @@ var updateBusinessCon = function () {
     });
 }
 
-function getAutoHeight() {
-    var height = $(window).height() - $('.mt-self').outerHeight() - $('.nav-footer').outerHeight() + $('#auto-content').outerHeight();
-    $('#auto-content').css({
-        'minHeight': height + 'px'
-    })
-}
-
 $(function () {
     getBusinessConList.then(function () {
         ko.applyBindings(bclModel);
-        getAutoHeight();
+        CommonTools.getAutoHeight($('#auto-content'));
     })
 });

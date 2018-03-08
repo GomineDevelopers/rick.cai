@@ -2,11 +2,11 @@ var categoryName = decodeURIComponent(CommonTools.getQueryVariable("categoryName
 
 var bcdModel = {};
 
-var getBusinessConDetail = new Promise(function (resolve,reject) {
-    var url = "http://192.168.0.191/home/content/businessdetail/id/"+CommonTools.getQueryVariable('id');
-    $.get(url,function (returnData) {
-        if(returnData.code && returnData.code == '200'){
-            if(returnData.data && returnData.data.data){
+var getBusinessConDetail = new Promise(function (resolve, reject) {
+    var url = "http://192.168.0.191/home/content/businessdetail/id/" + CommonTools.getQueryVariable('id');
+    $.get(url, function (returnData) {
+        if (returnData.code && returnData.code == '200') {
+            if (returnData.data && returnData.data.data) {
                 var mappingList = {
                     'create_time': {
                         create: function (options) {
@@ -14,26 +14,19 @@ var getBusinessConDetail = new Promise(function (resolve,reject) {
                         }
                     }
                 }
-                bcdModel = ko.mapping.fromJS(returnData.data.data,mappingList);
+                bcdModel = ko.mapping.fromJS(returnData.data.data, mappingList);
             }
             resolve("success");
-        }else{
+        } else {
             reject("failed");
             console.log("常见问题详情获取有错误");
         }
     });
 });
 
-function getAutoHeight() {
-    var height = $(window).height() - $('.mt-self').outerHeight() - $('.nav-footer').outerHeight() + $('#auto-content').outerHeight();
-    $('#auto-content').css({
-        'minHeight': height + 'px'
-    })
-}
-
 $(function () {
     getBusinessConDetail.then(function () {
         ko.applyBindings(bcdModel);
-        getAutoHeight();
+        CommonTools.getAutoHeight($('#auto-content'));
     })
 });

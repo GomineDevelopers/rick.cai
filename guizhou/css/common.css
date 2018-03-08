@@ -107,10 +107,10 @@ html,body {
 }
 
 .dropdown-menu a:hover {
-    color: white;
+    color: black;
     text-align: center;
     list-style: none;
-    background-color: #49649f;
+    background-color: white;
 }
 
 .dropdown-item {

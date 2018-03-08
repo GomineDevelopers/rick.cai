@@ -136,17 +136,9 @@ var updateNews = function () {
     });
 }
 
-
-function getAutoHeight() {
-    var height = $(window).height() - $('.mt-self').outerHeight() - $('.nav-footer').outerHeight() + $('#auto-content').outerHeight();
-    $('#auto-content').css({
-        'minHeight': height + 'px'
-    })
-}
-
 $(function () {
     getChuZhengList.then(function () {
         ko.applyBindings(czModel);
-        getAutoHeight();
+        CommonTools.getAutoHeight($('#auto-content'));
     })
 });

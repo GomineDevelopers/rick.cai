@@ -12,6 +12,8 @@ var businessListViewModel = function () {
 
 var blModel = new businessListViewModel();
 
+
+
 var getBusinessList = new Promise(function (resolve, reject) {
     $.get("http://192.168.0.191/home/content/tradelist", function (returnData) {
         if (returnData.code && returnData.code == '200') {
@@ -41,8 +43,10 @@ var getBusinessList = new Promise(function (resolve, reject) {
     });
 });
 
+
 $(function () {
     getBusinessList.then(function () {
         ko.applyBindings(blModel);
+        CommonTools.getAutoHeight($('.auto-content'));
     })
 });

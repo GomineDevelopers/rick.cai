@@ -150,16 +150,9 @@ var updateView = function () {
     });
 }
 
-function getAutoHeight() {
-    var height = $(window).height() - $('.mt-self').outerHeight() - $('.nav-footer').outerHeight() + $('#auto-content').outerHeight();
-    $('#auto-content').css({
-        'minHeight': height + 'px'
-    })
-}
-
 $(function () {
     getdownloadList.then(function () {
         ko.applyBindings(dModel);
-        getAutoHeight();
+        CommonTools.getAutoHeight($('#auto-content'));
     })
 });

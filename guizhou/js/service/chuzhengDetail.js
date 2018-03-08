@@ -36,16 +36,9 @@ var getChuzhengDetail = new Promise(function (resolve,reject) {
     });
 });
 
-function getAutoHeight() {
-    var height = $(window).height() - $('.mt-self').outerHeight() - $('.nav-footer').outerHeight() + $('#auto-content').outerHeight();
-    $('#auto-content').css({
-        'minHeight': height + 'px'
-    })
-}
-
 $(function () {
     getChuzhengDetail.then(function () {
         ko.applyBindings(czdModel);
-        getAutoHeight();
+        CommonTools.getAutoHeight($('#auto-content'));
     })
 });

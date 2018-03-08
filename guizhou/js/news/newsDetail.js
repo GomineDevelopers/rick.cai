@@ -28,16 +28,9 @@ var getNewsDetail = new Promise(function (resolve, reject) {
     });
 });
 
-function getAutoHeight() {
-    var height = $(window).height() - $('.mt-self').outerHeight() - $('.nav-footer').outerHeight() + $('#auto-content').outerHeight();
-    $('#auto-content').css({
-        'minHeight': height + 'px'
-    })
-}
-
 $(function () {
     getNewsDetail.then(function () {
         ko.applyBindings(ndModel);
-        getAutoHeight();
+        CommonTools.getAutoHeight($('#auto-content'));
     })
 });
