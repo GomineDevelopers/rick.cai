@@ -71,6 +71,11 @@
     padding: 5px 0;
     white-space: nowrap;
 }
+
+.item>.title{
+    color: #49649f !important;
+}
+
 .date{
 	float: right;
 	color: #999999;
