@@ -84,22 +84,7 @@ var getChuZhengList = new Promise(function (resolve, reject) {
                     },
                     'title': {
                         create: function (options) {
-                            if ($(window).width() < 768) {
-                                if (options.data.length <= 20) {
-                                    return options.data;
-                                }
-                                else {
-                                    return options.data.substring(0, 20) + "...";
-                                }
-                            }
-                            else {
-                                if (options.data.length <= 50) {
-                                    return options.data;
-                                }
-                                else {
-                                    return options.data.substring(0, 50) + "...";
-                                }
-                            }
+                            return CommonTools.formatText(options.data);
                         }
                     }
                 }
@@ -138,22 +123,7 @@ var updateNews = function () {
                     },
                     'title': {
                         create: function (options) {
-                            if ($(window).width() < 768) {
-                                if (options.data.length <= 20) {
-                                    return options.data;
-                                }
-                                else {
-                                    return options.data.substring(0, 20) + "...";
-                                }
-                            }
-                            else {
-                                if (options.data.length <= 50) {
-                                    return options.data;
-                                }
-                                else {
-                                    return options.data.substring(0, 50) + "...";
-                                }
-                            }
+                            return CommonTools.formatText(options.data);
                         }
                     }
                 }
