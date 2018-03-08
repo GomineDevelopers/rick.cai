@@ -133,10 +133,16 @@ var updateDownloadList = function () {
 }
 
 var updateView = function () {
-    var id = this.id();
-    $.post("http://192.168.0.191/home/content/setdownload", this.id(), function (returnData) {
+    var updateId = this.id()
+    var postData = {id: updateId};
+    window.open(this.url());
+    $.post("http://192.168.0.191/home/content/setdownload", postData, function (returnData) {
         if (returnData.code && returnData.code == '200') {
-          
+            for (var i = 0; i < dModel.downloadList().length; i++) {
+                if (dModel.downloadList()[i].id() == updateId) {
+                    dModel.downloadList()[i].view(dModel.downloadList()[i].view() + 1);
+                }
+            }
         }
         else {
             console.log("下载次数更新有错误");
