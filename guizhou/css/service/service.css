@@ -40,6 +40,10 @@
    min-height: 16rem;
 }
 
+.one-row .panel-body {
+    min-height: 32rem;
+}
+
 .panel-body {
     padding: 0.9375rem;
     position: relative;

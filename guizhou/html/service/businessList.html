@@ -11,9 +11,8 @@
     <link rel="stylesheet" href="../../css/font-awesome.min.css">
     <link rel="stylesheet" href="../../css/common.css">
     <link rel="stylesheet" type="text/css" href="../../css/service/service.css"/>
-    <title>贵州商会</title>
+    <title>经贸商机列表</title>
 </head>
-
 <body>
 <!--顶部-->
 <header class="fixed-top  header-style">
@@ -110,70 +109,69 @@
     </nav>
     <!--导航栏导航栏-->
 </header>
+
 <!--内容-->
 <div class="mt-self">
-    <!--业务咨询-->
-    <div class="container-fluid  content-warp">
+    <!--会员风采-->
+    <div class="container-fluid ">
         <div class="row col-md-8 mx-auto">
             <div>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
                         <a href="#">商贸服务</a>
                     </li>
+                    <li class="breadcrumb-item">
+                        <a href="./business.html"> 经贸商机</a>
+                    </li>
                     <li class="breadcrumb-item active">
-                        <a href="#">经贸商机</a>
+                        <a href="#"><span data-bind="text:categoryName"></span></a>
                     </li>
                 </ol>
             </div>
         </div>
-        <div class="row col-md-8 mx-auto one-row">
-            <div class="col-md-6">
+
+        <div class="row col-md-8 mx-auto">
+            <!--业务咨询之常见问题-->
+            <div class="col-md-12 no-padding-left">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h5 class="panel-title" data-bind="text:businessList1().category_name()"></h5>
+                        <h5 class="panel-title" data-bind="text:categoryName">
+                        </h5>
                     </div>
                     <div class="panel-body">
-                        <div class="item-cover">
-                            <div data-bind="foreach: businessList1().list()">
-                                <div class="item">
-                                    <a data-bind="attr:{href:'./businessDetail.html?id='+id()+'&categoryName='+$parent.businessList1().category_name()}"><span
-                                            class="title" data-bind="text:title"></span></a>
-                                    &nbsp;<span class="date" data-bind="text:create_time"></span>
-                                </div>
-                            </div>
-                            <div class="item item-more">
-                                <a data-bind="attr: { href: './businessList.html?categoryId='+ businessList1().category_id()+'&categoryName='+businessList1().category_name()}"><img
-                                        src="../../img/arrow-icon.png">&nbsp;&nbsp;查看更多</a>
+                        <div class="item-cover" data-bind="foreach: businessList" id="auto-content">
+                            <div class="item">
+                                <span class="title"><img src="../../img/point-icon.png"></span>
+                                <a data-bind="attr:{ href : './businessDetail.html?id='+id()+'&categoryName='+categoryName}">
+                                    <span data-bind="text: title"></span></a>
+                                &nbsp;<span class="date pull-right" data-bind="text: create_time"></span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h5 class="panel-title" data-bind="text:businessList2().category_name()"></h5>
-                    </div>
-                    <div class="panel-body">
-                        <div class="item-cover">
-                            <div data-bind="foreach: businessList2().list()">
-                                <div class="item">
-                                    <a data-bind="attr:{href:'./businessDetail.html?id='+id()+'&categoryName='+$parent.businessList2().category_name()}"><span
-                                            class="title" data-bind="text:title"></span></a>
-                                    &nbsp;<span class="date" data-bind="text:create_time"></span>
-                                </div>
-                            </div>
-                            <div class="item item-more">
-                                <a data-bind="attr: { href: './businessList.html?categoryId='+ businessList2().category_id()+'&categoryName='+businessList2().category_name()}"><img
-                                        src="../../img/arrow-icon.png">&nbsp;&nbsp;查看更多</a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="panel-footer" data-bind="visible:pages().length>0">
+                    <nav aria-label="Page navigation example" class="pull-right">
+                        <ul class="pagination" data-bind="foreach: pages">
+                            <li><span data-bind="pageNumber()"></span></li>
+                            <li class="page-item "
+                                data-bind="click:$parent.decreasePage,visible:pageNumber()==$parent.minPage(),css:{disabled :$parent.currentPage()==1 }">
+                                <a class="page-link" href="#">&lt;</a></li>
+                            <li class="page-item"
+                                data-bind="event: { click: $parent.setCurrentPage.bind($data, pageNumber()) },css:{active:pageNumber()== $parent.currentPage()}">
+                                <a class="page-link" href="#"><span data-bind="text:pageNumber"></span></a>
+                            </li>
+                            <li class="page-item"
+                                data-bind="click:$parent.increasePage ,visible:pageNumber()==$parent.maxPage(),css:{disabled :$parent.currentPage()==$parent.totalPage()}">
+                                <a class="page-link" href="#">&gt;</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
+
     </div>
 </div>
+
 <!--底部-->
 <footer class="nav navbar navbar-expand-sm navbar-fixed-bottom nav-footer ">
     <div class="row container mx-auto">
@@ -184,7 +182,6 @@
                 <li class="nav-item">Tel：0851-88665029／88555448 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     Fax：0851-88555655
                 </li>
-
                 <li class="nav-item">地址：贵阳市云岩区延安中路48号世贸广场B区2203室</li>
             </ul>
         </div>
@@ -204,7 +201,6 @@
 <script src="../../js/knockout/knockout.mapping-latest.js"></script>
 <script src="../../js/common.js"></script>
 <script src="../../js/polyfill.js"></script>
-<script src="../../js/service/business.js" defer="defer"></script>
+<script src="../../js/service/businessList.js" defer="defer"></script>
 </body>
-
 </html>
