@@ -123,7 +123,7 @@ var updateDownloadList = function () {
                         }
                     }
                 }
-                ko.mapping.fromJS(returnData.data.list.data, mappingList, dModel.chuZhengList);
+                ko.mapping.fromJS(returnData.data.list.data, mappingList, dModel.downloadList);
             }
         }
         else {
