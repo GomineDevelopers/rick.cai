@@ -138,12 +138,14 @@
                         <div class="item-cover">
                             <div data-bind="foreach: businessList1().list()">
                                 <div class="item">
-                                    <a data-bind="attr:{href:'./businessConDetail.html?id='+id()+'&categoryName=法律事务常见问题'}"><span class="title" data-bind="text:title"></span></a>
+                                    <a data-bind="attr:{href:'./businessConDetail.html?id='+id()+'&categoryName='+$parent.businessList1().category_name()}"><span
+                                            class="title" data-bind="text:title"></span></a>
                                     &nbsp;<span class="date" data-bind="text:create_time"></span>
                                 </div>
                             </div>
                             <div class="item item-more">
-                                <a  data-bind="attr: { href: './businessConList.html?categoryId='+ businessList1().category_id()+'&categoryName='+businessList1().category_name()}"><img src="../../img/arrow-icon.png">&nbsp;&nbsp;查看更多</a>
+                                <a data-bind="attr: { href: './businessConList.html?categoryId='+ businessList1().category_id()+'&categoryName='+businessList1().category_name()}"><img
+                                        src="../../img/arrow-icon.png">&nbsp;&nbsp;查看更多</a>
                             </div>
                         </div>
                     </div>
@@ -158,12 +160,14 @@
                         <div class="item-cover">
                             <div data-bind="foreach: businessList2().list()">
                                 <div class="item">
-                                    <a data-bind="attr:{href:'./businessConDetail.html?id='+id()+'&categoryName=展览服务常见问题'}"><span class="title" data-bind="text:title"></span></a>
+                                    <a data-bind="attr:{href:'./businessConDetail.html?id='+id()+'&categoryName='+$parent.businessList2().category_name()}"><span
+                                            class="title" data-bind="text:title"></span></a>
                                     &nbsp;<span class="date" data-bind="text:create_time"></span>
                                 </div>
                             </div>
                             <div class="item item-more">
-                                <a  data-bind="attr: { href: './businessConList.html?categoryId='+ businessList2().category_id()+'&categoryName='+businessList2().category_name()}"><img src="../../img/arrow-icon.png">&nbsp;&nbsp;查看更多</a>
+                                <a data-bind="attr: { href: './businessConList.html?categoryId='+ businessList2().category_id()+'&categoryName='+businessList2().category_name()}"><img
+                                        src="../../img/arrow-icon.png">&nbsp;&nbsp;查看更多</a>
                             </div>
                         </div>
                     </div>
@@ -180,12 +184,14 @@
                         <div class="item-cover">
                             <div data-bind="foreach: businessList3().list()">
                                 <div class="item">
-                                    <span class="title" data-bind="text:title"></span>
+                                    <a data-bind="attr:{href:'./businessConDetail.html?id='+id()+'&categoryName='+$parent.businessList3().category_name()}">
+                                        <span class="title" data-bind="text:title"></span></a>
                                     &nbsp;<span class="date" data-bind="text:create_time"></span>
                                 </div>
                             </div>
                             <div class="item item-more">
-                                <a  data-bind="attr: { href: './businessConList.html?categoryId='+ businessList3().category_id()+'&categoryName='+businessList3().category_name()}"><img src="../../img/arrow-icon.png">&nbsp;&nbsp;查看更多</a>
+                                <a data-bind="attr: { href: './businessConList.html?categoryId='+ businessList3().category_id()+'&categoryName='+businessList3().category_name()}"><img
+                                        src="../../img/arrow-icon.png">&nbsp;&nbsp;查看更多</a>
                             </div>
                         </div>
                     </div>
@@ -200,12 +206,14 @@
                         <div class="item-cover">
                             <div data-bind="foreach: businessList4().list()">
                                 <div class="item">
-                                    <span class="title" data-bind="text:title"></span>
+                                    <a data-bind="attr:{href:'./businessConDetail.html?id='+id()+'&categoryName='+$parent.businessList4().category_name()}">
+                                        <span class="title" data-bind="text:title"></span></a>
                                     &nbsp;<span class="date" data-bind="text:create_time"></span>
                                 </div>
                             </div>
                             <div class="item item-more">
-                                <a  data-bind="attr: { href: './businessConList.html?categoryId='+ businessList4().category_id()+'&categoryName='+businessList4().category_name()}"><img src="../../img/arrow-icon.png">&nbsp;&nbsp;查看更多</a>
+                                <a data-bind="attr: { href: './businessConList.html?categoryId='+ businessList4().category_id()+'&categoryName='+businessList4().category_name()}"><img
+                                        src="../../img/arrow-icon.png">&nbsp;&nbsp;查看更多</a>
                             </div>
                         </div>
                     </div>
