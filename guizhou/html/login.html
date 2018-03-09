@@ -2,47 +2,99 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>零食商贩－登录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../css/bootstrap/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/login.css"/>
 </head>
 <body>
-<div class="login-view">
-    <div class="login-wrapper" ng-controller="loginCtrl">
-        <div class="login-box">
-            <div class="login-title">
-                <div class="company-name">
-                    <span>零食商贩</span>
-                </div>
-                <div class="systme-name">
-                    <span>Snack Petty Vendor</span>
-                </div>
+<!--导航栏导航栏-->
+<nav class="navbar navbar-expand-sm  fixed-top header-menu bg-white">
+    <!-- Toggler/collapsibe Button -->
+    <div class="row container col-md-12 header-img">
+        <div class=" offset-1">
+            <img src="../img/brand.png" alt="Logo">
+            <img src="../img/world-trade.png" alt="Logo">
+        </div>
+    </div>
+</nav>
+<div class="container-fluid login-container" >
+    <div class=" container col-md-8">
+        <div class="pull-right login-box">
+            <div class="col-md-10 form-group mx-auto">
+                <form class=" form-horizontal ">
+                    <div class=" mb-3 mx-auto ">
+                        <div class=" text-center login-label-text"><h4>欢迎来到贵州国际商会</h4></div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text text-muted"  for="username" > <i class="fa fa-user fa-lg"></i> </span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="请输入用户名" aria-label="Username" aria-describedby="basic-addon1" id="username">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text text-muted"  for="password" > <i class="fa fa-lock fa-lg"></i> </span>
+                        </div>
+                        <input type="password" class="form-control" placeholder="请输入密码" aria-label="password" aria-describedby="basic-addon1" id="password">
+                    </div>
+                    <div class="form-group row">
+                        <label for="code" class="col-sm-3 col-form-label">验证码</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control"  placeholder="请输入验证码" id="code">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="button" id="checkCode" class="code" style="width:60px" onclick="createCode()"> <a href="###" onclick="createCode()">看不清，换一张</a>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col ">
+                            <button class="btn  btn-block login-box-btn"  id="login">登陆</button>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col text-left">
+                            <a href="">了解商会</a>
+                        </div>
+                        <div class="col text-right">
+                            <a href="">申请加入会员</a>
+                        </div>
+                    </div>
+
+                </form>
             </div>
-            <div class="login-form">
-                <div class="form-group form-input">
-                    <input type="text" class="normal-input" id="user-name" placeholder="用户名">
-                    <div class="common-error-tips"><div></div></div>
-                </div>
-                <div class="form-group form-input">
-                    <input type="password" class="normal-input" id="user-pwd" placeholder="密码">
-                    <div class="common-error-tips"><div></div></div>
-                </div>
-                <div class="form-group form-btn">
-                    <input type="button" class="normal-btn" id="login" value="登录">
-                </div>
-                <div class="form-group form-btn">
-                    <input type="button" class="normal-btn" id="getData" value="请求">
-                </div>
-                <div class="form-group form-btn">
-                    <input type="button" class="normal-btn" id="logout" value="注销 ">
-                </div>
-                <div class="form-group form-forget">
-                    <label class="error-tips">登录失败</label>
-                </div>
+
+        </div>
+
+    </div>
+</div>
+<footer class="nav navbar navbar-expand-sm ">
+    <div class="container-fluid col-md-12">
+        <div class="col-md-6 offset-1">
+            <ul class=" nav-footer-item ">
+                <li class="nav-item">贵州国际商会</li>
+                <li class="nav-item">邮政编码：850002</li>
+                <li class="nav-item">Tel：0851-88665029／88555448 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fax：0851-88555655
+                </li>
+
+                <li class="nav-item">地址：贵阳市云岩区延安中路48号世贸广场B区2203室</li>
+            </ul>
+        </div>
+        <div class="col-md-3 mx-auto">
+            <div class="pull-right">
+                <img src="../img/erweima.png" />
             </div>
         </div>
     </div>
-</div>
+</footer>
+<!--导航栏导航栏-->
 </body>
 <script src="../js/jquery/jquery-3.3.1.min.js"></script>
 <script src="../js/common.js"></script>
 <script src="../js/login.js" defer="defer"></script>
+
 </html>

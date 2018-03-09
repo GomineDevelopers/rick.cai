@@ -2,7 +2,7 @@
 	background-image: url(../img/loginBg.png);
 	background-repeat: no-repeat;
 	background-size: 100%;
-	margin-top: 4rem;
+	padding-top: 4rem;
 	height: 600px;
 }
 
@@ -17,6 +17,11 @@
 	padding-top: 2rem;
 }
 
+@media (max-width: 768px) {
+	.login-box{
+		width: 100%;
+	}
+}
 .login-label-text {
 	color: #49649f;
 }
@@ -35,4 +40,18 @@
 }
 .nav-footer-item >li{
 	color: #808080 !important;
+}
+
+.code {
+	background-image:url(111.jpg);
+	font-family:Arial,宋体;
+	font-style:italic;
+	color:green;
+	border:0;
+	padding:2px 3px;
+	letter-spacing:3px;
+	font-weight:bolder;
+}
+.unchanged {
+	border:0;
 }
