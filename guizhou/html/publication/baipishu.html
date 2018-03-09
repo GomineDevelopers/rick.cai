@@ -118,13 +118,10 @@
 			<div class="container-fluid  content-warp">
 				<div class="row col-md-8 mx-auto">
 					<ol class="breadcrumb">
-						<li>
+						<li class="breadcrumb-item">
 							<a href="#">出版物</a>
 						</li>
-						<li>
-							<a href="#">&nbsp;&nbsp;<i class="fa fa-angle-right fa-lg "></i>&nbsp;&nbsp;</a>
-						</li>
-						<li class="active">
+						<li class="breadcrumb-item active">
 							<a href="#">白皮书</a>
 						</li>
 
@@ -135,11 +132,9 @@
 					<div class="col-md-12 no-padding-left">
 						<div class="panel panel-default">
 							<div class="panel-heading">
-								<h5 class="panel-title">
-							白皮书
-						</h5>
+								<h5 class="panel-title">白皮书</h5>
 							</div>
-							<div class="panel-body">
+							<div class="panel-body" id="auto-content">
 								<table class="table" border="0" cellspacing="" cellpadding="">
 									<thead>
 										<tr>
@@ -195,6 +190,23 @@
 									</div>
 								</table>
 							</div>
+						</div>
+						<div class="panel-footer" data-bind="visible:pages().length>0">
+							<nav aria-label="Page navigation example" class="pull-right">
+								<ul class="pagination" data-bind="foreach: pages">
+									<li><span data-bind="pageNumber()"></span></li>
+									<li class="page-item "
+										data-bind="click:$parent.decreasePage,visible:pageNumber()==$parent.minPage(),css:{disabled :$parent.currentPage()==1 }">
+										<a class="page-link" href="#">&lt;</a></li>
+									<li class="page-item"
+										data-bind="event: { click: $parent.setCurrentPage.bind($data, pageNumber()) },css:{active:pageNumber()== $parent.currentPage()}">
+										<a class="page-link" href="#"><span data-bind="text:pageNumber"></span></a>
+									</li>
+									<li class="page-item"
+										data-bind="click:$parent.increasePage ,visible:pageNumber()==$parent.maxPage(),css:{disabled :$parent.currentPage()==$parent.totalPage()}">
+										<a class="page-link" href="#">&gt;</a></li>
+								</ul>
+							</nav>
 						</div>
 					</div>
 
