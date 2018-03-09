@@ -63,22 +63,22 @@ var baipishuViewModel = function () {
 
 var bpsModel = new baipishuViewModel();
 
-var getBaipishuList = new Promise(function (resolve,reject) {
+var getBaipishuList = new Promise(function (resolve, reject) {
     var pageInfo = {
-        limit : 10,
-        page : bpsModel.currentPage()
+        limit: 10,
+        page: bpsModel.currentPage()
     }
-    $.get('http://192.168.0.191/home/content/paperlist',pageInfo,function(returnData){
-        if(returnData.code && returnData.code == '200'){
-            if(returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0){
+    $.get('http://192.168.0.191/home/content/paperlist', pageInfo, function (returnData) {
+        if (returnData.code && returnData.code == '200') {
+            if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
                 var mappingList = {
-                    'create_time':{
-                        create:function (options) {
+                    'create_time': {
+                        create: function (options) {
                             return CommonTools.formatDate(options.data);
                         }
                     },
-                    'title':{
-                        create:function (options) {
+                    'title': {
+                        create: function (options) {
                             return CommonTools.formatText(options.data);
                         }
                     }
@@ -90,7 +90,7 @@ var getBaipishuList = new Promise(function (resolve,reject) {
                 bpsModel.updatePages();
             }
             resolve("success");
-        }else{
+        } else {
             reject('failed');
             console.log('白皮书列表获取失败');
         }
@@ -131,21 +131,35 @@ var updateBaipishuList = function () {
 }
 
 var updateView = function () {
-    var updateId = this.id()
-    var postData = {id: updateId};
-    window.open(this.url());
-    $.post("http://192.168.0.191/home/content/setpaper", postData, function (returnData) {
-        if (returnData.code && returnData.code == '200') {
-            for (var i = 0; i < bpsModel.baipishuList().length; i++) {
-                if (bpsModel.baipishuList()[i].id() == updateId) {
-                    bpsModel.baipishuList()[i].view(bpsModel.baipishuList()[i].view() + 1);
+    var self=this;
+    if (CommonTools.getLocalStorage('token')) {
+        var params = {
+            url: "home/content/setpaper",
+            type: 'post',
+            data: {id: self.id()},
+            tokenFlag:true,
+            sCallback: function (returnData) {
+                if (returnData.code && returnData.code == '200') {
+                    for (var i = 0; i < bpsModel.baipishuList().length; i++) {
+                        if (bpsModel.baipishuList()[i].id() == self.id()) {
+                            bpsModel.baipishuList()[i].view(bpsModel.baipishuList()[i].view() + 1);
+                        }
+                    }
+                    window.open(self.url());
                 }
+            },
+            eCallback: function (e) {
+                $('#myModal').modal();
             }
-        }
-        else {
-            console.log("下载次数更新有错误");
-        }
-    });
+        };
+        CommonTools.getData(params);
+
+
+
+    }
+    else {
+        $('#myModal').modal();
+    }
 }
 
 $(function () {
