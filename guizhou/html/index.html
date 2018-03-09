@@ -83,7 +83,7 @@
                             出版物
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">白皮书</a>
+                            <a class="dropdown-item" href="./publication/baipishu.html">白皮书</a>
                         </div>
                     </li>
                     <!-- Dropdown -->
@@ -137,7 +137,7 @@
     </div>
     <!--主页四块-->
     <div class="container-fluid main ">
-        <div class="row  col-md-8 mx-auto">
+        <div class="row col-md-8 mx-auto index-div" >
             
             <div class="col-md-7  top-row">
                 <div class="block news-block">
@@ -157,12 +157,12 @@
                         </div>
                         <div class=" right-list">
                             <div data-bind="foreach: newsSH , visible:2 == selectedNewsId()">
-                                <div class="item">
+                                <div class="item" data-bind="css:{ 'no-border-bottom':$index()==5}">
                                 <span class="title">  <img src="../img/point-icon.png"></img> <span
                                         data-bind="text: title"></span></span>
-                                    &nbsp;<span class="date" data-bind="text: create_time"></span>
-                                </div>
-                            </div>
+                            &nbsp;<span class="date" data-bind="text: create_time"></span>
+                        </div>
+                        </div>
                             <div data-bind="foreach: newsZH,visible:3 == selectedNewsId()">
                                 <div class="item">
                                 <span class="title">  <img src="../img/point-icon.png"></img> <span
@@ -194,8 +194,7 @@
             </div>
             
         </div>
-        <div class="row col-md-8 mx-auto">
-           
+        <div class="row col-md-8 mx-auto index-div" >
             <div class="col-md-7 bottom-row">
                 <div class="block introduction-block">
                     <div class="block-header">

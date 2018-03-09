@@ -14,8 +14,21 @@
 
 .main .block {
     border: 1px solid #ddd;
-    
+
 }
+
+@media (min-width: 1000px) {
+    .index-div{
+        min-width: 1000px;
+    }
+}
+
+@media ( max-width: 1000px ) and (min-width: 768px) {
+    .index-div{
+        min-width: 768px;
+    }
+}
+
 
 /*下面四个小块*/
 .block .block-header {
@@ -109,24 +122,26 @@
 
 .news-block .item {
     height: 3rem;
+    line-height:1rem;
     font-size: 14px;
     padding: 1rem 0.5rem 1rem 0.2rem;
     border-bottom: 1px solid rgba(0, 0, 0, .125);
     white-space: nowrap;
-
+    display: flex;
+    width: 100%
 }
 
 .news-block .item .title {
-    height: 1rem;
     padding-left: 0.1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 80%;
     display: inline-block;
-    /*width: 80%;*/
 }
 
 .news-block .item .date {
     color: #999999;
-    /*padding-right: 0.5rem;*/
-    float: right;
+
 }
 
 /*商会介绍*/
@@ -142,13 +157,19 @@
 }
 
 .introduction-block .left-list {
-    width: 40%;
+    width: 35%;
     float: left;
-    padding-left: 1.34rem;
+    text-align: center;
+}
+
+.introduction-block .left-list img{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 .introduction-block .right-list {
-    width: 60%;
+    width: 65%;
     float: left;
     padding-left: 1.4rem;
     padding-right: 1.4rem;
@@ -181,18 +202,22 @@
 
 .announce-block .item {
     height: 3rem;
+    line-height:1rem;
     font-size: 14px;
     padding: 1rem 0.5rem 1rem 0.2rem;
     border-bottom: 1px solid rgba(0, 0, 0, .125);
     white-space: nowrap;
+    display: flex;
+    width: 100%
 
 }
 
 .announce-block .item .title {
-    height: 1rem;
     padding-left: 0.1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 80%;
     display: inline-block;
-/*    width: 80%;*/
 }
 
 .announce-block .item .date {

@@ -49,16 +49,6 @@ var getNewsSH = new Promise(function (resolve, reject) {
                             return CommonTools.formatDate(options.data);
                         }
                     },
-                    'title': {
-                        create: function (options) {
-                            if (options.data.length <= 20) {
-                                return options.data;
-                            }
-                            else {
-                                return options.data.substring(0, 20) + "...";
-                            }
-                        }
-                    }
                 }
                 iModel.newsSH = ko.mapping.fromJS(returnData.data.list, mappingList);
             }
@@ -87,16 +77,6 @@ var getNewsZH = new Promise(function (resolve, reject) {
                             return CommonTools.formatDate(options.data);
                         }
                     },
-                    'title': {
-                        create: function (options) {
-                            if (options.data.length <= 20) {
-                                return options.data;
-                            }
-                            else {
-                                return options.data.substring(0, 20) + "...";
-                            }
-                        }
-                    }
                 }
                 iModel.newsZH = ko.mapping.fromJS(returnData.data.list, mappingList);
             }
@@ -121,16 +101,6 @@ var getAnnounce = new Promise(function (resolve, reject) {
                             return CommonTools.formatDate(options.data);
                         }
                     },
-                    'title': {
-                        create: function (options) {
-                            if (options.data.length <= 20) {
-                                return options.data;
-                            }
-                            else {
-                                return options.data.substring(0, 20) + "...";
-                            }
-                        }
-                    }
                 }
                 iModel.announces = ko.mapping.fromJS(returnData.data.list, mappingList);
             }
