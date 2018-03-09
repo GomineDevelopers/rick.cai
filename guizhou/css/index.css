@@ -162,6 +162,11 @@
     text-align: center;
 }
 
+.imgSty{
+    width: 69px;
+    height: 49px;
+}
+
 .introduction-block .left-list img{
     width: 100%;
     padding-right: 15px;
