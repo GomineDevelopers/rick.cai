@@ -16,7 +16,7 @@ var legalListViewModel = function () {
         if (self.currentPage() < self.totalPage()) {
             self.currentPage(self.currentPage() + 1);
             self.updatePages();
-            updateBusinessCon();
+            updateLegalCon();
         }
     }
 
@@ -24,14 +24,14 @@ var legalListViewModel = function () {
         if (self.currentPage() > 1) {
             self.currentPage(self.currentPage() - 1);
             self.updatePages();
-            updateBusinessCon();
+            updateLegalCon();
         }
     }
 
     self.setCurrentPage = function (pageNumber) {
         if (pageNumber >= 1 && pageNumber <= self.totalPage()) {
             self.currentPage(pageNumber);
-            updateBusinessCon();
+            updateLegalCon();
         }
     }
 
@@ -101,7 +101,7 @@ var getLegalList = new Promise(function (resolve,reject) {
     });
 });
 
-var updateBusinessCon = function () {
+var updateLegalCon = function () {
     var pageInfo = {
         limit: 10,
         page: llModel.currentPage(),

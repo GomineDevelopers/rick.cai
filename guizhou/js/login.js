@@ -11,7 +11,7 @@ $(function () {
             return;
         }
         var params = {
-            url: 'apptoken/get',
+            url: 'api/apptoken/get',
             type: 'post',
             data: {ac: $userName.val(), se: $pwd.val()},
             sCallback: function (res) {
