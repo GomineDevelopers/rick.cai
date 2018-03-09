@@ -1,0 +1,38 @@
+.login-container {
+	background-image: url(../img/loginBg.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	margin-top: 4rem;
+	height: 600px;
+}
+
+.login-box {
+	margin-top: 5rem;
+	width: 25rem;
+	height: 25rem;
+	background-color: #FFFFFF;
+	box-shadow: 5px 5px 30px rgba(48, 95, 129, 0.15);
+	border: 1px solid rgba(0, 0, 0, .2);
+	border-radius: .3rem;
+	padding-top: 2rem;
+}
+
+.login-label-text {
+	color: #49649f;
+}
+.login-box-btn{
+	background-color: #49649f;
+	color: white;
+}
+.login-box-btn:hover{
+	background-color: #49649fcc;
+	color: white;
+}
+.login-box a{
+	text-decoration: none;
+    color:#212529 ;
+	
+}
+.nav-footer-item >li{
+	color: #808080 !important;
+}

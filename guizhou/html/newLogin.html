@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="../css/bootstrap/bootstrap-reboot.min.css">
 		<link rel="stylesheet" href="../css/font-awesome.min.css">
 		<link rel="stylesheet" href="../css/common.css">
+		<link rel="stylesheet" type="text/css" href="../css/login.css"/>
 	</head>
 
 	<body>
@@ -24,33 +25,52 @@
 
 			</div>
 		</nav>
-		<div class="container-fluid" style="background-image: url(../img/loginBg.png);background-repeat: no-repeat; background-size: 100%;   margin-top: 4rem; height: 600px;">
+		<div class="container-fluid login-container" >
 			<div class=" container col-md-8">
-				<div class="pull-right" style="margin-top: 5rem;width: 400px;height: 365px; background-color: #FFFFFF; box-shadow: 5px 5px 30px rgba(48,95,129,0.15);    border: 1px solid rgba(0,0,0,.2); border-radius: .3rem;">
-					<div class="col-md-10 mx-auto">
-						<form class="form-horizontal ">
-							<h3 class="form-title text-center">欢迎来到贵州国际商会</h3>
-							<div class="col">
+				<div class="pull-right login-box">
+					<div class="col-md-10 form-group mx-auto">
+						<form class=" form-horizontal ">
+							<div class=" mb-3 mx-auto ">
+							<div class=" text-center login-label-text"><h4>欢迎来到贵州国际商会</h4></div> 
+							</div>
+							
 								<div class="input-group mb-3">
 									<div class="input-group-prepend">
-										<span class="input-group-text text-muted" id="basic-addon1"> <i class="fa fa-user fa-lg"></i> </span>
+										<span class="input-group-text text-muted" > <i class="fa fa-user fa-lg"></i> </span>
 									</div>
 									<input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
 								</div>
 								<div class="input-group mb-3">
 									<div class="input-group-prepend">
-										<span class="input-group-text" id="basic-addon1"> <i class="fa fa-lock fa-lg"></i> </span>
+										<span class="input-group-text text-muted" > <i class="fa fa-lock fa-lg"></i> </span>
 									</div>
 									<input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
 								</div>
 								<div class="form-group row">
 									<label for="inputPassword" class="col-sm-4 col-form-label">验证码</label>
 									<div class="col-sm-8">
-										<input type="password" class="form-control" id="inputPassword" placeholder="Password">
+										<input type="text" class="form-control"  placeholder="请输入验证码">
 									</div>
 								</div>
-
-							</div>
+								<div class="form-group row">
+									 <!--验证码所在块-->
+									 <!--验证码所在块-->
+								</div>
+                                <div class="form-group row">
+									
+									<div class="col ">
+                                          <button class="btn  btn-block login-box-btn" >登陆</button>
+									</div>
+								</div>
+								<div class="form-group row">
+									<div class="col text-left">
+                                          <a href="">了解商会</a>
+									</div>
+									<div class="col text-right">
+                                          <a href="">申请加入会员</a>
+									</div>
+								</div>
+							
 						</form>
 					</div>
 
