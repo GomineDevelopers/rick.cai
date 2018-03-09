@@ -141,42 +141,27 @@
 							</div>
 							<div class="panel-body">
 								<table class="table" border="0" cellspacing="" cellpadding="">
-									<tr>
-										<th>格式</th>
-										<th>名称</th>
-										<th>时间</th>
-										<th>下载次数</th>
-										<th>下载</th>
-									</tr>
-
-									<tr>
-										<td>PDF</td>
-										<td>《国际商会2017年全球贸易金融调...</td>
-										<td>2018-02-08</td>
-										<td>0</td>
-										<td>
-											<a href=""><i class="fa fa-download fa-lg "></i></a>
-											</i>
-										</td>
-									</tr>
-									<tr>
-										<td>PDF</td>
-										<td>《国际商会2017年全球贸易金融调...</td>
-										<td>2018-02-08</td>
-										<td>0</td>
-										<td>
-											<a href=""><i class="fa fa-download fa-lg "></i></a>
-										</td>
-									</tr>
-									<tr>
-										<td>PDF</td>
-										<td>《国际商会2017年全球贸易金融调...</td>
-										<td>2018-02-08</td>
-										<td>0</td>
-										<td>
-											<a href=""data-toggle="modal" data-target="#myModal"><i class="fa fa-download fa-lg text-muted "></i></a>
-										</td>
-									</tr>
+									<thead>
+										<tr>
+											<th>格式</th>
+											<th>名称</th>
+											<th>时间</th>
+											<th>下载次数</th>
+											<th>下载</th>
+										</tr>
+									</thead>
+									<tbody data-bind="foreach: baipishuList">
+										<tr>
+											<td data-bind="text:ext"></td>
+											<td data-bind="text:title"></td>
+											<td data-bind="text:create_time"></td>
+											<td data-bind="text:view"></td>
+											<td data-bind="click:updateView">
+												<a href="javascript:void(0);"><i class="fa fa-download fa-lg "></i></a>
+												</i>
+											</td>
+										</tr>
+									</tbody>
 									<div class="modal fade" id="myModal">
 										<div class="modal-dialog">
 											<div class="modal-content">
@@ -248,7 +233,7 @@
 		<script src="../../js/knockout/knockout.mapping-latest.js"></script>
 		<script src="../../js/common.js"></script>
 		<script src="../../js/polyfill.js"></script>
-		<script src="../../js/news/home.js" defer="defer"></script>
+		<script src="../../js/publication/baipishu.js" defer="defer"></script>
 	</body>
 
 </html>
