@@ -108,12 +108,9 @@
 
 }
 
-.col > button {
+#myModal .modal-footer button {
     background-color: #49649f;
     color: white;
 }
 
-.col > a > button {
-    background-color: #49649f;
-    color: white;
-}
+
