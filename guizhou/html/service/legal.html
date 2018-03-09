@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="../../css/font-awesome.min.css">
 		<link rel="stylesheet" href="../../css/common.css">
 		<link rel="stylesheet" type="text/css" href="../../css/service/service.css"/>
-		<title>贵州商会</title>
+		<title>法律服务</title>
 	</head>
 
 	<body>
@@ -136,7 +136,7 @@
 		<!--内容-->
 		<div class="mt-self">
 			<!--会员风采-->
-			<div class="container-fluid  content-warp">
+			<div class="container-fluid  two-rows">
 				<div class="row col-md-8 mx-auto">
 					<div>
 						<ol class="breadcrumb">
@@ -180,29 +180,20 @@
 					<div class="col-md-6 no-padding-left">
 						<div class="panel panel-default">
 							<div class="panel-heading">
-								<h5 class="panel-title">
-                                                                                        商事仲裁
-                                </h5>
+								<h5 class="panel-title" data-bind="text:legalList1().category_name"></h5>
 							</div>
 							<div class="panel-body">
 								<div class="block-body">
-									<div class="item-cover" data-bind="foreach: announces">
-										<div class="item">
-											<span class="title"><img src="../../img/point-icon.png"> <span data-bind="text: title">关于开展贵州省环境调查通知</span></span>
-											&nbsp;<span class="date" data-bind="text: create_time">2018-2-28</span>
-										</div>
-
-										<div class="item">
-											<span class="title"><img src="../../img/point-icon.png"> <span data-bind="text: title">关于开展贵州省经贸环境调查通知</span></span>
-											&nbsp;<span class="date" data-bind="text: create_time">2018-2-28</span>
-										</div>
-
-										<div class="item">
-											<span class="title"><img src="../../img/point-icon.png"> <span data-bind="text: title">关于开展全省民营企业人才队伍建设通知</span></span>
-											&nbsp;<span class="date" data-bind="text: create_time">2018-2-28</span>
+									<div class="item-cover">
+										<div data-bind="foreach: legalList1().list()">
+											<div class="item">
+												<a data-bind="attr:{href:'./legalDetail.html?id='+id()+'&categoryName='+$parent.legalList1().category_name()}"><span class="title" data-bind="text: title"></span></a>
+												&nbsp;<span class="date" data-bind="text: create_time"></span>
+											</div>
 										</div>
 										<div class="item item-more">
-											<a href="./news/home.html"><img src="../../img/arrow-icon.png">&nbsp;&nbsp;更多</a>
+											<a data-bind="attr: { href: './legalList.html?categoryId='+ legalList1().category_id()+'&categoryName='+legalList1().category_name()}">
+												<img src="../../img/arrow-icon.png">&nbsp;&nbsp;更多</a>
 										</div>
 									</div>
 								</div>
@@ -212,75 +203,46 @@
 					<div class="col-md-6 no-padding-right">
 						<div class="panel panel-default">
 							<div class="panel-heading">
-								<h5 class="panel-title">
-                                                                                          商事调节
-                                </h5>
+								<h5 class="panel-title" data-bind="text:legalList2().category_name"></h5>
 							</div>
 							<div class="panel-body">
 								<div class="block-body">
-									<div class="item-cover" data-bind="foreach: announces">
-										<div class="item">
-											<span class="title"><img src="../../img/point-icon.png"> <span data-bind="text: title">关于开展贵州省环境调查通知</span></span>
-											&nbsp;<span class="date" data-bind="text: create_time">2018-2-28</span>
-										</div>
-
-										<div class="item">
-											<span class="title"><img src="../../img/point-icon.png"> <span data-bind="text: title">关于开展贵州省经贸环境调查通知</span></span>
-											&nbsp;<span class="date" data-bind="text: create_time">2018-2-28</span>
-										</div>
-
-										<div class="item">
-											<span class="title"><img src="../../img/point-icon.png"> <span data-bind="text: title">关于开展全省民营企业人才队伍建设通知</span></span>
-											&nbsp;<span class="date" data-bind="text: create_time">2018-2-28</span>
+									<div class="item-cover">
+										<div  data-bind="foreach: legalList2().list()">
+											<div class="item">
+												<a data-bind="attr:{href:'./legalDetail.html?id='+id()+'&categoryName='+$parent.legalList2().category_name()}"><span class="title" data-bind="text: title"></span></a>
+												&nbsp;<span class="date" data-bind="text: create_time"></span>
+											</div>
 										</div>
 										<div class="item item-more">
-											<a href="./news/home.html"><img src="../../img/arrow-icon.png">&nbsp;&nbsp;更多</a>
+											<a data-bind="attr: { href: './legalList.html?categoryId='+ legalList2().category_id()+'&categoryName='+legalList2().category_name()}">
+												<img src="../../img/arrow-icon.png">&nbsp;&nbsp;更多</a>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-
 				</div>
 			<!--法律信息第二行-->
 			   	<div class="row col-md-8 mx-auto content-warp mt-3">
-					<!--<div class=" block news-block">
-                <div class="block-header row">
-                    <div class="newsTitle" data-bind="foreach: cates">
-                        <span data-bind="text: title,css:{ 'active':id() == $parent.selectedNewsId()},click:$parent.changeSelectedNews"> </span>
-                    </div>
-                </div>
-            </div>
-            <div class="block-body">
-                
-            </div>-->
 					<div class="col-md-6 no-padding-left">
 						<div class="panel panel-default">
 							<div class="panel-heading">
-								<h5 class="panel-title">
-                                                                                       经贸预警
-                                </h5>
+								<h5 class="panel-title" data-bind="text:legalList3().category_name"></h5>
 							</div>
 							<div class="panel-body">
 								<div class="block-body">
-									<div class="item-cover" data-bind="foreach: announces">
-										<div class="item">
-											<span class="title"><img src="../../img/point-icon.png"> <span data-bind="text: title">关于开展贵州省环境调查通知</span></span>
-											&nbsp;<span class="date" data-bind="text: create_time">2018-2-28</span>
-										</div>
-
-										<div class="item">
-											<span class="title"><img src="../../img/point-icon.png"> <span data-bind="text: title">关于开展贵州省经贸环境调查通知</span></span>
-											&nbsp;<span class="date" data-bind="text: create_time">2018-2-28</span>
-										</div>
-
-										<div class="item">
-											<span class="title"><img src="../../img/point-icon.png"> <span data-bind="text: title">关于开展全省民营企业人才队伍建设通知</span></span>
-											&nbsp;<span class="date" data-bind="text: create_time">2018-2-28</span>
+									<div class="item-cover">
+										<div data-bind="foreach: legalList3().list()">
+											<div class="item">
+												<a data-bind="attr:{href:'./legalDetail.html?id='+id()+'&categoryName='+$parent.legalList3().category_name()}"><span class="title" data-bind="text: title"></span></a>
+												&nbsp;<span class="date" data-bind="text: create_time"></span>
+											</div>
 										</div>
 										<div class="item item-more">
-											<a href="./news/home.html"><img src="../../img/arrow-icon.png">&nbsp;&nbsp;更多</a>
+											<a data-bind="attr: { href: './legalList.html?categoryId='+ legalList3().category_id()+'&categoryName='+legalList3().category_name()}">
+												<img src="../../img/arrow-icon.png">&nbsp;&nbsp;更多</a>
 										</div>
 									</div>
 								</div>
@@ -290,29 +252,20 @@
 					<div class="col-md-6 no-padding-right">
 						<div class="panel panel-default">
 							<div class="panel-heading">
-								<h5 class="panel-title">
-                                                                                          其他服务
-                                </h5>
+								<h5 class="panel-title" data-bind="text:legalList4().category_name"></h5>
 							</div>
 							<div class="panel-body">
 								<div class="block-body">
-									<div class="item-cover" data-bind="foreach: announces">
-										<div class="item">
-											<span class="title"><img src="../../img/point-icon.png"> <span data-bind="text: title">关于开展贵州省环境调查通知</span></span>
-											&nbsp;<span class="date" data-bind="text: create_time">2018-2-28</span>
-										</div>
-
-										<div class="item">
-											<span class="title"><img src="../../img/point-icon.png"> <span data-bind="text: title">关于开展贵州省经贸环境调查通知</span></span>
-											&nbsp;<span class="date" data-bind="text: create_time">2018-2-28</span>
-										</div>
-
-										<div class="item">
-											<span class="title"><img src="../../img/point-icon.png"> <span data-bind="text: title">关于开展全省民营企业人才队伍建设通知</span></span>
-											&nbsp;<span class="date" data-bind="text: create_time">2018-2-28</span>
+									<div class="item-cover">
+										<div data-bind="foreach: legalList4().list()">
+											<div class="item">
+												<a data-bind="attr:{href:'./legalDetail.html?id='+id()+'&categoryName='+$parent.legalList4().category_name()}"><span class="title" data-bind="text: title"></span></a>
+												&nbsp;<span class="date" data-bind="text: create_time"></span>
+											</div>
 										</div>
 										<div class="item item-more">
-											<a href="./news/home.html"><img src="../../img/arrow-icon.png">&nbsp;&nbsp;更多</a>
+											<a data-bind="attr: { href: './legalList.html?categoryId='+ legalList4().category_id()+'&categoryName='+legalList4().category_name()}">
+												<img src="../../img/arrow-icon.png">&nbsp;&nbsp;更多</a>
 										</div>
 									</div>
 								</div>
@@ -354,7 +307,7 @@
 		<script src="../../js/knockout/knockout.mapping-latest.js"></script>
 		<script src="../../js/common.js"></script>
 		<script src="../../js/polyfill.js"></script>
-		<script src="../../js/news/home.js" defer="defer"></script>
+		<script src="../../js/service/legal.js" defer="defer"></script>
 	</body>
 
 </html>
