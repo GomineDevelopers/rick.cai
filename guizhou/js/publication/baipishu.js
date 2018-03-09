@@ -147,15 +147,15 @@ var updateView = function () {
                     }
                     window.open(self.url());
                 }
+                else {
+                    $('#myModal').modal();
+                }
             },
             eCallback: function (e) {
                 $('#myModal').modal();
             }
         };
         CommonTools.getData(params);
-
-
-
     }
     else {
         $('#myModal').modal();

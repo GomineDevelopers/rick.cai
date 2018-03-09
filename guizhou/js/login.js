@@ -48,7 +48,7 @@ $(function () {
 
     $("#getData").click(function () {
         var params={
-            url:'apptoken/getuser',
+            url:'api/apptoken/getuser',
             tokenFlag:true,
             sCallback:function(res) {
                 console.log(res);
