@@ -1,6 +1,7 @@
 .container-fluid {
     background-color: #f5f5f5;
 }
+
 .body-background {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -51,6 +52,11 @@
 
 .panel-body .item{
     padding: 2px 0;
+}
+
+.panel-body a, .panel-body a:hover{
+    color: black;
+    text-decoration: none;
 }
 
 .panel-heading {
