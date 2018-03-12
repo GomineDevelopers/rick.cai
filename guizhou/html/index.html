@@ -24,10 +24,13 @@
                     <li class="nav-item">
                         <i class="fa fa-caret-right light-black"></i> <a href="#" class="light-black"> 中文</a>
                     </li>&nbsp;&nbsp;
-                    <li class="nav-item">
+                    <li class="nav-item" id="isLogin">
                         <i class="fa fa-user-circle-o weak-light-black"></i>
-                        <a href="#" class="light-black"> 登陆</a><span class="light-black">&nbsp;|&nbsp;</span>
+                        <a href="./login.html" class="light-black"> 登陆</a><span class="light-black">&nbsp;|&nbsp;</span>
                         <a href="#" class="light-black">注册</a>
+                    </li>
+                    <li class="nav-item" id="isLogout" style="display: none">
+                        <a href="#" class="light-black" id="logout">退出</a>
                     </li>
                 </ul>
             </div>
@@ -115,22 +118,18 @@
 
 <div class="mt-self">
     <!--轮播图-->
-    <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        </ol>
+    <div id="indexCarousel" class="carousel slide " data-ride="carousel">
         <div class="carousel-inner" data-bind="foreach: carousel">
             <div class="carousel-item" data-bind="css:{'active':$index()==0}">
                 <a data-bind="attr: { href: url }">
                     <img class="d-block w-100" data-bind="attr: { src: img, alt: title }"></a>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <a class="carousel-control-prev" href="#indexCarousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
         </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <a class="carousel-control-next" href="#indexCarousel" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>

@@ -112,9 +112,19 @@ CommonTools.getAutoHeight = function (div) {
 }
 
 $(function () {
+    if (CommonTools.getLocalStorage('token')) {
+        $("#isLogin").remove();
+        $("#isLogout").show()
+    }
+    else {
+        $("#isLogout").remove();
+        $("#isLogin").show()
+    }
+
     if ($("#logout")) {
         $("#logout").click(function () {
             CommonTools.deleteLocalStorage('token');
+            window.location.reload();
         });
     }
 
