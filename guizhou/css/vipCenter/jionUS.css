@@ -1,3 +1,40 @@
 .mt-self {
     background-color: #f5f5f5;
 }
+
+.join-block .block-header {
+    height: 8rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.join-block .block-body {
+
+}
+
+*{
+    margin:0;
+    padding:0;
+}
+.wrap{
+    margin: 5rem auto;
+    width: 80%;
+}
+/* 方法一 start */
+.wrap{
+    position: relative;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.wrap .title{
+    position: absolute;
+    top: -1em;
+    left: 10%;
+    line-height: 2em;
+    padding: 0 1em;
+    background-color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+}
+/* 方法一 end */
