@@ -1,6 +1,7 @@
 var code;
 
 function createCode() {
+
     code = new Array();
     var codeLength = 4; //验证码的长度
     var checkCode = document.getElementById("checkCode");
@@ -14,55 +15,69 @@ function createCode() {
         createCode();
     }
     checkCode.value = code;
+    lModel.inputCode("");
 }
 
-function validate() {
-    var inputCode = document.getElementById("code").value.toUpperCase();
-    if (inputCode.length <= 0) {
-        alert("请输入验证码！");
-        return false;
-    } else if (inputCode != code) {
-        alert("验证码输入错误！");
-        createCode();
-        return false;
-    } else {
-        alert("成功！");
-        return true;
-    }
+var loginModel = function () {
+    var self = this;
+    self.username = ko.observable("").extend({
+        required: {params: true, message: "用户名不能为空"},
+        minLength: {params: 5, message: "用户名不能少于5位字符"},
+        maxLength: {params: 50, message: "用户名不能多于50位字符"},
+    });
+    self.password = ko.observable("").extend({
+        required: {params: true, message: "密码不能为空"},
+        minLength: {params: 5, message: "密码不能少于5位字符"},
+        maxLength: {params: 20, message: "密码不能多于20位字符"},
+    });
+    self.inputCode = ko.observable("").extend({
+        validation: {
+            validator: function (val) {
+                if (val && val.toUpperCase() == code.toUpperCase()) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            },
+            message: '验证码输入有误',
+        }
+    }),
+
+        self.submit = function () {
+            if (lModel.errors().length == 0) {
+                var params = {
+                    url: 'api/apptoken/get',
+                    type: 'post',
+                    data: {ac: self.username(), se: self.password()},
+                    sCallback: function (res) {
+                        if (res && res.code == 200) {
+                            CommonTools.setLocalStorage('token', res.token);
+                            window.location.href = './index.html';
+                        }
+                        else if (res.code == 401) {
+                            alert(res.msg);
+                            createCode();
+                        }
+                    },
+                    eCallback: function (e) {
+                        console.log("登陆错误");
+                    }
+                };
+                CommonTools.getData(params);
+            } else {
+                createCode();
+                lModel.errors.showAllMessages();
+            }
+        };
 }
+
+var lModel = new loginModel();
 
 $(function () {
-    /* $(document).on('click', '#login', function () {
-         validate();
-         var $userName = $('#user-name'),
-             $pwd = $('#user-pwd');
-         if (!$userName.val()) {
-             $userName.next().show().find('div').text('请输入用户名');
-             return;
-         }
-         if (!$pwd.val()) {
-             $pwd.next().show().find('div').text('请输入密码');
-             return;
-         }
-         var params = {
-             url: 'api/apptoken/get',
-             type: 'post',
-             data: {ac: $userName.val(), se: $pwd.val()},
-             sCallback: function (res) {
-                 if (res) {
-                     CommonTools.setLocalStorage('token', res.token);
-                     //window.location.href = 'home.html';
-                 }
-             },
-             eCallback: function (e) {
-                 if (e.status == 401) {
-                     $('.error-tips').text('帐号或密码错误').show().delay(2000).hide(0);
-                 }
-             }
-         };
-         CommonTools.getData(params);
-     });*/
     createCode();
+    lModel.errors = ko.validation.group(lModel);
+    ko.applyBindings(lModel);
 });
 
 

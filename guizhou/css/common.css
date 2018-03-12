@@ -206,3 +206,8 @@ html,body {
 #auto-content{
     width: 100%;
 }
+
+/*验证*/
+.error{
+   color: red;
+}
