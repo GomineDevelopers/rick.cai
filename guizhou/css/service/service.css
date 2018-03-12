@@ -51,7 +51,30 @@
 }
 
 .panel-body .item{
-    padding: 2px 0;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    font-size: 14px;
+    white-space: nowrap;
+    display: flex;
+    width: 100%;
+}
+
+.panel-body .item a{
+    width: 80%;
+}
+
+.panel-body .item .title{
+    color: #49649f !important;
+    padding-left: 0.1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    display: inline-block;
+}
+
+.panel-body .item .date{
+    color: #999999;
+    float: right;
 }
 
 .panel-body a, .panel-body a:hover{
@@ -82,14 +105,7 @@
     white-space: nowrap;
 }
 
-.item>.title{
-    color: #49649f !important;
-}
 
-.date{
-	float: right;
-	color: #999999;
-}
 .item-more{
     position: absolute;
     bottom: 5px;
