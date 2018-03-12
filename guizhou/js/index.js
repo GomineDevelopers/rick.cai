@@ -4,6 +4,7 @@ var indexViewModel = function () {
     self.newsSH = ko.observableArray([]);
     self.newsZH = ko.observableArray([]);
     self.selectedNewsId = ko.observable(2);
+    self. carousel= ko.observableArray([]);
     self.changeSelectedNews = function (v) {
         self.selectedNewsId(v.id());
     }
