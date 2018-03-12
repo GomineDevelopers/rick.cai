@@ -26,7 +26,7 @@
     <div class=" container col-md-8">
         <div class="pull-right login-box">
             <div class="col-md-10 form-group mx-auto">
-                <form class=" form-horizontal ">
+                <form class=" form-horizontal" novalidate>
                     <div class=" mb-3 mx-auto ">
                         <div class=" text-center login-label-text"><h4>欢迎来到贵州国际商会</h4></div>
                     </div>
@@ -34,22 +34,25 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text text-muted"  for="username" > <i class="fa fa-user fa-lg"></i> </span>
                         </div>
-                        <input type="text" class="form-control" placeholder="请输入用户名" aria-label="Username" aria-describedby="basic-addon1" id="username">
+                        <input type="text" class="form-control" placeholder="请输入用户名" aria-label="Username" aria-describedby="basic-addon1" id="username" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid city.
+                        </div>
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text text-muted"  for="password" > <i class="fa fa-lock fa-lg"></i> </span>
                         </div>
-                        <input type="password" class="form-control" placeholder="请输入密码" aria-label="password" aria-describedby="basic-addon1" id="password">
+                        <input type="password" class="form-control" placeholder="请输入密码" aria-label="password" aria-describedby="basic-addon1" id="password" required>
                     </div>
                     <div class="form-group row">
                         <label for="code" class="col-sm-3 col-form-label">验证码</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control"  placeholder="请输入验证码" id="code">
+                            <input type="text" class="form-control"  placeholder="请输入验证码" id="code" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="button" id="checkCode" class="code" style="width:60px" onclick="createCode()"> <a href="###" onclick="createCode()">看不清，换一张</a>
+                        <input type="button" id="checkCode" class="code mr-3" style="width:60px" onclick="createCode()"> <a href="###" onclick="createCode()">看不清，换一张</a>
                     </div>
                     <div class="form-group row">
                         <div class="col ">

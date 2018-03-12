@@ -9,7 +9,7 @@
 .login-box {
 	margin-top: 5rem;
 	width: 25rem;
-	height: 25rem;
+	min-height: 25rem;
 	background-color: #FFFFFF;
 	box-shadow: 5px 5px 30px rgba(48, 95, 129, 0.15);
 	border: 1px solid rgba(0, 0, 0, .2);
@@ -43,7 +43,6 @@
 }
 
 .code {
-	background-image:url(111.jpg);
 	font-family:Arial,宋体;
 	font-style:italic;
 	color:green;

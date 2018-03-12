@@ -112,11 +112,18 @@ CommonTools.getAutoHeight = function (div) {
 }
 
 $(function () {
-    var topHeight = $('.fixed-top').outerHeight();
-    $('.mt-self').css({
-        'paddingTop': topHeight + 'px'
-    })
+    if ($("#logout")) {
+        $("#logout").click(function () {
+            CommonTools.deleteLocalStorage('token');
+        });
+    }
 
+    if ($('.fixed-top') && $('.mt-self')) {
+        var topHeight = $('.fixed-top').outerHeight();
+        $('.mt-self').css({
+            'paddingTop': topHeight + 'px'
+        })
+    }
 });
 
 
