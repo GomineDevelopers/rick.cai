@@ -129,16 +129,18 @@
                     <div class="panel-body">
                         <div class="row col-md-8 mx-auto mb-2 auto-content" data-bind="foreach: vipCenterList">
                             <div class="col-lg-3 col-md-6 col-sm-12 mb-2">
-                                <div class="card text-center ">
+                                <a data-bind="attr:{href:'./vipDetailContent.html?id='+id()}">
+                                    <div class="card text-center ">
                                     <div class="card-img-wrap">
                                         <img class="card-img-top" data-bind="attr:{src:img}">
                                     </div>
                                     <div class="card-body">
-                                        <a data-bind="attr:{href:'./vipDetailContent.html?id='+id()}"><h5 class="card-title text-nowrap" data-bind="text:title"></h5></a>
-                                        <p class="card-text text-nowrap" data-bind="text:description"></p>
+                                        <h5 class="card-title text-nowrap" data-bind="text:title"></h5>
+                                            <p class="card-text text-nowrap" data-bind="text:description"></p>
 
                                     </div>
                                 </div>
+                                </a>
                             </div>
                         </div>
                         <div class="panel-footer  col-md-8 mx-auto" data-bind="visible:pages().length>0">
