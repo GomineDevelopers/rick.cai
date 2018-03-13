@@ -41,4 +41,7 @@
 .card-text{
 	color:#999999 ;
 }
+#auto-content a:hover{
+    text-decoration: none;
+}
 
