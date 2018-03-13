@@ -113,67 +113,56 @@
 <!--内容-->
 <div class="mt-self">
   <!--加入我们-->
-	<div class="container-fluid  content-warp">
-			<div class="row col-md-8 mx-auto">
-				<ol class="breadcrumb">
-						<li>
-							<a href="#">会员专区</a>
-						</li>
-						<li>
-							<a href="#">&nbsp;&nbsp;<i class="fa fa-angle-right fa-lg "></i>&nbsp;&nbsp;</a>
-						</li>
-						<li class="active"><a href="#">会员通讯</a></li>
-						
-					</ol>
-			</div>
-			<div class="row col-md-8 mx-auto content-warp ">
-			<!--出证认证-->
-			<div class="col-md-12 no-padding-left">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h5 class="panel-title">
-							会员通讯
-						</h5>
-					</div>
-					<div class="panel-body">
-							<div class="item-cover" data-bind="foreach: chuZhengList" id="auto-content">
-								<div class="item">
-									<div class="contac-list" >
-									     <span class="title"> <span><h5><img src="../../img/point-Large.png">&nbsp;通鑫再生资源回收利用有限公司</h5></span></span>
-										 <h6>&nbsp;&nbsp;&nbsp;&nbsp;<span>电话：86-010-82217800</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>传真：86-010-82217800</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>邮箱：86-010-82217800</span></h6>
-										 <h6>&nbsp;&nbsp;&nbsp;&nbsp;<span>地址：贵阳市西城区桦皮厂胡同2号国际商会大厦</span></h6>
-									     
-									</div>
-									<div class="contac-list" >
-									     <span class="title"> <span><h5><img src="../../img/point-Large.png">&nbsp;通鑫再生资源回收利用有限公司</h5></span></span>
-										 <h6>&nbsp;&nbsp;&nbsp;&nbsp;<span>电话：86-010-82217800</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>传真：86-010-82217800</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>邮箱：86-010-82217800</span></h6>
-										 <h6>&nbsp;&nbsp;&nbsp;&nbsp;<span>地址：贵阳市西城区桦皮厂胡同2号国际商会大厦</span></h6>
-									     
-									</div>
-									<div class="contac-list" >
-									     <span class="title"> <span><h5><img src="../../img/point-Large.png">&nbsp;通鑫再生资源回收利用有限公司</h5></span></span>
-										 <h6>&nbsp;&nbsp;&nbsp;&nbsp;<span>电话：86-010-82217800</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>传真：86-010-82217800</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>邮箱：86-010-82217800</span></h6>
-										 <h6>&nbsp;&nbsp;&nbsp;&nbsp;<span>地址：贵阳市西城区桦皮厂胡同2号国际商会大厦</span></h6>
-									     
-									</div>
-									<div class="contac-list" >
-									     <span class="title"> <span><h5><img src="../../img/point-Large.png">&nbsp;通鑫再生资源回收利用有限公司</h5></span></span>
-										 <h6>&nbsp;&nbsp;&nbsp;&nbsp;<span>电话：86-010-82217800</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>传真：86-010-82217800</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>邮箱：86-010-82217800</span></h6>
-										 <h6>&nbsp;&nbsp;&nbsp;&nbsp;<span>地址：贵阳市西城区桦皮厂胡同2号国际商会大厦</span></h6>
-									     
-									</div>
-								</div>
-							</div>
-					</div>
-				</div>
-			</div>
+	<div class="container-fluid  content-warp body-background">
+        <div class="row col-md-8 mx-auto">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">会员专区</a>
+                </li>
+                <li class="breadcrumb-item active"><a href="#">会员通讯</a></li>
 
-		</div>
-			
-		</div>
-		
+            </ol>
+        </div>
+        <div class="row col-md-8 mx-auto content-warp ">
+            <div class="col-md-12 no-padding-left">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h5 class="panel-title">会员通讯</h5>
+                    </div>
+                    <div class="panel-body">
+                        <div class="item-cover" data-bind="foreach: contactList" id="auto-content">
+                            <div class="item contac-list">
+                                <div class="col " >
+                                     <span class="title"> <span><h5><img src="../../img/point-Large.png">&nbsp;通鑫再生资源回收利用有限公司</h5></span></span>
+                                     <h6>&nbsp;&nbsp;&nbsp;&nbsp;电话：<span data-bind="text:legal_person_phone"></span>&nbsp;&nbsp;&nbsp;&nbsp;传真：<span data-bind="text:fax"></span>&nbsp;&nbsp;&nbsp;&nbsp;邮箱：<span data-bind="text:legal_person_email"></span></h6>
+                                     <h6>&nbsp;&nbsp;&nbsp;&nbsp;地址：<span data-bind="text:detailed"></span></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer" data-bind="visible:pages().length>0 && maxPage()>1">
+                    <nav aria-label="Page navigation example" class="pull-right">
+                        <ul class="pagination" data-bind="foreach: pages">
+                            <li><span data-bind="pageNumber()"></span></li>
+                            <li class="page-item "
+                                data-bind="click:$parent.decreasePage,visible:pageNumber()==$parent.minPage(),css:{disabled :$parent.currentPage()==1 }">
+                                <a class="page-link" href="#">&lt;</a></li>
+                            <li class="page-item"
+                                data-bind="event: { click: $parent.setCurrentPage.bind($data, pageNumber()) },css:{active:pageNumber()== $parent.currentPage()}">
+                                <a class="page-link" href="#"><span data-bind="text:pageNumber"></span></a>
+                            </li>
+                            <li class="page-item"
+                                data-bind="click:$parent.increasePage ,visible:pageNumber()==$parent.maxPage(),css:{disabled :$parent.currentPage()==$parent.totalPage()}">
+                                <a class="page-link" href="#">&gt;</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-</div>
+
 <!--底部-->
 <footer class="nav navbar navbar-expand-sm navbar-fixed-bottom nav-footer ">
     <div class="row container mx-auto">
@@ -204,5 +193,6 @@
 <script src="../../js/knockout/knockout.mapping-latest.js"></script>
 <script src="../../js/common.js"></script>
 <script src="../../js/polyfill.js"></script>
+<script src="../../js/vipCenter/contactList.js" defer="defer"></script>
 </body>
 </html>
