@@ -117,17 +117,15 @@
 	<div class="container-fluid  content-warp body-background">
 			<div class="row col-md-8 mx-auto">
 				<ol class="breadcrumb">
-						<li>
+						<li class="breadcrumb-item">
 							<a href="#">会员中心</a>
 						</li>
-						<li>
-							<a href="#">&nbsp;&nbsp;<i class="fa fa-angle-right fa-lg "></i>&nbsp;&nbsp;</a>
-						</li>
-						<li><a href="#">会员风采</a></li>
-						<li>
-							<a href="#">&nbsp;&nbsp;<i class="fa fa-angle-right fa-lg "></i>&nbsp;&nbsp;</a>
-						</li>
-						<li class="active"><a href="#">正文</a></li>
+						<li class="breadcrumb-item">
+                            <a href="./vipCenter.html">会员风采</a>
+                        </li>
+						<li class="breadcrumb-item active">
+                            <a href="#">正文</a>
+                        </li>
 					</ol>
 			</div>
 			<div class="row col-md-8 mx-auto bg-white intro-text-detail ">
@@ -139,7 +137,7 @@
                         <small><span data-bind="text:description"></span> </small>
                     </h5>
                   </div>
-                  <img data-bind="attr:{src:img}" class="embed-responsive mx-auto img-position" />
+                  <img data-bind="attr:{src:img}" class="mx-auto img-position" />
                   <div data-bind="html:content" id="auto-content"></div>
 			</div>
 			
