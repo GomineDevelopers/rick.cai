@@ -1,0 +1,146 @@
+.container-fluid {
+    background-color: #f5f5f5;
+}
+
+.body-background {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 0 0.75rem 2rem;
+}
+
+.content-warp{
+	margin-top: 1rem;
+}
+
+.mt-self{
+  background-color: #f5f5f5;
+}
+
+.panel-default {
+    border-color: #ddd;
+}
+
+.panel {
+    margin-bottom: 1.25rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.panel-default>.panel-heading {
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+}
+
+.two-rows .panel-body {
+   min-height: 16rem;
+}
+
+.one-row .panel-body {
+    min-height: 32rem;
+}
+
+.panel-body {
+    padding: 0.9375rem;
+    position: relative;
+}
+
+.panel-body .item{
+    height: 2.2rem;
+    line-height: 2.2rem;
+    font-size: 14px;
+    white-space: nowrap;
+    display: flex;
+    width: 100%;
+}
+
+.panel-body .item a{
+    width: 80%;
+}
+
+.panel-body .item .title{
+    color: #49649f !important;
+    padding-left: 0.1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    display: inline-block;
+}
+
+.panel-body .item .date{
+    color: #999999;
+    float: right;
+}
+
+.panel-body a, .panel-body a:hover{
+    color: black;
+    text-decoration: none;
+}
+
+.panel-heading {
+	height:2.8rem;
+    padding: 0.625rem 0.9375rem;
+    border-bottom: 1px solid #ddd;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+.panel-footer {
+    width:  100%;
+    background:  #f5f5f5;
+}
+
+@media (min-width: 1000px) {
+    .no-padding-left{
+        padding-left: 0 !important;
+    }
+    .no-padding-right{
+        padding-right: 0px !important;
+    }
+}
+
+.item-cover >.item{
+    font-size: 14px;
+    padding: 5px 0;
+    white-space: nowrap;
+}
+
+
+.item-more{
+    position: absolute;
+    bottom: 5px;
+}
+
+.item-more a{
+	color: #999999;
+}
+/*出证入证正文页面*/
+.nd-header{
+    margin-top: 1.5rem;
+}
+.title{
+	font-size: 1.125rem;
+}
+.rounded-circle{
+	height: 120px;
+    width: 120px;
+    margin-top: 5px;
+}
+.panel-body-inner{
+	margin-top: 0.9375rem;
+}
+.btn-links{
+	color: white;
+	background-color:#6784c3 ;
+	    margin-top: 5px;
+} 
+.btn-links:hover{
+	background-color:#324375 ;
+} 
+.panel-body span{
+	margin-top: 5px;
+}

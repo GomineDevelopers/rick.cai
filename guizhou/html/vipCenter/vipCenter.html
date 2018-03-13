@@ -136,14 +136,14 @@
                                     </div>
                                     <div class="card-body">
                                         <h5 class="card-title text-nowrap" data-bind="text:title"></h5>
-                                            <p class="card-text text-nowrap" data-bind="text:description"></p>
+                                        <p class="card-text text-nowrap" data-bind="text:description"></p>
 
                                     </div>
                                 </div>
                                 </a>
                             </div>
                         </div>
-                        <div class="panel-footer  col-md-8 mx-auto" data-bind="visible:pages().length>0">
+                        <div class="panel-footer  col-md-8 mx-auto" data-bind="visible:pages().length>0 && maxPage()>1">
                             <nav aria-label="Page navigation example" class="pull-right">
                                 <ul class="pagination" data-bind="foreach: pages">
                                     <li><span data-bind="pageNumber()"></span></li>
@@ -166,7 +166,7 @@
         </div>
     </div>
 </div>
-</div>
+
 <!--底部-->
 <footer class="nav navbar navbar-expand-sm navbar-fixed-bottom nav-footer ">
     <div class="row container mx-auto">

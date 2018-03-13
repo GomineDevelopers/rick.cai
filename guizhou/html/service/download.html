@@ -160,7 +160,7 @@
                         </table>
                     </div>
                 </div>
-                <div class="panel-footer" data-bind="visible:pages().length>0">
+                <div class="panel-footer" data-bind="visible:pages().length>0 && maxPage()>1">
                     <nav aria-label="Page navigation example" class="pull-right">
                         <ul class="pagination" data-bind="foreach: pages">
                             <li><span data-bind="pageNumber()"></span></li>
