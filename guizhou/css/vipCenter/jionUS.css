@@ -180,6 +180,11 @@
     width: 80%;
 }
 
+.wrap a{
+    color: #49649f;
+    text-decoration: underline;
+}
+
 .wrap .title {
     position: absolute;
     top: -1em;
@@ -187,7 +192,7 @@
     line-height: 2em;
     padding: 0 1em;
     background-color: #fff;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
 }
 
@@ -208,8 +213,18 @@
     padding-top: 1rem;
 }
 
-.wrap .footer button {
+.wrap .footer .btn {
     background-color: #49649f;
     color: #ffffff;
     width: 10rem;
+}
+
+.wrap .footer .little-btn {
+    width: 7rem;
+}
+
+.wrap .footer .light-btn {
+    border: 1px solid #49649f;
+    background-color: #ffffff;
+    color: #49649f;
 }

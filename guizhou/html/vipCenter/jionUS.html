@@ -206,6 +206,10 @@
                                            data-bind="value: repassword" maxlength="20">
                                     <div data-bind="validationMessage: repassword" class="error mt-3"></div>
                                 </div>
+                                <div class="form-group">
+                                   <a href="../contact/shanghuijianjie.html">想了解贵州国际商会更多内容？立即查看</a>
+                                </div>
+
                             </form>
                             <div class="footer">
                                 <button type="button" class="btn" data-bind="click:registerNext">下一步
@@ -256,7 +260,27 @@
                     <div class="block-body">
                         <div class="wrap">
                             <span class="title">上传资料</span>
-
+                            <div class="fileinput fileinput-new" data-provides="fileinput">
+                                <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                                    <img data-src="holder.js/100%x100%" alt="...">
+                                </div>
+                                <div class="fileinput-preview fileinput-exists thumbnail"
+                                     style="max-width: 200px; max-height: 150px;"></div>
+                                <div>
+                                    <span class="btn btn-default btn-file"><span
+                                            class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input
+                                            type="file" name="..."></span>
+                                    <a href="#" class="btn btn-default fileinput-exists"
+                                       data-dismiss="fileinput">Remove</a>
+                                </div>
+                                <div data-bind="validationMessage: file1" class="error mt-3"></div>
+                                <div data-bind="validationMessage: file2" class="error mt-3"></div>
+                                <div data-bind="validationMessage: file3" class="error mt-3"></div>
+                            </div>
+                            <div class="footer">
+                                <button type="button" class="btn little-btn light-btn mt-2" data-bind="click:uploadBefore">上一步</button>
+                                <button type="button" class="btn little-btn mt-2" data-bind="click:uploadNext">提交</button>
+                            </div>
                         </div>
                     </div>
                 </div>

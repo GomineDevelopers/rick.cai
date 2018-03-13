@@ -37,8 +37,10 @@ var joinModel = function () {
             message: '两次密码输入不一致,请重试',
         }
     });
+
+    self.errors1 = ko.validation.group({username: self.username, password: self.password, repassword: self.repassword});
     self.registerNext = function (stepId) {
-        if (jModel.errors().length == 0) {
+        if (jModel.errors1().length == 0) {
             var params = {
                 url: 'register.html',
                 type: 'post',
@@ -57,7 +59,7 @@ var joinModel = function () {
             };
             CommonTools.getData(params);
         } else {
-            jModel.errors.showAllMessages();
+            jModel.errors1.showAllMessages();
         }
 
     }
@@ -65,6 +67,44 @@ var joinModel = function () {
     // step3
 
     // step4
+    self.file1 = ko.observable("").extend({
+        required: {params: true, message: "请上传营业执照"},
+    });
+    self.file2 = ko.observable("").extend({
+        required: {params: true, message: "请上传法人身份证"},
+    });
+    self.file3 = ko.observable("").extend({
+        required: {params: true, message: "请上传经办人身份证"},
+    });
+    self.errors3 = ko.validation.group({file1: self.file1, file2: self.file2, file3: self.file3});
+    self.uploadNext = function (stepId) {
+        if (jModel.errors3().length == 0) {
+            /*            var params = {
+                            url: 'register.html',
+                            type: 'post',
+                            data: {username: self.username(), password: self.password(), repassword: self.repassword()},
+                            sCallback: function (res) {
+                                if (res && res.code == 200) {
+                                    self.setStepId(3);
+                                }
+                                else {
+                                    alert(res.msg);
+                                }
+                            },
+                            eCallback: function (e) {
+                                console.log("注册错误");
+                            }
+                        };
+                        CommonTools.getData(params);*/
+            self.setStepId(5);
+        } else {
+            jModel.errors3.showAllMessages();
+        }
+    }
+
+    self.uploadBefore = function (stepId) {
+        self.setStepId(3);
+    }
 
     // step5
     self.finish = function () {
@@ -77,7 +117,7 @@ var joinModel = function () {
 var jModel = new joinModel();
 
 $(function () {
-    jModel.errors = ko.validation.group(jModel);
+
     ko.applyBindings(jModel);
     CommonTools.getAutoHeight($('#auto-content'));
 });
