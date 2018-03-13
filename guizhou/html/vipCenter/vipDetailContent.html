@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../../css/font-awesome.min.css">
     <link rel="stylesheet" href="../../css/common.css">
     <link rel="stylesheet" href="../../css/news/home.css">
-    <link rel="stylesheet" type="text/css" href="../../css/vipCenter/jionUS.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/vipCenter/vipDetailCon.css"/>
     <title>会员风采 正文</title>
 </head>
 
@@ -114,7 +114,7 @@
 <!--内容-->
 <div class="mt-self">
   <!--加入我们-->
-	<div class="container-fluid  content-warp">
+	<div class="container-fluid  content-warp body-background">
 			<div class="row col-md-8 mx-auto">
 				<ol class="breadcrumb">
 						<li>
@@ -123,7 +123,7 @@
 						<li>
 							<a href="#">&nbsp;&nbsp;<i class="fa fa-angle-right fa-lg "></i>&nbsp;&nbsp;</a>
 						</li>
-						<li class="active"><a href="#">会员风采</a></li>
+						<li><a href="#">会员风采</a></li>
 						<li>
 							<a href="#">&nbsp;&nbsp;<i class="fa fa-angle-right fa-lg "></i>&nbsp;&nbsp;</a>
 						</li>
@@ -132,26 +132,15 @@
 			</div>
 			<div class="row col-md-8 mx-auto bg-white intro-text-detail ">
 				  <div class="container text-title-container">
-				  	<h2 class="text-center">浙江省物产集团公司</h2>
+				  	<h2 class="text-center" data-bind="text:title"></h2>
 				  </div> 
 				  <div class="container ">
-                <h5 class="text-center text-muted">
-                    <small><span data-bind="text:create_time">打造产业电商平台  全面提升竞争优势</span> </small>
-                </h5>
-            </div>
-            <img src="../../img/intropic.png"class="embed-responsive mx-auto img-position" />
-				<p class="list-inline">
-					 息经济时代， 互联网、物联网、大数据、云计算等技术加速引发商业变革， 传统产业转型升级迫在眉睫。伴随“互联网+”上升为国家战略，作为我省国企唯一的世界500 强， 浙江物产集团积极响应国家号召，审时度势地提出了“流通4.0”，通过线上线下结合的平台化运营，实现供应链上的供应商、制造商、消费者等利益相关方的跨界融合，共建生态圈共生共赢。
-				</p>
-				<p class="list-inline ">	
-                 目前，物产集团在相关贸易主业板块已形成了各具特色、业内领先的一系列产业电商平台，探索出一条通过平台整合提升企业经营效能之路， 竞争优势得以进一步显现。2015 年前四个月，该集团实现利润7.69 亿元，同比增长13.19%。   
-				</p>
-				<p class="list-inline">
-					上海大宗。经过多年的精耕细作， 上海大宗钢铁电子交易中心（SSEC）已成为最具权威性的大宗钢材电子交易市场和中国钢材现货中远期电子交易平台，2014 年实现交易额1341 亿元，交易量4190 万吨， 有效客户数9750 家。目前正推出全新的区域专场交易模式， 即平台与区域内有影响力的服务商进行战略合作，由其基于SSEC 盘面基准（上海） 价格加上当地价差，对指定区域进行买卖双向报价，实现两地价格实时联动，盘面报价直观，买卖活跃，现已设立山东、广东和宁波三个区域专场。同时SSEC 将充分发挥第三方平台优势，积极接洽，对接供求，并尝试中央对手方清算机制，在国内首创诚信规范、公开透明且具备行业影响力的场外衍生品交易市场，推进大宗商品多层次市场体系建设，服务实体经济。
-				</p>
-                <p>	
-                  上海大宗。经过多年的精耕细作， 上海大宗钢铁电子交易中心（SSEC）已成为最具权威性的大宗钢材电子交易市场和中国钢材现货中远期电子交易平台，2014 年实现交易额1341 亿元，交易量4190 万吨， 有效客户数9750 家。目前正推出全新的区域专场交易模式， 即平台与区域内有影响力的服务商进行战略合作，由其基于SSEC 盘面基准（上海） 价格加上当地价差，对指定区域进行买卖双向报价，实现两地价格实时联动，盘面报价直观，买卖活跃，现已设立山东、广东和宁波三个区域专场。同时SSEC 将充分发挥第三方平台优势，积极接洽，对接供求，并尝试中央对手方清算机制，在国内首创诚信规范、公开透明且具备行业影响力的场外衍生品交易市场，推进大宗商品多层次市场体系建设，服务实体经济。   
-				</p>
+                    <h5 class="text-center text-muted">
+                        <small><span data-bind="text:description"></span> </small>
+                    </h5>
+                  </div>
+                  <img data-bind="attr:{src:img}" class="embed-responsive mx-auto img-position" />
+                  <div data-bind="html:content" id="auto-content"></div>
 			</div>
 			
 		</div>
@@ -188,6 +177,6 @@
 <script src="../../js/knockout/knockout.mapping-latest.js"></script>
 <script src="../../js/common.js"></script>
 <script src="../../js/polyfill.js"></script>
-<script src="../../js/news/home.js" defer="defer"></script>
+<script src="../../js/vipCenter/vipDetailCon.js" defer="defer"></script>
 </body>
 </html>
