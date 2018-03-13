@@ -64,7 +64,7 @@
 }
 
 .panel-body .item .title{
-    color: #49649f !important;
+    color: #000000 !important;
     padding-left: 0.1rem;
     overflow: hidden;
     text-overflow: ellipsis;

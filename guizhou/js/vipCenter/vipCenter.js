@@ -123,6 +123,6 @@ var updateVipCenterCon = function () {
 $(function () {
     getVipCenterList.then(function () {
         ko.applyBindings(vclModel);
-        CommonTools.getAutoHeight($('.auto-content'));
+        CommonTools.getAutoHeight($('#auto-content'));
     })
 });
