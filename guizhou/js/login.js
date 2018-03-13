@@ -22,12 +22,12 @@ var loginModel = function () {
     var self = this;
     self.username = ko.observable("").extend({
         required: {params: true, message: "用户名不能为空"},
-        minLength: {params: 5, message: "用户名不能少于5位字符"},
+        minLength: {params: 6, message: "用户名不能少于6位字符"},
         maxLength: {params: 50, message: "用户名不能多于50位字符"},
     });
     self.password = ko.observable("").extend({
         required: {params: true, message: "密码不能为空"},
-        minLength: {params: 5, message: "密码不能少于5位字符"},
+        minLength: {params: 6, message: "密码不能少于6位字符"},
         maxLength: {params: 20, message: "密码不能多于20位字符"},
     });
     self.inputCode = ko.observable("").extend({
