@@ -77,25 +77,9 @@ var joinModel = function () {
         required: {params: true, message: "请上传经办人身份证"},
     });
     self.errors3 = ko.validation.group({file1: self.file1, file2: self.file2, file3: self.file3});
+
     self.uploadNext = function (stepId) {
         if (jModel.errors3().length == 0) {
-            /*            var params = {
-                            url: 'register.html',
-                            type: 'post',
-                            data: {username: self.username(), password: self.password(), repassword: self.repassword()},
-                            sCallback: function (res) {
-                                if (res && res.code == 200) {
-                                    self.setStepId(3);
-                                }
-                                else {
-                                    alert(res.msg);
-                                }
-                            },
-                            eCallback: function (e) {
-                                console.log("注册错误");
-                            }
-                        };
-                        CommonTools.getData(params);*/
             self.setStepId(5);
         } else {
             jModel.errors3.showAllMessages();
@@ -105,6 +89,7 @@ var joinModel = function () {
     self.uploadBefore = function (stepId) {
         self.setStepId(3);
     }
+
 
     // step5
     self.finish = function () {
@@ -116,8 +101,57 @@ var joinModel = function () {
 
 var jModel = new joinModel();
 
-$(function () {
+function initEasyUpload(div, txt) {
+    div.easyUpload({
+        allowFileTypes: '*.jpg;*.png;*.gif',//允许上传文件类型
+        allowFileSize: 100000,//允许上传文件大小(KB)
+        selectText: txt,//选择文件按钮文案
+        multi: false,//是否允许多文件上传
+        showNote: true,//是否展示文件上传说明
+        note: '',//文件上传说明
+        showPreview: true,//是否显示文件预览
+        url: 'http://192.168.0.191/home/user/avatar',//上传文件地址
+        fileName: 'file',//文件filename配置参数
+        formParam: {
+            token: CommonTools.getLocalStorage('token'),//不需要验证token时可以去掉
+            type: null
+        },//文件filename以外的配置参数，格式：{key1:value1,key2:value2}
+        timeout: 30000,//请求超时时间
+        okCode: 200,//与后端返回数据code值一致时执行成功回调，不配置默认200
+        successFunc: function (res) {
+            if (this.formParam.type == 1) {
+                jModel.file1("valid");
+            }
+            else if (this.formParam.type == 2) {
+                jModel.file2("valid");
+            }
+            else if (this.formParam.type == 3) {
+                jModel.file3("valid");
+            }
+            console.log('成功回调', res);
+        },//上传成功回调函数
+        errorFunc: function (res) {
+            console.log('失败回调', res);
+        },//上传失败回调函数
+        deleteFunc: function (res) {
+            if (this.formParam.type == 1) {
+                jModel.file1("");
+            }
+            else if (this.formParam.type == 2) {
+                jModel.file2("");
+            }
+            else if (this.formParam.type == 3) {
+                jModel.file3("");
+            }
+            console.log('删除回调', res);
+        }//删除文件回调函数
+    });
+}
 
+$(function () {
+    initEasyUpload($('#file1'), '点击上传营业执照');
+    initEasyUpload($('#file2'), '点击上传身份证');
+    initEasyUpload($('#file3'), '点击上传身份证');
     ko.applyBindings(jModel);
     CommonTools.getAutoHeight($('#auto-content'));
 });

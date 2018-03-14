@@ -180,7 +180,7 @@
     width: 80%;
 }
 
-.wrap a{
+.wrap a {
     color: #49649f;
     text-decoration: underline;
 }
@@ -227,4 +227,60 @@
     border: 1px solid #49649f;
     background-color: #ffffff;
     color: #49649f;
+}
+
+/*上传*/
+.easy_upload-container {
+    width: 100% !important;
+    border: 1px dashed #7596D4 !important;
+    border-radius: .25rem ;
+    min-height: 20rem;
+    position: relative;
+}
+
+.easy_upload_queue {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: white;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    border-radius: .25rem;
+}
+
+.easy_upload_queue_item{
+    height: auto;
+}
+
+.easy_upload-head{
+    position: absolute;
+    text-align: center;
+    left:0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.easy_upload_preview {
+    width: 60% !important;
+    margin: 0 auto !important;
+    text-align: center;
+}
+
+.easy_upload_status{
+    width: 10%;
+    margin: 0 auto !important;
+    text-align: center;
+}
+
+.easy_upload_btn  {
+    width: 30%;
+    margin: 0 auto !important;
+    text-align: center;
+    max-width: 199px;
+}
+
+.easy_upload_btn .btn{
+    width: 100% !important;
+    max-width: 100px;
 }
