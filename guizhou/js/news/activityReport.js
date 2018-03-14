@@ -1,12 +1,16 @@
 var activityReportViewModel = function () {
     var self = this;
     self.activityReportList = ko.observableArray([]);
-
     self.pages = ko.observableArray([]);
     self.currentPage = ko.observable(1);
     self.totalPage = ko.observable(1);
     self.minPage = ko.observable(1);
     self.maxPage = ko.observable(1);
+
+    // 去详情页
+    self.goDetail = function (v) {
+        window.location.href = "./newsDetail.html?newsid=" + v.id()+"&categoryName=活动快报";
+    }
 
     //分页相关
     self.increasePage = function () {

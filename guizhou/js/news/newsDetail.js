@@ -1,4 +1,5 @@
 var ndModel = {};
+var categoryName = decodeURIComponent(CommonTools.getQueryVariable("categoryName"));
 
 var getNewsDetail = new Promise(function (resolve, reject) {
     var url = "http://192.168.0.191/home/content/newdetail/id/" + CommonTools.getQueryVariable("newsid")
@@ -13,7 +14,7 @@ var getNewsDetail = new Promise(function (resolve, reject) {
                     },
                     'username': {
                         create: function (options) {
-                            if(options.data == null){
+                            if(options.data == null|| options.data == ""){
                                 return "发布人：未知";
                             }else{
                                 return "发布人: " + options.data;
@@ -22,7 +23,7 @@ var getNewsDetail = new Promise(function (resolve, reject) {
                     },
                     'source':{
                         create:function (options) {
-                            if(options.data == null){
+                            if(options.data == null || options.data == ""){
                                 return "来源：未知";
                             }else{
                                 return "来源："+ options.data;

@@ -1,24 +1,29 @@
-var companyNewsViewModel = function () {
+var indexViewModel = function () {
     var self = this;
-    self.companyNewsList = ko.observableArray([]);
-
+    self.cates = ko.observableArray([]);
+    self.news = ko.observableArray([]);
+    self.selectedNewsId = ko.observable(2);
     self.pages = ko.observableArray([]);
     self.currentPage = ko.observable(1);
     self.totalPage = ko.observable(1);
     self.minPage = ko.observable(1);
     self.maxPage = ko.observable(1);
-    // 去详情页
-    self.goDetail = function (v) {
-        window.location.href = "./newsDetail.html?newsid=" + v.id()+"&categoryName=企业资讯";
+    //改变新闻类型
+    self.changeSelectedNews = function (v) {
+        self.selectedNewsId(v.id());
+        self.currentPage(1);
+        updateNews();
     }
-
-
+    // 去新闻详情页
+    self.goDetail = function (v) {
+        window.location.href = "./newsDetail.html?newsid=" + v.id();
+    }
     //分页相关
     self.increasePage = function () {
         if (self.currentPage() < self.totalPage()) {
             self.currentPage(self.currentPage() + 1);
             self.updatePages();
-            updateCompanyNews();
+            updateNews();
         }
     }
 
@@ -26,14 +31,14 @@ var companyNewsViewModel = function () {
         if (self.currentPage() > 1) {
             self.currentPage(self.currentPage() - 1);
             self.updatePages();
-            updateCompanyNews();
+            updateNews();
         }
     }
 
     self.setCurrentPage = function (pageNumber) {
         if (pageNumber >= 1 && pageNumber <= self.totalPage()) {
             self.currentPage(pageNumber);
-            updateCompanyNews();
+            updateNews();
         }
     }
 
@@ -63,58 +68,24 @@ var companyNewsViewModel = function () {
         }
         self.minPage(min);
         self.maxPage(max);
-        ko.mapping.fromJS(temp, {}, cnModel.pages);
+        ko.mapping.fromJS(temp, {}, iModel.pages);
     }
 }
 
-var cnModel = new companyNewsViewModel();
+var iModel = new indexViewModel();
+//获取新闻中心
 
-var getCompanyNewsList = new Promise(function (resolve,reject) {
+var getNews = new Promise(function (resolve, reject) {
     var pageInfo = {
-        limit :5,
-        page: cnModel.currentPage(),
-        category: 27
+        limit: 5,
+        page: iModel.currentPage(),
+        category: 2
     };
-    $.get('http://192.168.0.191/home/content/newlists',pageInfo,function (returnData) {
-        if(returnData.code && returnData.code == '200'){
-            if(returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0){
-                var mappingList = {
-                    'create_time': {
-                        create: function (options) {
-                            return CommonTools.formatDate(options.data);
-                        }
-                    },
-                    'title':{
-                        create:function (options) {
-                            return CommonTools.formatText(options.data);
-                        }
-                    }
-                }
-                cnModel.companyNewsList = ko.mapping.fromJS(returnData.data.list.data,mappingList);
-            }
-            if (returnData.data && returnData.data.list && returnData.data.list.total) {
-                cnModel.totalPage(returnData.data.list.last_page);
-                cnModel.updatePages();
-            }
-            resolve("success");
-        }else{
-            reject("failed");
-            console.log("企业资讯列表获取有错误");
-        }
-    });
-});
 
-var updateCompanyNews = function () {
-    var pageInfo = {
-        limit :5,
-        page: cnModel.currentPage(),
-        category: 27
-    };
     $.get("http://192.168.0.191/home/content/newlists", pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
-            if (returnData.data && returnData.data.list && returnData.data.list.total) {
-                cnModel.totalPage(returnData.data.list.last_page);
-                cnModel.updatePages();
+            if (returnData.data && returnData.data.cate && returnData.data.cate.length > 0) {
+                iModel.cates = ko.mapping.fromJS(returnData.data.cate);
             }
             if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
                 var mappingList = {
@@ -123,24 +94,73 @@ var updateCompanyNews = function () {
                             return CommonTools.formatDate(options.data);
                         }
                     },
-                    'title':{
-                        create:function (options) {
-                            return CommonTools.formatText(options.data);
+                    'title': {
+                        create: function (options) {
+                            if (options.data.length <= 20) {
+                                return options.data;
+                            }
+                            else {
+                                return options.data.substring(0, 20) + "...";
+                            }
                         }
                     }
                 }
-                ko.mapping.fromJS(returnData.data.list.data, mappingList, cnModel.companyNewsList);
+                iModel.news = ko.mapping.fromJS(returnData.data.list.data, mappingList);
+            }
+            if (returnData.data && returnData.data.list && returnData.data.list.total) {
+                iModel.totalPage(returnData.data.list.last_page);
+                iModel.updatePages();
+            }
+            resolve("success");
+        }
+        else {
+            reject("failed");
+            console.log("新闻中心获取有错误");
+        }
+    });
+});
+
+var updateNews = function () {
+    var pageInfo = {
+        limit: 5,
+        page: iModel.currentPage(),
+        category: iModel.selectedNewsId(),
+    };
+    $.get("http://192.168.0.191/home/content/newlists", pageInfo, function (returnData) {
+        if (returnData.code && returnData.code == '200') {
+            if (returnData.data && returnData.data.list && returnData.data.list.total) {
+                iModel.totalPage(returnData.data.list.last_page);
+                iModel.updatePages();
+            }
+            if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
+                var mappingList = {
+                    'create_time': {
+                        create: function (options) {
+                            return CommonTools.formatDate(options.data);
+                        }
+                    },
+                    'title': {
+                        create: function (options) {
+                            if (options.data.length <= 20) {
+                                return options.data;
+                            }
+                            else {
+                                return options.data.substring(0, 20) + "...";
+                            }
+                        }
+                    }
+                }
+                ko.mapping.fromJS(returnData.data.list.data, mappingList, iModel.news);
             }
         }
         else {
-            console.log("企业资讯列表获取有错误");
+            console.log("新闻中心获取有错误");
         }
     });
 }
 
 $(function () {
-   getCompanyNewsList.then(function () {
-       ko.applyBindings(cnModel);
-       CommonTools.getAutoHeight($('#auto-content'));
-   });
+    getNews.then(function () {
+        ko.applyBindings(iModel);
+    })
 });

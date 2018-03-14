@@ -1,6 +1,6 @@
 var indexViewModel = function () {
     var self = this;
-    self.cates = ko.observableArray([]);
+
     self.news = ko.observableArray([]);
     self.selectedNewsId = ko.observable(2);
     self.pages = ko.observableArray([]);
@@ -16,7 +16,7 @@ var indexViewModel = function () {
     }
     // 去新闻详情页
     self.goDetail = function (v) {
-        window.location.href = "./newsDetail.html?newsid=" + v.id();
+        window.location.href = "./newsDetail.html?newsid=" + v.id()+"&categoryName=新闻资讯";
     }
     //分页相关
     self.increasePage = function () {
@@ -84,9 +84,6 @@ var getNews = new Promise(function (resolve, reject) {
 
     $.get("http://192.168.0.191/home/content/newlists", pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
-            if (returnData.data && returnData.data.cate && returnData.data.cate.length > 0) {
-                iModel.cates = ko.mapping.fromJS(returnData.data.cate);
-            }
             if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
                 var mappingList = {
                     'create_time': {
@@ -124,7 +121,7 @@ var updateNews = function () {
     var pageInfo = {
         limit: 5,
         page: iModel.currentPage(),
-        category: iModel.selectedNewsId(),
+        category: 2
     };
     $.get("http://192.168.0.191/home/content/newlists", pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
@@ -162,5 +159,6 @@ var updateNews = function () {
 $(function () {
     getNews.then(function () {
         ko.applyBindings(iModel);
+        CommonTools.getAutoHeight($('#auto-content'));
     })
 });

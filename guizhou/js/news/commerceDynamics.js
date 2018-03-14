@@ -8,6 +8,11 @@ var commerceDynamicViewModel = function () {
     self.minPage = ko.observable(1);
     self.maxPage = ko.observable(1);
 
+    // 去详情页
+    self.goDetail = function (v) {
+        window.location.href = "./newsDetail.html?newsid=" + v.id()+"&categoryName=商会动态";
+    }
+
     //分页相关
     self.increasePage = function () {
         if (self.currentPage() < self.totalPage()) {

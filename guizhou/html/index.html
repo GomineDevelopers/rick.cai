@@ -58,7 +58,10 @@
                             商会资讯
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="./news/home.html">新闻资讯</a>
+                            <a class="dropdown-item" href="news/home.html">新闻资讯</a>
+                            <a class="dropdown-item" href="news/CommerceDynamics.html">商会动态</a>
+                            <a class="dropdown-item" href="news/companyNews.html">企业资讯</a>
+                            <a class="dropdown-item" href="news/activityReport.html">活动快报</a>
                         </div>
                     </li>
                     <!-- Dropdown -->
@@ -144,7 +147,7 @@
                     <div class="block-header">
                         <img src="../img/news-icon.png" class="icon">
                         <span>新闻中心</span>
-                        <a href="./news/home.html">更多<img src="../img/arrow-icon.png"></a>
+                        <a data-bind="attr:{href:url()}">更多<img src="../img/arrow-icon.png"></a>
                     </div>
                     <div class="block-body">
                         <div class="left-list">
@@ -158,19 +161,37 @@
                         <div class=" right-list">
                             <div data-bind="foreach: newsSH , visible:2 == selectedNewsId()">
                                 <div class="item" data-bind="css:{ 'no-border-bottom':$index()==5}">
-                                <span class="title">
-                                    <img src="../img/point-icon.png"></img>
-                                    <a data-bind="attr:{href:'./news/newsDetail.html?newsid='+id()}"><span data-bind="text: title"></span></a>
-                                </span>
-                            &nbsp;<span class="date" data-bind="text: create_time"></span>
-                        </div>
-                        </div>
+                                    <span class="title">
+                                        <img src="../img/point-icon.png"></img>
+                                        <a data-bind="attr:{href:'./news/newsDetail.html?newsid='+id()+'&categoryName=新闻资讯'}"><span data-bind="text: title"></span></a>
+                                    </span>
+                                &nbsp;<span class="date" data-bind="text: create_time"></span>
+                                </div>
+                            </div>
                             <div data-bind="foreach: newsZH,visible:3 == selectedNewsId()">
                                 <div class="item">
                                 <span class="title">
                                     <img src="../img/point-icon.png"></img>
-                                    <a data-bind="attr:{href:'./news/newsDetail.html?newsid='+id()}"><span data-bind="text: title"></span></a>
+                                    <a data-bind="attr:{href:'./news/newsDetail.html?newsid='+id()+'&categoryName=商会动态'}"><span data-bind="text: title"></span></a>
                                 </span>
+                                    &nbsp;<span class="date" data-bind="text: create_time"></span>
+                                </div>
+                            </div>
+                            <div data-bind="foreach: newsQY , visible:27 == selectedNewsId()">
+                                <div class="item">
+                                    <span class="title">
+                                        <img src="../img/point-icon.png"></img>
+                                        <a data-bind="attr:{href:'./news/newsDetail.html?newsid='+id()+'&categoryName=企业资讯'}"><span data-bind="text: title"></span></a>
+                                    </span>
+                                    &nbsp;<span class="date" data-bind="text: create_time"></span>
+                                </div>
+                            </div>
+                            <div data-bind="foreach: newsHD , visible:28 == selectedNewsId()">
+                                <div class="item">
+                                    <span class="title">
+                                        <img src="../img/point-icon.png"></img>
+                                        <a data-bind="attr:{href:'./news/newsDetail.html?newsid='+id()+'&categoryName=活动快报'}"><span data-bind="text: title"></span></a>
+                                    </span>
                                     &nbsp;<span class="date" data-bind="text: create_time"></span>
                                 </div>
                             </div>

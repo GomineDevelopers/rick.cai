@@ -147,7 +147,7 @@
                 </ol>
             </div>
         </div>
-        <div class="row col-md-8 mx-auto mt-3">
+        <div class="row col-md-8 mx-auto">
 
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -173,50 +173,36 @@
             </div>
 
         </div>
-        <div class="row col-md-8 mx-auto mt-3">
-            <div class="container-fluid clearpadding">
-                <div class="panel panel-default ">
-                    <div class="panel-heading">
-                        <h5 class="panel-title">新闻资讯</h5>
+        <div class="row col-md-8 mx-auto content-warp mt-3">
+            <div class=" block panel panel-default">
+                <div class="block-header  row  mx-auto content-warp panel-heading">
+                    <div class="newsTitle" data-bind="foreach: cates">
+                        <span data-bind="text: title,css:{ 'active':id() == $parent.selectedNewsId()},click:$parent.changeSelectedNews"> </span>
                     </div>
-                    <div class="panel-body">
-                        <div class="left-list" id="auto-content">
-                            <div class="media-list " data-bind="foreach: news">
-                                <div class="media" data-bind="click: $parent.goDetail">
-                                    <a class="media-left" href="#">
-                                        <img class="media-object" data-bind="attr: { src: img}" alt="通用的占位符图像">
-                                    </a>
-                                    <div class="media-body col-md-8">
-                                        <div class="title" data-bind="text: title"></div>
-                                        <div class="intro" data-bind="text: description"></div>
-                                        <div class="text-sm-left date" data-bind="text: create_time"></div>
+                </div>
+                <div class="block-body">
+                    <div class="left-list">
+                        <div class="media-list " data-bind="foreach: news">
+                            <div class="media" data-bind="click: $parent.goDetail">
+                                <a class="media-left" href="#">
+                                    <img class="media-object" data-bind="attr: { src: img,}" alt="通用的占位符图像">
+                                </a>
+                                <div class="media-body col-md-8">
+                                    <div class="title" data-bind="text: title"></div>
+                                    <div class="intro" data-bind="text: description">
                                     </div>
+                                    <div class="text-sm-left date" data-bind="text: create_time">2018-1-20</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="panel-footer" data-bind="visible:pages().length>0 && maxPage()>1">
-                    <nav aria-label="Page navigation example" class="pull-right">
-                        <ul class="pagination" data-bind="foreach: pages">
-                            <li><span data-bind="pageNumber()"></span></li>
-                            <li class="page-item "
-                                data-bind="click:$parent.decreasePage,visible:pageNumber()==$parent.minPage(),css:{disabled :$parent.currentPage()==1 }">
-                                <a class="page-link" href="#">&lt;</a></li>
-                            <li class="page-item"
-                                data-bind="event: { click: $parent.setCurrentPage.bind($data, pageNumber()) },css:{active:pageNumber()== $parent.currentPage()}">
-                                <a class="page-link" href="#"><span data-bind="text:pageNumber"></span></a>
-                            </li>
-                            <li class="page-item"
-                                data-bind="click:$parent.increasePage ,visible:pageNumber()==$parent.maxPage(),css:{disabled :$parent.currentPage()==$parent.totalPage()}">
-                                <a class="page-link" href="#">&gt;</a></li>
-                        </ul>
-                    </nav>
-                </div>
+                
             </div>
         </div>
     </div>
 </div>
+
 <!--底部-->
 <footer class="nav navbar navbar-expand-sm navbar-fixed-bottom nav-footer ">
     <div class="row container mx-auto">
@@ -247,6 +233,6 @@
 <script src="../../js/knockout/knockout.mapping-latest.js"></script>
 <script src="../../js/common.js"></script>
 <script src="../../js/polyfill.js"></script>
-<script src="../../js/news/home.js" defer="defer"></script>
+<script src="../../js/news/oldhome.js" defer="defer"></script>
 </body>
 </html>
