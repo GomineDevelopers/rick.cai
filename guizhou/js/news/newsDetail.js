@@ -1,4 +1,9 @@
-var ndModel = {};
+var newsDetailModel = function () {
+    this.url = ko.observable("");
+    this.list = ko.observableArray([]);
+};
+
+var ndModel = new newsDetailModel();
 var categoryName = decodeURIComponent(CommonTools.getQueryVariable("categoryName"));
 
 var getNewsDetail = new Promise(function (resolve, reject) {
@@ -6,6 +11,22 @@ var getNewsDetail = new Promise(function (resolve, reject) {
     $.get(url, function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.data) {
+                switch (returnData.data.data.category_id) {
+                    case 2:
+                        ndModel.url("../news/home.html");
+                        break;
+                    case 3:
+                        ndModel.url("../news/CommerceDynamics.html");
+                        break;
+                    case 27:
+                        ndModel.url("../news/companyNews.html");
+                        break;
+                    case 28:
+                        ndModel.url("../news/activityReport.html");
+                        break;
+                    default:
+                        ndModel.url("./news/home.html");
+                }
                 var mappingList = {
                     'create_time': {
                         create: function (options) {
@@ -14,24 +35,24 @@ var getNewsDetail = new Promise(function (resolve, reject) {
                     },
                     'username': {
                         create: function (options) {
-                            if(options.data == null|| options.data == ""){
+                            if (options.data == null || options.data == "") {
                                 return "发布人：未知";
-                            }else{
+                            } else {
                                 return "发布人: " + options.data;
                             }
                         }
                     },
-                    'source':{
-                        create:function (options) {
-                            if(options.data == null || options.data == ""){
+                    'source': {
+                        create: function (options) {
+                            if (options.data == null || options.data == "") {
                                 return "来源：未知";
-                            }else{
-                                return "来源："+ options.data;
+                            } else {
+                                return "来源：" + options.data;
                             }
                         }
                     }
                 }
-                ndModel = ko.mapping.fromJS(returnData.data.data, mappingList);
+                ndModel.list = ko.mapping.fromJS(returnData.data.data, mappingList);
             }
             resolve("success");
         }
@@ -41,6 +62,7 @@ var getNewsDetail = new Promise(function (resolve, reject) {
         }
     });
 });
+
 
 $(function () {
     getNewsDetail.then(function () {

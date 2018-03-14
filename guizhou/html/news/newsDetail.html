@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../../css/font-awesome.min.css">
     <link rel="stylesheet" href="../../css/common.css">
     <link rel="stylesheet" href="../../css/news/newsDetail.css">
-    <title>新闻咨讯详情</title>
+    <title>详情</title>
 </head>
 
 <body>
@@ -141,7 +141,7 @@
                         <a href="#">商会资讯</a>
                     </li>
                     <li class="breadcrumb-item">
-                        <a href="#" data-bind="text:categoryName"></a>
+                        <a  data-bind="text:categoryName,attr: { href: url }"></a>
                     </li>
                     <li class="breadcrumb-item active">
                         <a href="#">正文</a>
@@ -149,7 +149,7 @@
                 </ol>
             </div>
         </div>
-        <div class="row col-md-8 mx-auto bg-white intro-text-detail ">
+        <div class="row col-md-8 mx-auto bg-white intro-text-detail " data-bind="with: list">
             <div class="container">
                 <h4 class="text-center nd-header" data-bind="text:title"></h4>
             </div>
