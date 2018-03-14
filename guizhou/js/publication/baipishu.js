@@ -59,6 +59,10 @@ var baipishuViewModel = function () {
         self.maxPage(max);
         ko.mapping.fromJS(temp, {}, bpsModel.pages);
     }
+
+    self.goRegister = function () {
+        window.location.href = "../vipCenter/joinUS.html";
+    }
 }
 
 var bpsModel = new baipishuViewModel();
@@ -131,13 +135,13 @@ var updateBaipishuList = function () {
 }
 
 var updateView = function () {
-    var self=this;
+    var self = this;
     if (CommonTools.getLocalStorage('token')) {
         var params = {
             url: "home/content/setpaper",
             type: 'post',
             data: {id: self.id()},
-            tokenFlag:true,
+            tokenFlag: true,
             sCallback: function (returnData) {
                 if (returnData.code && returnData.code == '200') {
                     for (var i = 0; i < bpsModel.baipishuList().length; i++) {
