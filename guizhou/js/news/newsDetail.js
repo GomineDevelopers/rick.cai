@@ -13,9 +13,22 @@ var getNewsDetail = new Promise(function (resolve, reject) {
                     },
                     'username': {
                         create: function (options) {
-                            return "发布人: " + options.data;
+                            if(options.data == null){
+                                return "发布人：未知";
+                            }else{
+                                return "发布人: " + options.data;
+                            }
                         }
                     },
+                    'source':{
+                        create:function (options) {
+                            if(options.data == null){
+                                return "来源：未知";
+                            }else{
+                                return "来源："+ options.data;
+                            }
+                        }
+                    }
                 }
                 ndModel = ko.mapping.fromJS(returnData.data.data, mappingList);
             }
