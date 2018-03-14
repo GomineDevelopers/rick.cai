@@ -37,7 +37,6 @@ var joinModel = function () {
             message: '两次密码输入不一致,请重试',
         }
     });
-
     self.errors1 = ko.validation.group({username: self.username, password: self.password, repassword: self.repassword});
     self.registerNext = function (stepId) {
         if (jModel.errors1().length == 0) {
@@ -65,6 +64,10 @@ var joinModel = function () {
     }
 
     // step3
+    self.state = ko.observable(); //省
+    self.city = ko.observable(); //市
+    self.region = ko.observable();//区
+    self.locationList = [];
 
     // step4
     self.file1 = ko.observable("").extend({
@@ -95,8 +98,6 @@ var joinModel = function () {
     self.finish = function () {
         window.location.href = "/guizhou/html/login.html";
     }
-
-
 }
 
 var jModel = new joinModel();
@@ -148,10 +149,21 @@ function initEasyUpload(div, txt) {
     });
 }
 
+function initLocation() {
+    var params = {
+        sCallback: function (data) {
+            jModel.locationList = data.State;
+        },
+    };
+    CommonTools.getLocation(params);
+
+}
+
 $(function () {
     initEasyUpload($('#file1'), '点击上传营业执照');
     initEasyUpload($('#file2'), '点击上传身份证');
     initEasyUpload($('#file3'), '点击上传身份证');
+    initLocation();
     ko.applyBindings(jModel);
     CommonTools.getAutoHeight($('#auto-content'));
 });

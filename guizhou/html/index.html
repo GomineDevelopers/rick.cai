@@ -123,10 +123,12 @@
 <div class="mt-self">
     <!--轮播图-->
     <div id="indexCarousel" class="carousel slide " data-ride="carousel">
-        <div class="carousel-inner" data-bind="foreach: carousel">
+        <div class="carousel-inner">
+            <div data-bind="foreach: carousel">
             <div class="carousel-item" data-bind="css:{'active':$index()==0}">
                 <a data-bind="attr: { href: url }">
                     <img class="d-block w-100" data-bind="attr: { src: img, alt: title }"></a>
+            </div>
             </div>
         </div>
         <a class="carousel-control-prev" href="#indexCarousel" role="button" data-slide="prev">
@@ -141,7 +143,7 @@
     <!--主页四块-->
     <div class="container-fluid main ">
         <div class="row col-md-8 mx-auto index-div" >
-            
+
             <div class="col-md-7  top-row">
                 <div class="block news-block">
                     <div class="block-header">
@@ -219,7 +221,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
         <div class="row col-md-8 mx-auto index-div" >
             <div class="col-md-7 bottom-row">
@@ -297,7 +299,7 @@
                     </div>
                 </div>
             </div>
-           
+
         </div>
     </div>
 </div>

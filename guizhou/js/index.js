@@ -6,14 +6,13 @@ var indexViewModel = function () {
     self.newsQY = ko.observableArray([]);
     self.newsHD = ko.observableArray([]);
     self.selectedNewsId = ko.observable(2);
-    self. carousel= ko.observableArray([]);
+    self.carousel = ko.observableArray([]);
     self.announces = ko.observableArray([]);
     self.url = ko.observable("./news/home.html");
 
     self.changeSelectedNews = function (v) {
         self.selectedNewsId(v.id());
-        switch(self.selectedNewsId())
-        {
+        switch (self.selectedNewsId()) {
             case 2:
                 self.url("./news/home.html");
                 break;
@@ -33,7 +32,6 @@ var indexViewModel = function () {
 }
 
 var iModel = new indexViewModel();
-
 
 //获取轮播图片
 var getCarousel = new Promise(function (resolve, reject) {
@@ -189,10 +187,8 @@ var getAnnounce = new Promise(function (resolve, reject) {
     });
 });
 
-
-
 $(function () {
-    Promise.all([getNewsSH, getNewsZH,getNewsQY,getNewsHD,getAnnounce]).then(function () {
+    Promise.all([getCarousel, getNewsSH, getNewsZH, getNewsQY, getNewsHD, getAnnounce]).then(function () {
         ko.applyBindings(iModel);
     });
 });
