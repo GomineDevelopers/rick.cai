@@ -13,7 +13,7 @@ var getLegalDetail = new Promise(function (resolve, reject) {
                 var mappingList = {
                     'create_time': {
                         create: function (options) {
-                            return CommonTools.formatDate(options.data);
+                            return "发布时间：" + CommonTools.formatDate(options.data);
                         }
                     }
                 }
