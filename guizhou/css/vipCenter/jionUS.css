@@ -220,6 +220,8 @@
     font-size: 14px;
     padding: 5px 10px;
     line-height: 1.8rem;
+    text-align:justify;
+    text-indent:2rem;
 }
 
 .wrap .footer {
