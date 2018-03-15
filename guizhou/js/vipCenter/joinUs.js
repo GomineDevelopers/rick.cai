@@ -63,13 +63,35 @@ var joinModel = function () {
 
     }
 
-    // step3
+    // step3-1
     self.companyName = ko.observable();
     self.companyEnName = ko.observable();
+    self.creditCode = ko.observable();
+    self.postCode = ko.observable();
+    self.webSite = ko.observable();
+    self.registeredAddress = ko.observable();
+    self.industryClassification = ko.observable();
+    self.registeredCapital = ko.observable();
+    self.fixedAssets = ko.observable();
+    self.turnover = ko.observable();
+    self.nature = ko.observable();
+    self.introduction = ko.observable();
     self.state = ko.observable(); //省
     self.city = ko.observable(); //市
     self.region = ko.observable();//区
     self.locationList = [];
+
+    //step3-2
+    self.legalRepresentative = ko.observable();
+    self.legalPhone = ko.observable();
+    self.legalEmail = ko.observable();
+    self.fax = ko.observable();
+    self.dailyName = ko.observable();
+    self.dailyPhone = ko.observable();
+    self.dailyEmail = ko.observable();
+
+    //step3-3
+
 
     self.errors2 = ko.validation.group({username: self.username, password: self.password, repassword: self.repassword});
     self.authenNext = function (stepId) {
