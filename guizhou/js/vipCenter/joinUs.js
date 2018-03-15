@@ -13,6 +13,8 @@ var joinModel = function () {
         $(window).scrollTop(0);
     }
 
+    self.token = ko.observable();
+
     // step2
     self.username = ko.observable("").extend({
         required: {params: true, message: "用户名不能为空"},
@@ -46,6 +48,7 @@ var joinModel = function () {
                 data: {username: self.username(), password: self.password(), repassword: self.repassword()},
                 sCallback: function (res) {
                     if (res && res.code == 200) {
+                        self.token(res.token);
                         self.setStepId(3);
                     }
                     else {
@@ -91,7 +94,30 @@ var joinModel = function () {
     self.dailyEmail = ko.observable();
 
     //step3-3
+    self.intentions = [' 副会长单位', '常务理事单位', '理事单位', '会员单位'];
+    self.selectedIntention = ko.observable();
+    self.services = [
+        {name: "国际交流", checked: false, id: "service1"},
+        {name: "行业合作", checked: false, id: "service2"},
+        {name: "企业展会", checked: false, id: "service3"},
+        {name: "法律咨询", checked: false, id: "service4"},
+        {name: "市场信息", checked: false, id: "service5"},
+        {name: "项目招商", checked: false, id: "service6"},
+        {name: "其他", checked: false, id: "service7"},
+    ];
+    self.selectedServices = ko.observable();
 
+    self.updateServices = function () {
+        this.checked = !this.checked;
+        var tmp = ""
+        for (var i = 0; i < self.services.length; i++) {
+            if (self.services[i].checked) {
+                tmp = tmp + self.services[i].name + ";"
+            }
+        }
+        self.selectedServices(tmp);
+        return true;
+    }
 
     self.errors2 = ko.validation.group({username: self.username, password: self.password, repassword: self.repassword});
     self.authenNext = function (stepId) {
@@ -152,7 +178,7 @@ function initEasyUpload(div, txt) {
         url: 'http://192.168.0.191/home/user/avatar',//上传文件地址
         fileName: 'file',//文件filename配置参数
         formParam: {
-            token: CommonTools.getLocalStorage('token'),//不需要验证token时可以去掉
+            token: jModel.token() || CommonTools.getLocalStorage('token'),//不需要验证token时可以去掉
             type: null
         },//文件filename以外的配置参数，格式：{key1:value1,key2:value2}
         timeout: 30000,//请求超时时间

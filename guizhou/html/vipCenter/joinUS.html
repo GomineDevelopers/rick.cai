@@ -29,7 +29,7 @@
                         <i class="fa fa-user-circle-o weak-light-black"></i>
                         <a href="../login.html" class="light-black"> 登陆</a><span
                             class="light-black">&nbsp;|&nbsp;</span>
-                        <a href="./joinUS.html" class="light-black">注册</a>
+                        <a href="../vipCenter/joinUS.html" class="light-black">注册</a>
                     </li>
                     <li class="nav-item" id="isLogout" style="display: none">
                         <a href="#" class="light-black" id="logout">退出</a>
@@ -52,7 +52,7 @@
                 </li>
                 <ul class="navbar-nav nav nav-tabs  mx-auto  text-center  text-nowrap ">
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link " href="./index.html">首页</a>
+                        <a class="nav-link " href="../index.html">首页</a>
                     </li>
                     <!-- Dropdown -->
                     <li class="nav-item dropdown" role="presentation">
@@ -60,7 +60,10 @@
                             商会资讯
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="./news/home.html">新闻资讯</a>
+                            <a class="dropdown-item" href="../news/home.html">新闻资讯</a>
+                            <a class="dropdown-item" href="../news/CommerceDynamics.html">商会动态</a>
+                            <a class="dropdown-item" href="../news/companyNews.html">企业资讯</a>
+                            <a class="dropdown-item" href="../news/activityReport.html">活动快报</a>
                         </div>
                     </li>
                     <!-- Dropdown -->
@@ -69,11 +72,11 @@
                             商贸服务
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="./service/chuZheng.html">出证认证</a>
-                            <a class="dropdown-item" href="./service/legal.html">法律服务</a>
-                            <a class="dropdown-item" href="./service/businessConsulting.html">业务咨询</a>
-                            <a class="dropdown-item" href="./service/business.html">经贸商机</a>
-                            <a class="dropdown-item" href="./service/download.html">下载区</a>
+                            <a class="dropdown-item" href="../service/chuZheng.html">出证认证</a>
+                            <a class="dropdown-item" href="../service/legal.html">法律服务</a>
+                            <a class="dropdown-item" href="../service/businessConsulting.html">业务咨询</a>
+                            <a class="dropdown-item" href="../service/business.html">经贸商机</a>
+                            <a class="dropdown-item" href="../service/download.html">下载区</a>
                         </div>
                     </li>
                     <!-- Dropdown -->
@@ -88,7 +91,7 @@
                             出版物
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="./publication/baipishu.html">白皮书</a>
+                            <a class="dropdown-item" href="../publication/baipishu.html">白皮书</a>
                         </div>
                     </li>
                     <!-- Dropdown -->
@@ -97,9 +100,9 @@
                             会员专区
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">会员风采</a>
-                            <a class="dropdown-item" href="#">会员通讯</a>
-                            <a class="dropdown-item" href="#">加入商会</a>
+                            <a class="dropdown-item" href="../vipCenter/joinUS.html">加入商会</a>
+                            <a class="dropdown-item" href="../vipCenter/vipCenter.html">会员风采</a>
+                            <a class="dropdown-item" href="../vipCenter/contactList.html">会员通讯</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -107,8 +110,9 @@
                             联系我们
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="./contact/shanghuijianjie.html">商会简介</a>
-                            <a class="dropdown-item" href="./contact/youqinglianjie.html">友商链接</a>
+                            <a class="dropdown-item" href="../contact/shanghuijianjie.html">商会简介</a>
+                            <a class="dropdown-item" href="../contact/hezuotuiguang.html">合作推广</a>
+                            <a class="dropdown-item" href="../contact/youqinglianjie.html">友商链接</a>
                         </div>
                     </li>
                 </ul>
@@ -245,7 +249,7 @@
                                     <div class="col-md-8 col-sm-12 mx-auto mt-2 authen-body"
                                          data-bind="validationOptions:{insertMessages:false}">
                                         <div class="form-group">
-                                            <label for="companyName" ><span class="required">*</span>企业名称：</label>
+                                            <label for="companyName"><span class="required">*</span>企业名称：</label>
                                             <input type="text" class="form-control" id="companyName"
                                                    data-bind="value: companyName" maxlength="100">
                                             <div data-bind="validationMessage: companyName" class="error mt-2"></div>
@@ -276,6 +280,25 @@
                                                    data-bind="value:registeredAddress" maxlength="100">
                                         </div>
                                         <div class="form-group">
+                                            <label for="registeredAddress">企业办公地：</label>
+
+                                            <select class="form-control" id="state"
+                                                    data-bind="options: locationList, value: state, optionsCaption: '选择省'">
+                                            </select>
+                                            <div data-bind="with:state">
+                                                <select class="form-control" id="city"
+                                                        data-bind="options: intentions, value: selectedIntention, optionsCaption: '请选择'">
+                                                </select>
+                                            </div>
+                                            <div data-bind="with:city">
+                                                <select class="form-control" id="region"
+                                                        data-bind="options: intentions, value: selectedIntention, optionsCaption: '请选择'">
+                                                </select>
+                                            </div>
+                                            <input type="text" class="form-control" id="officedAddress"
+                                                   data-bind="value:registeredAddress" maxlength="100">
+                                        </div>
+                                        <div class="form-group">
                                             <label for="industryClassification">行业分类：</label>
                                             <input type="text" class="form-control" id="industryClassification"
                                                    data-bind="value:industryClassification" maxlength="40">
@@ -302,7 +325,8 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="introduction">企业简介：</label>
-                                            <textarea class="form-control" id="introduction" rows="3" data-bind="value:introduction"></textarea>
+                                            <textarea class="form-control" id="introduction" rows="3"
+                                                      data-bind="value:introduction"></textarea>
                                         </div>
 
 
@@ -313,7 +337,8 @@
                                     <div class="col-md-8 col-sm-12 mx-auto mt-2 authen-body"
                                          data-bind="validationOptions:{insertMessages:false}">
                                         <div class="form-group">
-                                            <label for="legalRepresentative"><span class="required">*</span>法人代表：</label>
+                                            <label for="legalRepresentative"><span
+                                                    class="required">*</span>法人代表：</label>
                                             <input type="text" class="form-control" id="legalRepresentative"
                                                    data-bind="value: legalRepresentative" maxlength="40">
                                         </div>
@@ -351,25 +376,25 @@
                                 </div>
                                 <div class="authen-block">
                                     <div class="authen-title"> 3. 商会服务</div>
-                                    <div class="col-md-8 col-sm-12 mx-auto mt-2 authen-body"
+                                    <div class="col-md-8 col-sm-12 mx-auto mt-2 "
                                          data-bind="validationOptions:{insertMessages:false}">
                                         <div class="form-group">
                                             <label for="intention">会员意向：</label>
-                                            <select class="custom-select" id="intention">
-                                                <option selected>请选择</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                            <select class="form-control" id="intention"
+                                                    data-bind="options: intentions, value: selectedIntention, optionsCaption: '请选择'">">
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="service">希望商会提供的服务：</label>
-                                            <div class="custom-control custom-checkbox" id="service">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                                <label class="custom-control-label" for="customCheck1">国际交流</label>
+                                            <label>希望商会提供的服务：</label>
+                                            <div data-bind="foreach: services">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox"
+                                                           data-bind="value:id,attr:{'id': id}, click: $parent.updateServices">
+                                                    <label class="form-check-label"
+                                                           data-bind="text:name, attr:{'for': id}"></label>
+                                                </div>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                                 <div class="footer">
@@ -478,7 +503,7 @@
             </ul>
         </div>
         <div class="col-md-2 text-center  nav-footer-item  mx-auto">
-                <img  src="../../img/erweima.png" />
+            <img src="../../img/erweima.png"/>
         </div>
     </div>
 </footer>
