@@ -67,17 +67,18 @@ var joinModel = function () {
     }
 
     // step3-1
-    self.companyName = ko.observable("").extend({required:{param:true,message:'企业名称不能为空'}});
+    self.companyName = ko.observable("").extend({required: {param: true, message: '企业名称不能为空'}});
     self.companyEnName = ko.observable();
-    self.creditCode = ko.observable("").extend({required:{param:true,message:'统一信用代码/注册号不能为空'}});
+    self.creditCode = ko.observable("").extend({required: {param: true, message: '统一信用代码/注册号不能为空'}});
     self.postCode = ko.observable();
     self.webSite = ko.observable();
     self.registeredAddress = ko.observable();
     self.industryClassification = ko.observable();
     self.registeredCapital = ko.observable();
     self.fixedAssets = ko.observable();
-    self.turnover = ko.observable("").extend({required:{param:true,message:'年营业额不能为空'}});
-    self.nature = ko.observable();
+    self.turnover = ko.observable("").extend({required: {param: true, message: '年营业额不能为空'}});
+    self.natures = ['内资企业','联营企业','有限责任公司','私营企业','外商投资（含港澳台）','其他类型'];
+    self.selectedNature = ko.observable();
     self.introduction = ko.observable();
     self.state = ko.observable(); //省
     self.city = ko.observable(); //市
@@ -85,13 +86,13 @@ var joinModel = function () {
     self.locationList = [];
 
     //step3-2
-    self.legalRepresentative = ko.observable().extend({required:{param:true,message:'法人代表不能为空'}});
-    self.legalPhone = ko.observable().extend({required:{param:true,message:'法人代表手机号不能为空'}});
+    self.legalRepresentative = ko.observable().extend({required: {param: true, message: '法人代表不能为空'}});
+    self.legalPhone = ko.observable().extend({required: {param: true, message: '法人代表手机号不能为空'}});
     self.legalEmail = ko.observable();
     self.fax = ko.observable();
-    self.dailyName = ko.observable().extend({required:{param:true,message:'日常联系人姓名不能为空'}});
-    self.dailyPhone = ko.observable().extend({required:{param:true,message:'日常联系人电话不能为空'}});
-    self.dailyEmail = ko.observable().extend({required:{param:true,message:'日常联系人邮箱不能为空'}});
+    self.dailyName = ko.observable().extend({required: {param: true, message: '日常联系人姓名不能为空'}});
+    self.dailyPhone = ko.observable().extend({required: {param: true, message: '日常联系人电话不能为空'}});
+    self.dailyEmail = ko.observable().extend({required: {param: true, message: '日常联系人邮箱不能为空'}});
 
     //step3-3
     self.intentions = [' 副会长单位', '常务理事单位', '理事单位', '会员单位'];
@@ -119,20 +120,28 @@ var joinModel = function () {
         return true;
     }
 
-    self.errors2 = ko.validation.group({companyName: self.companyName,creditCode: self.creditCode,turnover: self.turnover,legalRepresentative: self.legalRepresentative,
-        legalPhone: self.legalPhone,dailyName: self.dailyName,dailyPhone: self.dailyPhone,dailyEmail: self.dailyEmail});
+    self.errors2 = ko.validation.group({
+        companyName: self.companyName,
+        creditCode: self.creditCode,
+        turnover: self.turnover,
+        legalRepresentative: self.legalRepresentative,
+        legalPhone: self.legalPhone,
+        dailyName: self.dailyName,
+        dailyPhone: self.dailyPhone,
+        dailyEmail: self.dailyEmail
+    });
+
     self.authenNext = function (stepId) {
-        if (jModel.errors3().length == 0) {
+        if (jModel.errors2().length == 0) {
             self.setStepId(5);
         } else {
-            jModel.errors3.showAllMessages();
+            jModel.errors2.showAllMessages();
         }
     }
 
     self.authenExit = function (stepId) {
         window.location.href = "/guizhou/html/login.html";
     }
-
 
     // step4
     self.file1 = ko.observable("").extend({
@@ -157,7 +166,6 @@ var joinModel = function () {
     self.uploadBefore = function (stepId) {
         self.setStepId(3);
     }
-
 
     // step5
     self.finish = function () {
@@ -214,22 +222,25 @@ function initEasyUpload(div, txt) {
     });
 }
 
-function initLocation() {
+var initLocation = new Promise(function (resolve, reject) {
     var params = {
         sCallback: function (data) {
-            jModel.locationList = data.State;
+            jModel.locationList = data;
+            resolve('success');
         },
     };
     CommonTools.getLocation(params);
-
-}
+});
 
 $(function () {
+
     initEasyUpload($('#file1'), '点击上传营业执照');
     initEasyUpload($('#file2'), '点击上传身份证');
     initEasyUpload($('#file3'), '点击上传身份证');
-    initLocation();
-    ko.applyBindings(jModel);
-    CommonTools.getAutoHeight($('#auto-content'));
+    initLocation.then(function () {
+        ko.applyBindings(jModel);
+        CommonTools.getAutoHeight($('#auto-content'));
+    })
+
 });
 

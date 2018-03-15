@@ -161,10 +161,11 @@
                             <span class="title">欢迎</span>
                             <div class="blue-content text-center">认证成为贵州国际商会会员</div>
                             <div class="content">
-                             <p>贵州国际商会实行会员制，通过与境内外其他商协会组织开展机制性合作，向会员提供国际交流、行业合作、法律咨询、市场信息、会展策划、项目招商和业务培训等服务。</p>
-                             <p>贵州国际商会的会员多是国际化经营的先行者、外经贸领域的主力军。我们欢迎更多具有国际竞争力、行业影响力和社会知名度的企业、事业、社会团体等机构加入贵州国际商会，成为贵州国际商会的会员。</p>
-							 <p>伟大的时代创造了难得的机遇，跨越式发展需要广阔的平台。让我们一起，共同创造美好的未来。</p>　
-							　　
+                                <p>贵州国际商会实行会员制，通过与境内外其他商协会组织开展机制性合作，向会员提供国际交流、行业合作、法律咨询、市场信息、会展策划、项目招商和业务培训等服务。</p>
+                                <p>
+                                    贵州国际商会的会员多是国际化经营的先行者、外经贸领域的主力军。我们欢迎更多具有国际竞争力、行业影响力和社会知名度的企业、事业、社会团体等机构加入贵州国际商会，成为贵州国际商会的会员。</p>
+                                <p>伟大的时代创造了难得的机遇，跨越式发展需要广阔的平台。让我们一起，共同创造美好的未来。</p>　
+                                　　
                             </div>
                             <div class="footer">
                                 <button type="button" class="btn"
@@ -263,11 +264,13 @@
                                             <label for="creditCode"><span class="required">*</span>统一信用代码/注册号：</label>
                                             <input type="text" class="form-control" id="creditCode"
                                                    data-bind="value: creditCode" maxlength="40">
+                                            <div data-bind="validationMessage: creditCode" class="error mt-2"></div>
                                         </div>
                                         <div class="form-group">
                                             <label for="postCode">邮政编码：</label>
                                             <input type="text" class="form-control" id="postCode"
                                                    data-bind="value: postCode" maxlength="6">
+                                            <div data-bind="validationMessage: postCode" class="error mt-2"></div>
                                         </div>
                                         <div class="form-group">
                                             <label for="webSite">企业网址：</label>
@@ -279,24 +282,27 @@
                                             <input type="text" class="form-control" id="registeredAddress"
                                                    data-bind="value:registeredAddress" maxlength="100">
                                         </div>
-                                        <div class="form-group">
-                                            <label for="registeredAddress">企业办公地：</label>
-
-                                            <select class="form-control" id="state"
-                                                    data-bind="options: locationList, value: state, optionsCaption: '选择省'">
-                                            </select>
-                                            <div data-bind="with:state">
+                                        <div class="form-row">
+                                            <label for="registeredAddress" class="form-group col-md-12"><span class="required">*</span>企业办公地：</label>
+                                            <div class="form-group col-md-4">
+                                                <select class="form-control" id="state"
+                                                        data-bind="options: locationList, value: state, optionsCaption: '省', optionsText: 'name',">
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-4" data-bind="with:state">
                                                 <select class="form-control" id="city"
-                                                        data-bind="options: intentions, value: selectedIntention, optionsCaption: '请选择'">
+                                                        data-bind="options: city, value: $parent.city, optionsCaption: '市', optionsText: 'name',">">
                                                 </select>
                                             </div>
-                                            <div data-bind="with:city">
+                                            <div class="form-group col-md-4" data-bind="with:city">
                                                 <select class="form-control" id="region"
-                                                        data-bind="options: intentions, value: selectedIntention, optionsCaption: '请选择'">
+                                                        data-bind="options: area, value: $parent.region, optionsCaption: '区'">
                                                 </select>
                                             </div>
-                                            <input type="text" class="form-control" id="officedAddress"
-                                                   data-bind="value:registeredAddress" maxlength="100">
+                                            <div class="form-group col-md-12">
+                                                <input type="text" class="form-control " id="officedAddress"
+                                                       data-bind="value:registeredAddress" maxlength="100" placeholder="详细地址">
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="industryClassification">行业分类：</label>
@@ -304,32 +310,32 @@
                                                    data-bind="value:industryClassification" maxlength="40">
                                         </div>
                                         <div class="form-group">
-                                            <label for="registeredCapital">注册资本：</label>
-                                            <input type="text" class="form-control" id="registeredCapital"
+                                            <label for="registeredCapital">注册资本(单位:万元)：</label>
+                                            <input type="number" class="form-control" id="registeredCapital"
                                                    data-bind="value:registeredCapital" maxlength="100">
                                         </div>
                                         <div class="form-group">
-                                            <label for="fixedAssets">固定资产：</label>
-                                            <input type="text" class="form-control" id="fixedAssets"
+                                            <label for="fixedAssets">固定资产(单位:万元)：</label>
+                                            <input type="number" class="form-control" id="fixedAssets"
                                                    data-bind="value:fixedAssets" maxlength="20">
                                         </div>
                                         <div class="form-group">
-                                            <label for="turnover"><span class="required">*</span>年营业额（注册前一年）：</label>
-                                            <input type="text" class="form-control" id="turnover"
+                                            <label for="turnover"><span class="required">*</span>年营业额(注册前一年)(单位:万元)：</label>
+                                            <input type="number" class="form-control" id="turnover"
                                                    data-bind="value:turnover" maxlength="20">
+                                            <div data-bind="validationMessage: turnover" class="error mt-2"></div>
                                         </div>
                                         <div class="form-group">
                                             <label for="nature">企业性质：</label>
-                                            <input type="text" class="form-control" id="nature"
-                                                   data-bind="value:nature" maxlength="20">
+                                            <select class="form-control" id="nature"
+                                                    data-bind="options: natures, value: selectedNature, optionsCaption: '请选择'">">
+                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="introduction">企业简介：</label>
                                             <textarea class="form-control" id="introduction" rows="3"
                                                       data-bind="value:introduction"></textarea>
                                         </div>
-
-
                                     </div>
                                 </div>
                                 <div class="authen-block">
@@ -341,36 +347,43 @@
                                                     class="required">*</span>法人代表：</label>
                                             <input type="text" class="form-control" id="legalRepresentative"
                                                    data-bind="value: legalRepresentative" maxlength="40">
+                                            <div data-bind="validationMessage: legalRepresentative" class="error mt-2"></div>
                                         </div>
                                         <div class="form-group">
                                             <label for="legalPhone"><span class="required">*</span>法人手机号：</label>
                                             <input type="text" class="form-control" id="legalPhone"
                                                    data-bind="value:legalPhone" maxlength="20">
+                                            <div data-bind="validationMessage: legalPhone" class="error mt-2"></div>
                                         </div>
                                         <div class="form-group">
                                             <label for="legalEmail">法人邮箱：</label>
                                             <input type="text" class="form-control" id="legalEmail"
                                                    data-bind="value:legalEmail" maxlength="20">
+                                            <div data-bind="validationMessage: legalEmail" class="error mt-2"></div>
                                         </div>
                                         <div class="form-group">
                                             <label for="fax">传真：</label>
                                             <input type="text" class="form-control" id="fax"
                                                    data-bind="value:fax" maxlength="40">
+                                            <div data-bind="validationMessage: fax" class="error mt-2"></div>
                                         </div>
                                         <div class="form-group">
                                             <label for="dailyName"><span class="required">*</span>日常联系人姓名：</label>
                                             <input type="text" class="form-control" id="dailyName"
                                                    data-bind="value:dailyName" maxlength="40">
+                                            <div data-bind="validationMessage: dailyName" class="error mt-2"></div>
                                         </div>
                                         <div class="form-group">
                                             <label for="dailyPhone"><span class="required">*</span>日常联系人电话：</label>
                                             <input type="text" class="form-control" id="dailyPhone"
                                                    data-bind="value:dailyPhone" maxlength="20">
+                                            <div data-bind="validationMessage: dailyPhone" class="error mt-2"></div>
                                         </div>
                                         <div class="form-group">
                                             <label for="dailyEmail"><span class="required">*</span>日常联系人邮箱：</label>
                                             <input type="text" class="form-control" id="dailyEmail"
                                                    data-bind="value:dailyEmail" maxlength="20">
+                                            <div data-bind="validationMessage: dailyEmail" class="error mt-2"></div>
                                         </div>
                                     </div>
                                 </div>
