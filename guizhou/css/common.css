@@ -1,22 +1,21 @@
-html,body {
-    font-family:"Arial";
-    font-style:normal;
+html, body {
+    font-family: "Arial";
+    font-style: normal;
     height: 100%;
     padding: 0;
     margin: 0;
 }
 
-
-.body-background{
+.body-background {
     background-color: #f5f5f5;
 }
 
-.no-border-bottom{
+.no-border-bottom {
     border-bottom: none !important;
 }
 
 @media (max-width: 768px) {
-    .header-img{
+    .header-img {
         width: 80%;
     }
 }
@@ -187,7 +186,7 @@ html,body {
 /*sitemap*/
 .breadcrumb {
     background: #f5f5f5;
-    margin-bottom:0 !important;
+    margin-bottom: 0 !important;
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
@@ -203,11 +202,12 @@ html,body {
     color: #49649f !important;
 }
 
-#auto-content{
+#auto-content {
     width: 100%;
 }
 
 /*验证*/
-.error{
-   color: red;
+.error {
+    color: red !important;
+    font-size: 12px !important;
 }

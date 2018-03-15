@@ -186,30 +186,29 @@
                     <div class="block-body">
                         <div class="wrap">
                             <span class="title">创建用户</span>
-                            <form class="col-md-8 col-sm-12 mx-auto"
+                            <form class="col-md-8 col-sm-12 mx-auto mt-2"
                                   data-bind="validationOptions:{insertMessages:false}">
                                 <div class="form-group">
                                     <label for="username">用户名：</label>
                                     <input type="text" class="form-control" id="username" placeholder="请输入用户名"
                                            data-bind="value: username" maxlength="50">
-                                    <div data-bind="validationMessage: username" class="error mt-3"></div>
+                                    <div data-bind="validationMessage: username" class="error mt-2"></div>
                                 </div>
                                 <div class="form-group">
                                     <label for="password">密码：</label>
                                     <input type="password" class="form-control" id="password" placeholder="请输入密码"
                                            data-bind="value: password" maxlength="20">
-                                    <div data-bind="validationMessage: password" class="error mt-3"></div>
+                                    <div data-bind="validationMessage: password" class="error mt-2"></div>
                                 </div>
                                 <div class="form-group">
                                     <label for="re-password">确认密码：</label>
                                     <input type="password" class="form-control" id="re-password" placeholder="请再一次输入密码"
                                            data-bind="value: repassword" maxlength="20">
-                                    <div data-bind="validationMessage: repassword" class="error mt-3"></div>
+                                    <div data-bind="validationMessage: repassword" class="error mt-2"></div>
                                 </div>
                                 <div class="form-group">
                                     <a href="../contact/shanghuijianjie.html">想了解贵州国际商会更多内容？立即查看</a>
                                 </div>
-
                             </form>
                             <div class="footer">
                                 <button type="button" class="btn" data-bind="click:registerNext">下一步
@@ -236,8 +235,91 @@
                     </div>
                     <div class="block-body">
                         <div class="wrap">
-                            <span class="title">企业认证</span>
-
+                            <form>
+                                <span class="title">企业认证</span>
+                                <div class="authen-block">
+                                    <div class="authen-title"> 1. 企业信息</div>
+                                    <div class="col-md-8 col-sm-12 mx-auto mt-2 authen-body"
+                                         data-bind="validationOptions:{insertMessages:false}">
+                                        <div class="form-group">
+                                            <label for="companyName" ><span class="required">*</span>企业名称：</label>
+                                            <input type="text" class="form-control" id="companyName"
+                                                   data-bind="value: companyName" maxlength="100">
+                                            <div data-bind="validationMessage: companyName" class="error mt-2"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="companyEnName">企业英文名：</label>
+                                            <input type="text" class="form-control" id="companyEnName"
+                                                   data-bind="value: companyEnName" maxlength="100">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="re-password">确认密码：</label>
+                                            <input type="password" class="form-control" id="re-password"
+                                                   placeholder="请再一次输入密码"
+                                                   data-bind="value: repassword" maxlength="20">
+                                            <div data-bind="validationMessage: repassword" class="error mt-2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="authen-block">
+                                    <div class="authen-title"> 2. 法人信息</div>
+                                    <div class="col-md-8 col-sm-12 mx-auto mt-2 authen-body"
+                                         data-bind="validationOptions:{insertMessages:false}">
+                                        <div class="form-group">
+                                            <label for="username">用户名：</label>
+                                            <input type="text" class="form-control" id="username" placeholder="请输入用户名"
+                                                   data-bind="value: username" maxlength="50">
+                                            <div data-bind="validationMessage: username" class="error mt-2"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password">密码：</label>
+                                            <input type="password" class="form-control" id="password"
+                                                   placeholder="请输入密码"
+                                                   data-bind="value: password" maxlength="20">
+                                            <div data-bind="validationMessage: password" class="error mt-2"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="re-password">确认密码：</label>
+                                            <input type="password" class="form-control" id="re-password"
+                                                   placeholder="请再一次输入密码"
+                                                   data-bind="value: repassword" maxlength="20">
+                                            <div data-bind="validationMessage: repassword" class="error mt-2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="authen-block">
+                                    <div class="authen-title"> 3. 商会服务</div>
+                                    <div class="col-md-8 col-sm-12 mx-auto mt-2 authen-body"
+                                         data-bind="validationOptions:{insertMessages:false}">
+                                        <div class="form-group">
+                                            <label for="username">用户名：</label>
+                                            <input type="text" class="form-control" id="username" placeholder="请输入用户名"
+                                                   data-bind="value: username" maxlength="50">
+                                            <div data-bind="validationMessage: username" class="error mt-2"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password">密码：</label>
+                                            <input type="password" class="form-control" id="password"
+                                                   placeholder="请输入密码"
+                                                   data-bind="value: password" maxlength="20">
+                                            <div data-bind="validationMessage: password" class="error mt-2"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="re-password">确认密码：</label>
+                                            <input type="password" class="form-control" id="re-password"
+                                                   placeholder="请再一次输入密码"
+                                                   data-bind="value: repassword" maxlength="20">
+                                            <div data-bind="validationMessage: repassword" class="error mt-2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <button type="button" class="btn little-btn light-btn mt-2"
+                                            data-bind="click:authenExit">跳过
+                                    </button>
+                                    <button type="button" class="btn little-btn mt-2" data-bind="click:authenNext">下一步
+                                    </button>
+                                </div>
                         </div>
                     </div>
                 </div>

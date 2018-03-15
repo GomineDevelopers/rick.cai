@@ -64,10 +64,26 @@ var joinModel = function () {
     }
 
     // step3
+    self.companyName = ko.observable();
+    self.companyEnName = ko.observable();
     self.state = ko.observable(); //省
     self.city = ko.observable(); //市
     self.region = ko.observable();//区
     self.locationList = [];
+
+    self.errors2 = ko.validation.group({username: self.username, password: self.password, repassword: self.repassword});
+    self.authenNext = function (stepId) {
+        if (jModel.errors3().length == 0) {
+            self.setStepId(5);
+        } else {
+            jModel.errors3.showAllMessages();
+        }
+    }
+
+    self.authenExit = function (stepId) {
+        window.location.href = "/guizhou/html/login.html";
+    }
+
 
     // step4
     self.file1 = ko.observable("").extend({

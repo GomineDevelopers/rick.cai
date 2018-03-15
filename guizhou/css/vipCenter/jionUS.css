@@ -8,6 +8,20 @@
     text-align: center;
 }
 
+.authen-block .authen-title{
+    color: #49649f;
+    margin: 1.5rem 2rem 1rem ;
+}
+
+.authen-block .authen-body{
+   border-bottom: 1px solid #ddd ;
+}
+
+.authen-block .required{
+    color: red;
+}
+
+
 @media (max-width: 768px) {
     .join-block .block-header {
         height: 14rem !important;
