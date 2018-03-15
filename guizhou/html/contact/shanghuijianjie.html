@@ -26,10 +26,13 @@
                     <li class="nav-item">
                         <i class="fa fa-caret-right light-black"></i> <a href="#" class="light-black"> 中文</a>
                     </li>&nbsp;&nbsp;
-                    <li class="nav-item">
+                    <li class="nav-item" id="isLogin">
                         <i class="fa fa-user-circle-o weak-light-black"></i>
-                        <a href="#" class="light-black"> 登陆</a><span class="light-black">&nbsp;|&nbsp;</span>
-                        <a href="#" class="light-black">注册</a>
+                        <a href="../login.html" class="light-black"> 登陆</a><span class="light-black">&nbsp;|&nbsp;</span>
+                        <a href="../vipCenter/joinUS.html" class="light-black">注册</a>
+                    </li>
+                    <li class="nav-item" id="isLogout" style="display: none">
+                        <a href="#" class="light-black" id="logout">退出</a>
                     </li>
                 </ul>
             </div>
@@ -47,9 +50,9 @@
             </button>
             <div class="collapse navbar-collapse navbar-fixed-top" id="collapsibleNavbar">
                 </li>
-                <ul class="navbar-nav   nav-tabs  mx-auto  text-center  text-nowrap ">
+                <ul class="navbar-nav nav nav-tabs  mx-auto  text-center  text-nowrap ">
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link " href="./index.html">首页</a>
+                        <a class="nav-link " href="../index.html">首页</a>
                     </li>
                     <!-- Dropdown -->
                     <li class="nav-item dropdown" role="presentation">
@@ -57,7 +60,10 @@
                             商会资讯
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="./news/home.html">新闻资讯</a>
+                            <a class="dropdown-item" href="../news/home.html">新闻资讯</a>
+                            <a class="dropdown-item" href="../news/CommerceDynamics.html">商会动态</a>
+                            <a class="dropdown-item" href="../news/companyNews.html">企业资讯</a>
+                            <a class="dropdown-item" href="../news/activityReport.html">活动快报</a>
                         </div>
                     </li>
                     <!-- Dropdown -->
@@ -66,9 +72,11 @@
                             商贸服务
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">出证认证</a>
-                            <a class="dropdown-item" href="#">法律服务</a>
-                            <a class="dropdown-item" href="#">业务咨询</a>
+                            <a class="dropdown-item" href="../service/chuZheng.html">出证认证</a>
+                            <a class="dropdown-item" href="../service/legal.html">法律服务</a>
+                            <a class="dropdown-item" href="../service/businessConsulting.html">业务咨询</a>
+                            <a class="dropdown-item" href="../service/business.html">经贸商机</a>
+                            <a class="dropdown-item" href="../service/download.html">下载区</a>
                         </div>
                     </li>
                     <!-- Dropdown -->
@@ -83,7 +91,7 @@
                             出版物
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">白皮书</a>
+                            <a class="dropdown-item" href="../publication/baipishu.html">白皮书</a>
                         </div>
                     </li>
                     <!-- Dropdown -->
@@ -92,9 +100,9 @@
                             会员专区
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">会员风采</a>
-                            <a class="dropdown-item" href="#">会员通讯</a>
-                            <a class="dropdown-item" href="#">加入商会</a>
+                            <a class="dropdown-item" href="../vipCenter/joinUS.html">加入商会</a>
+                            <a class="dropdown-item" href="../vipCenter/vipCenter.html">会员风采</a>
+                            <a class="dropdown-item" href="../vipCenter/contactList.html">会员通讯</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -102,8 +110,9 @@
                             联系我们
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">商会简介</a>
-                            <a class="dropdown-item" href="#">友商链接</a>
+                            <a class="dropdown-item" href="../contact/shanghuijianjie.html">商会简介</a>
+                            <a class="dropdown-item" href="../contact/hezuotuiguang.html">合作推广</a>
+                            <a class="dropdown-item" href="../contact/youqinglianjie.html">友商链接</a>
                         </div>
                     </li>
                 </ul>
@@ -112,7 +121,6 @@
     </nav>
     <!--导航栏导航栏-->
 </header>
-
 <!--内容-->
 <div class="mt-self" style="padding-top: 134px;">
     <div class="container-fluid  content-warp body-background">
