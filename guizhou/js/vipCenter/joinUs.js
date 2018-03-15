@@ -13,7 +13,7 @@ var joinModel = function () {
         $(window).scrollTop(0);
     }
 
-    self.token= ko.observable();
+    self.token = ko.observable();
 
     // step2
     self.username = ko.observable("").extend({
@@ -108,7 +108,7 @@ var joinModel = function () {
     self.selectedServices = ko.observable();
 
     self.updateServices = function () {
-        this.checked=!this.checked;
+        this.checked = !this.checked;
         var tmp = ""
         for (var i = 0; i < self.services.length; i++) {
             if (self.services[i].checked) {
@@ -178,7 +178,7 @@ function initEasyUpload(div, txt) {
         url: 'http://192.168.0.191/home/user/avatar',//上传文件地址
         fileName: 'file',//文件filename配置参数
         formParam: {
-            token: CommonTools.getLocalStorage('token'),//不需要验证token时可以去掉
+            token: jModel.token() || CommonTools.getLocalStorage('token'),//不需要验证token时可以去掉
             type: null
         },//文件filename以外的配置参数，格式：{key1:value1,key2:value2}
         timeout: 30000,//请求超时时间
