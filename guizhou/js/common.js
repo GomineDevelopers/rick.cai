@@ -122,6 +122,26 @@ CommonTools.getLocation = function (params) {
     })
 }
 
+CommonTools.checkRegex = function (type, value, rule) {
+    var re = ""
+    if (type == "email") {
+        re = /\w@\w*\.\w/;
+    }
+    else if (type == "phone") {
+        re = /^(0|86)?((1[358][0-9]|14[57]|17[678])[0-9]{8})|(170[059][0-9]{7})$/;
+    }
+    else {
+        re = rule;
+    }
+
+    if (re.test(value)) {
+        return true
+    }
+    else {
+        return false
+    }
+}
+
 $(function () {
     if (CommonTools.getLocalStorage('token')) {
         $("#isLogin").remove();

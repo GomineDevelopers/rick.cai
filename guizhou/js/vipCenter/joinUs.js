@@ -13,7 +13,7 @@ var joinModel = function () {
         $(window).scrollTop(0);
     }
 
-    self.token = ko.observable();
+    self.token = ko.observable("");
 
     // step2
     self.username = ko.observable("").extend({
@@ -73,26 +73,63 @@ var joinModel = function () {
     self.postCode = ko.observable();
     self.webSite = ko.observable();
     self.registeredAddress = ko.observable();
-    self.industryClassification = ko.observable();
-    self.registeredCapital = ko.observable();
-    self.fixedAssets = ko.observable();
-    self.turnover = ko.observable("").extend({required: {param: true, message: '年营业额不能为空'}});
-    self.natures = ['内资企业','联营企业','有限责任公司','私营企业','外商投资（含港澳台）','其他类型'];
-    self.selectedNature = ko.observable();
-    self.introduction = ko.observable();
+    self.locationList = [];
     self.state = ko.observable(); //省
     self.city = ko.observable(); //市
     self.region = ko.observable();//区
-    self.locationList = [];
+    self.officedAddress = ko.observable();
+    self.industryClassification = ko.observable();
+    self.registeredCapital = ko.observable();
+    self.fixedAssets = ko.observable();
+    self.turnover = ko.observable("").extend({
+        required: {param: true, message: '年营业额不能为空'}
+    });
+    self.natures = ['内资企业', '联营企业', '有限责任公司', '私营企业', '外商投资（含港澳台）', '其他类型'];
+    self.selectedNature = ko.observable();
+    self.introduction = ko.observable();
+
 
     //step3-2
     self.legalRepresentative = ko.observable().extend({required: {param: true, message: '法人代表不能为空'}});
-    self.legalPhone = ko.observable().extend({required: {param: true, message: '法人代表手机号不能为空'}});
-    self.legalEmail = ko.observable();
+    self.legalPhone = ko.observable().extend({
+        required: {param: true, message: '法人代表手机号不能为空'},
+        validation: {
+            validator: function (val) {
+                return CommonTools.checkRegex("phone", val, "")
+            },
+            message: '请输入合法的手机号码，以“1”开头的11位数字，不要加“086”前缀',
+        }
+
+    });
+    self.legalEmail = ko.observable().extend({
+        validation: {
+            validator: function (val) {
+                return CommonTools.checkRegex("email", val, "")
+            },
+            message: '邮箱格式不对哦',
+        }
+    });
+    ;
     self.fax = ko.observable();
     self.dailyName = ko.observable().extend({required: {param: true, message: '日常联系人姓名不能为空'}});
-    self.dailyPhone = ko.observable().extend({required: {param: true, message: '日常联系人电话不能为空'}});
-    self.dailyEmail = ko.observable().extend({required: {param: true, message: '日常联系人邮箱不能为空'}});
+    self.dailyPhone = ko.observable().extend({
+        required: {param: true, message: '日常联系人电话不能为空'},
+        validation: {
+            validator: function (val) {
+                return CommonTools.checkRegex("phone", val, "")
+            },
+            message: '请输入合法的手机号码，以“1”开头的11位数字，不要加“086”前缀',
+        }
+    });
+    self.dailyEmail = ko.observable().extend({
+        required: {param: true, message: '日常联系人邮箱不能为空'},
+        validation: {
+            validator: function (val) {
+                return CommonTools.checkRegex("email", val, "")
+            },
+            message: '邮箱格式不对哦',
+        }
+    });
 
     //step3-3
     self.intentions = [' 副会长单位', '常务理事单位', '理事单位', '会员单位'];
@@ -133,7 +170,10 @@ var joinModel = function () {
 
     self.authenNext = function (stepId) {
         if (jModel.errors2().length == 0) {
-            self.setStepId(5);
+            initEasyUpload($('#file1'), '点击上传营业执照');
+            initEasyUpload($('#file2'), '点击上传身份证');
+            initEasyUpload($('#file3'), '点击上传身份证');
+            self.setStepId(4);
         } else {
             jModel.errors2.showAllMessages();
         }
@@ -187,7 +227,7 @@ function initEasyUpload(div, txt) {
         url: 'http://192.168.0.191/home/user/avatar',//上传文件地址
         fileName: 'file',//文件filename配置参数
         formParam: {
-            token: jModel.token() || CommonTools.getLocalStorage('token'),//不需要验证token时可以去掉
+            token: jModel.token() == "" ? CommonTools.getLocalStorage('token') : jModel.token(),//不需要验证token时可以去掉
             type: null
         },//文件filename以外的配置参数，格式：{key1:value1,key2:value2}
         timeout: 30000,//请求超时时间
@@ -233,10 +273,6 @@ var initLocation = new Promise(function (resolve, reject) {
 });
 
 $(function () {
-
-    initEasyUpload($('#file1'), '点击上传营业执照');
-    initEasyUpload($('#file2'), '点击上传身份证');
-    initEasyUpload($('#file3'), '点击上传身份证');
     initLocation.then(function () {
         ko.applyBindings(jModel);
         CommonTools.getAutoHeight($('#auto-content'));
