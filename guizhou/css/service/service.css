@@ -62,6 +62,8 @@
 
 .panel-body .item a{
     width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .panel-body .item .title{

@@ -146,12 +146,13 @@
                         </h5>
                     </div>
                     <div class="panel-body">
-                        <div class="item-cover" data-bind="foreach: chuZhengList" id="auto-content">
-                            <div class="item">
-
-                             <a class="title" data-bind="attr:{ href : './chuZhengDetail.html?id='+id()}">
-                                 <span data-bind="text: title"></span></a>
-                                &nbsp;<span class="date pull-right" data-bind="text: create_time"></span>
+                        <div class="item-cover">
+                            <div data-bind="foreach: chuZhengList" id="auto-content">
+                                <div class="item">
+                                 <a data-bind="attr:{ href : './chuZhengDetail.html?id='+id()}">
+                                     <span data-bind="text: title"></span></a>
+                                    &nbsp;<span class="date" data-bind="text: create_time"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
