@@ -124,13 +124,15 @@
 	border-bottom: 1px solid #ddd;
 }
 
-.contac-list h6{
-	font-size: 14px;
-}
 .panel-body{
 	padding-left: 0px;
 	padding-right: 0px;
 }
 .contac-list:last-child{
 	border-bottom: none !important;
+}
+.contac-list h6 {
+	font-size: 14px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
