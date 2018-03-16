@@ -31,7 +31,7 @@
                         <div class=" text-center login-label-text"><h4>欢迎来到贵州国际商会</h4></div>
                     </div>
                     <div class="mb-3">
-                        <div class="input-group">
+                        <div class="input-group mt-4">
                             <div class="input-group-prepend">
                                 <span class="input-group-text text-muted" for="username"> <i
                                         class="fa fa-user fa-lg"></i> </span>
@@ -43,7 +43,7 @@
                         <div data-bind="validationMessage: username" class="error mt-3"></div>
                     </div>
                     <div class="mb-3">
-                        <div class="input-group ">
+                        <div class="input-group mt-4">
                             <div class="input-group-prepend">
                                 <span class="input-group-text text-muted" for="password"> <i
                                         class="fa fa-lock fa-lg"></i> </span>
@@ -53,24 +53,26 @@
                         </div>
                         <div data-bind="validationMessage: password" class="error mt-3"></div>
                     </div>
-
-                    <div class="form-group row">
-                        <label for="code" class="col-sm-3 col-form-label">验证码</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="请输入验证码" id="code"
-                                   data-bind="value: inputCode" maxlength="4">
+                    <div class="form-group mt-4">
+                    	<div class="row col">
+                    			 <label for="code" class="col-form-label">验证码</label>                   		
+                        
+                        <div class="col-md-4 ">
+                        		<input type="button" id="checkCode" class="code col-form-label "  onclick="createCode()">
+                        <!--<a href="###" onclick="createCode()"><i class="fa fa-refresh"></i></a>-->
                         </div>
-                        <div data-bind="validationMessage: inputCode" class="error mt-3 ml-3"></div>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" placeholder="" id="code"
+                                   data-bind="value: inputCode" maxlength="4">
+                             </div>
+                    	</div>
                     </div>
                     <div class="form-group row">
-                    	<div class="col ">
-                        <input type="button" id="checkCode" class="code btn-lg mr-3"  onclick="createCode()">
-                        <a href="###" onclick="createCode()">看不清，换一张</a>
-                        </div>
+                    	<div data-bind="validationMessage: inputCode" class="error mt- ml-3"></div>
                     </div>
                     <div class="form-group row">
                         <div class="col ">
-                            <button class="btn  btn-block login-box-btn" id="login" data-bind="click:submit">登陆</button>
+                            <button class="btn  btn-block login-box-btn mt-2" id="login" data-bind="click:submit">登陆</button>
                         </div>
                     </div>
                     <div class="form-group row">
