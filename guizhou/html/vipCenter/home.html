@@ -1,10 +1,232 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
+    <!-- Required meta tags -->
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="../../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../css/fileupload/easy-upload.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../css/vipCenter/home.css"/>
+    <title>个人中心</title>
 </head>
-<body>
 
+<body>
+<!--顶部-->
+<header class="fixed-top  header-style">
+    <div class="row">
+        <div class="col-sm-10 overflow header-top-label">
+            <div class="social-icons pull-right">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <i class="fa fa-caret-right light-black"></i> <a href="#" class="light-black"> 中文</a>
+                    </li>&nbsp;&nbsp;
+                    <li class="nav-item" id="isLogin" style="display: none">
+                        <i class="fa fa-user-circle-o weak-light-black"></i>
+                        <a href="./login.html" class="light-black"> 登陆</a><span class="light-black">&nbsp;|&nbsp;</span>
+                        <a href="../vipCenter/joinUS.html" class="light-black">注册</a>
+                    </li>
+                    <li class="nav-item" id="isLogout" style="display: none">
+                        <a href="../vipCenter/home.html" class="light-black" id="vipName"></a><span class="light-black">&nbsp;|&nbsp;</span>
+                        <a href="#" class="light-black" id="logout">退出</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--导航栏导航栏-->
+    <nav class="navbar navbar-expand-sm  center-block header-menu">
+        <!-- Toggler/collapsibe Button -->
+        <div class="col-md-8 row mx-auto header-img">
+            <img src="../../img/brand.png" alt="Logo">
+            <img src="../../img/world-trade.png" alt="Logo">
+            <button class="navbar-toggler bg-default" type="button" data-toggle="collapse"
+                    data-target="#collapsibleNavbar">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse  navbar-fixed-top" id="collapsibleNavbar">
+                </li>
+                <ul class="navbar-nav nav nav-tabs container-fluid  justify-content-end  text-center  text-nowrap ">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link " href="../index.html">首页</a>
+                    </li>
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown" role="presentation">
+                        <a class="nav-link dropdown" href="#" data-toggle="dropdown">
+                            商会资讯
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../news/home.html">新闻资讯</a>
+                            <a class="dropdown-item" href="../news/CommerceDynamics.html">商会动态</a>
+                            <a class="dropdown-item" href="../news/companyNews.html">企业资讯</a>
+                            <a class="dropdown-item" href="../news/activityReport.html">活动快报</a>
+                        </div>
+                    </li>
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown" role="presentation">
+                        <a class="nav-link dropdown" href="#" data-toggle="dropdown">
+                            商贸服务
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../service/chuZheng.html">出证认证</a>
+                            <a class="dropdown-item" href="../service/legal.html">法律服务</a>
+                            <a class="dropdown-item" href="../service/businessConsulting.html">业务咨询</a>
+                            <a class="dropdown-item" href="../service/business.html">经贸商机</a>
+                            <a class="dropdown-item" href="../service/download.html">下载区</a>
+                        </div>
+                    </li>
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown" role="presentation">
+                        <a class="nav-link dropdown" href="#" data-toggle="dropdown">
+                            展会
+                        </a>
+                    </li>
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown " role="presentation">
+                        <a class="nav-link dropdown" href="#" data-toggle="dropdown">
+                            出版物
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="./publication/baipishu.html">白皮书</a>
+                        </div>
+                    </li>
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown" href="#" data-toggle="dropdown">
+                            会员专区
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../vipCenter/joinUS.html">加入商会</a>
+                            <a class="dropdown-item" href="../vipCenter/vipCenter.html">会员风采</a>
+                            <a class="dropdown-item" href="../vipCenter/contactList.html">会员通讯</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown" href="#" data-toggle="dropdown">
+                            联系我们
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../contact/shanghuijianjie.html">商会简介</a>
+                            <a class="dropdown-item" href="../contact/hezuotuiguang.html">合作推广</a>
+                            <a class="dropdown-item" href="../contact/youqinglianjie.html">友商链接</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--导航栏导航栏-->
+</header>
+<!--内容-->
+<div class="mt-self">
+    <!--个人中心-->
+    <div class="container-fluid ">
+        <div class="row col-md-8 mx-auto">
+            <div>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="#">会员专区</a>
+                    </li>
+                    <li class="breadcrumb-item active">
+                        <a href="#">个人中心</a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="row col-md-8 mx-auto pb-4">
+            <div id="auto-content" class="bg-white">
+                <div class="col-md-12 border-bottom pb-2 home-header">
+                    <h5 class="pr-3 mt-2 mb-4 font-weight-bold">
+                        个人中心
+                    </h5>
+                    <div class="col-md-12">
+                        <div class="mb-1"><span class="label">用户名：</span><span class="pl-2"
+                                                                               data-bind="text:username"> </span></div>
+                        <div class="mb-1"><span class="label">注册时间：</span><span class="pl-2"
+                                                                                data-bind="text:date"> </span></div>
+                        <div class="mb-1"><a href="javascript:void(0)">修改密码</a></div>
+                    </div>
+                </div>
+                <div class="col-md-12 border-bottom pb-4">
+                    <div class="font-weight-bold mt-2 pb-4">审核状态</div>
+                    <div class="text-center home-status col-md-8 col-sm-12 mx-auto">
+                        <div class="progress-line">
+                            <span class="point point1 blue-point"></span>
+                            <span class="text text1 blue">材料提交</span>
+                            <span class="line2"
+                                  data-bind="css:{ 'blue-line' :type()>1 , 'grey-line':type()<=1  }"></span>
+                            <span class="point point2"
+                                  data-bind="css:{ 'blue-point' :type()>1 , 'grey-point':type()<=1  }"></span>
+                            <span class="text text2"
+                                  data-bind="css:{   'blue' :type()>1,'grey' :type()<=1  }">文本审核通过</span>
+                            <span class="line3"
+                                  data-bind="css:{ 'blue-line' :type()>2 , 'grey-line':type()<=2  }"></span>
+                            <span class=" point point3"
+                                  data-bind="css:{ 'blue-point' :type()>2 , 'grey-point':type()<=2  }"></span>
+                            <span class="text text3"
+                                  data-bind="css:{   'blue' :type()>2,'grey' :type()<=2  }">财务审核通过</span>
+                            <span class="line4"
+                                  data-bind="css:{ 'blue-line' :type()>3 , 'grey-line':type()<=3  }"></span>
+                            <span class=" point point4"
+                                  data-bind="css:{ 'blue-point' :type()>3 , 'grey-point':type()<=3  }"></span>
+                            <span class="text text4"
+                                  data-bind="css:{   'blue' :type()>3,'grey' :type()<=3  }">审核完成</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 pb-4">
+                    <div class="font-weight-bold mt-2 pb-4">会员权益</div>
+                    <div class="text-justify home-status col-md-8 col-sm-12 mx-auto pt-4 pb-4">
+                        <div class="pb-2 pl-md-2">(一) 免费参加本会与国（境）外机构在贵州举办的经贸合作、投资项目洽谈会。</div>
+                        <div class="pb-2 pl-md-2">(二) 免费提供国内外展览、国际联络、出口产品原产地证出证认证业务咨询等服务。</div>
+                        <div class="pb-2 pl-md-2">(三) 及时为会员办理出证认证业务。</div>
+                        <div class="pb-2 pl-md-2">(四) 免费或优惠参加本会在贵州举办的专题研讨会、培训班、讲座及各种交流联谊活动。</div>
+                        <div class="pb-2 pl-md-2"> (五) 优先办理外国工商界人士访问贵州邀请函的签发手续。</div>
+                        <div class="pb-2 pl-md-2">(六) 优惠提供专题信息服务。</div>
+                        <div class="pb-2 pl-md-2"> (七) 优先或优惠参加本会主办或承办的国内外展(博)览会、产品促销及出国展览代理等活动。</div>
+                        <div class="pb-2 pl-md-2"> (八) 优先安排参加本会组织的出国(境)经贸考察、出国(境)培训、招商洽谈等活动。</div>
+                        <div class="pb-2 pl-md-2"> (九) 可在我会网站发布信息。</div>
+                        <div class="pb-2 pl-md-2"> (十) 优先为会员企业开拓国际市场、招商引资、产品推广和开展进出口贸易提供服务。</div>
+                        <div class="pb-2 pl-md-2"> (十一) 协助会员与国内外工商组织和经贸机构建立联系，开展经贸业务，有关服务视情况收费。</div>
+                        <div class="pb-2 pl-md-2"> (十二) 代表会员向政府及有关部门反映意见和建议。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="nav navbar navbar-expand-sm navbar-fixed-bottom nav-footer ">
+    <div class="row col-md-8  mx-auto">
+        <div class="col-md-10 mx-auto">
+            <ul class=" nav-footer-item ">
+                <li class="nav-item">贵州国际商会</li>
+                <li class="nav-item">邮政编码：850002</li>
+                <li class="nav-item">Tel：0851-88665029／88555448 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Fax：0851-88555655
+                </li>
+                <li class="nav-item">地址：贵阳市云岩区延安中路48号世贸广场B区2203室</li>
+            </ul>
+        </div>
+        <div class="col-md-2 text-center  nav-footer-item  mx-auto">
+            <img src="../../img/erweima.png"/>
+        </div>
+    </div>
+</footer>
+
+<!-- Optional JavaScript -->
+<script src="../../js/jquery/jquery-3.3.1.min.js"></script>
+<script src="../../js/bootstrap/popper.min.js"></script>
+<script src="../../js/bootstrap/bootstrap.min.js"></script>
+<script src="../../js/fileupload/easyUpload.js"></script>
+<script src="../../js/knockout/knockout-3.4.2.js"></script>
+<script src="../../js/knockout/knockout.validation.min.js"></script>
+<script src="../../js/common.js"></script>
+<script src="../../js/polyfill.js"></script>
+<script src="../../js/vipCenter/home.js" defer="defer"></script>
 </body>
 </html>
