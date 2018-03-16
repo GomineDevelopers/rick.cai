@@ -177,7 +177,51 @@ var joinModel = function () {
             initEasyUpload($('#file1'), '点击上传营业执照');
             initEasyUpload($('#file2'), '点击上传身份证');
             initEasyUpload($('#file3'), '点击上传身份证');
-            self.setStepId(4);
+            var params = {
+                url: 'home/user/enterprise.html',
+                type: 'post',
+                data: {
+                    'account_name': self.companyName(),
+                    'account_name_en': self.companyEnName(),
+                    'registration_no': self.creditCode(),
+                    'postcode': self.postCode(),
+                    'official_website': self.webSite(),
+                    'address': self.registeredAddress(),
+                    'state_code': self.state().name,
+                    'city_code': self.city().name,
+                    'county_code': self.region(),
+                    'detailed': self.officedAddress(),
+                    'industry': self.industryClassification(),
+                    'capital': self.registeredCapital(),
+                    'assets': self.fixedAssets(),
+                    'business': self.turnover(),
+                    'nature': self.selectedNature(),
+                    'content': self.introduction(),
+
+                    'legal_person': self.legalRepresentative(),
+                    'legal_person_phone': self.legalPhone(),
+                    'legal_person_email': self.legalEmail(),
+                    'fax': self.fax(),
+                    'daily': self.dailyName(),
+                    'daily_phone': self.dailyPhone(),
+                    'daily_email': self.dailyEmail(),
+
+                    'intention': self.selectedIntention(),
+                    'provide': self.selectedServices()
+                },
+                sCallback: function (res) {
+                    if (res && res.code == 200) {
+                        self.setStepId(4);
+                    }
+                    else {
+                        alert(res.msg);
+                    }
+                },
+                eCallback: function (e) {
+                    console.log("注册错误");
+                }
+            };
+            CommonTools.getData(params);
         } else {
             jModel.errors2.showAllMessages();
         }
