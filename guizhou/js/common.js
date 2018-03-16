@@ -62,6 +62,7 @@ CommonTools.getLocalStorage = function (key) {
         }
         else {
             this.deleteLocalStorage('token');
+            this.deleteLocalStorage('userData');
         }
     }
     return '';
@@ -136,6 +137,7 @@ $(function () {
     if ($("#logout")) {
         $("#logout").click(function () {
             CommonTools.deleteLocalStorage('token');
+            CommonTools.deleteLocalStorage('userData');
             window.location.reload();
         });
     }

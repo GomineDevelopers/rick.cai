@@ -53,6 +53,7 @@ var loginModel = function () {
                     sCallback: function (res) {
                         if (res && res.code == 200) {
                             CommonTools.setLocalStorage('token', res.token);
+                            CommonTools.setLocalStorage('userData', res.data);
                             window.location.href = './index.html';
                         }
                         else if (res.code == 401) {
