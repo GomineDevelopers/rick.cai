@@ -125,13 +125,14 @@ CommonTools.checkRegex = function (type, value, rule) {
 }
 
 $(function () {
-    if (CommonTools.getLocalStorage('token')) {
+    if (CommonTools.getLocalStorage('token') && CommonTools.getLocalStorage('userData')) {
         $("#isLogin").remove();
-        $("#isLogout").show()
+        $("#vipName").text(CommonTools.getLocalStorage('userData').username);
+        $("#isLogout").show();
     }
     else {
         $("#isLogout").remove();
-        $("#isLogin").show()
+        $("#isLogin").show();
     }
 
     if ($("#logout")) {
