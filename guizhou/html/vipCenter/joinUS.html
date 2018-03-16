@@ -165,12 +165,117 @@
                                 <p>
                                     贵州国际商会的会员多是国际化经营的先行者、外经贸领域的主力军。我们欢迎更多具有国际竞争力、行业影响力和社会知名度的企业、事业、社会团体等机构加入贵州国际商会，成为贵州国际商会的会员。</p>
                                 <p>伟大的时代创造了难得的机遇，跨越式发展需要广阔的平台。让我们一起，共同创造美好的未来。</p>　
-                                　　
+                            </div>
+                            <div class="text-center">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="isRead"
+                                           data-bind="checked:isRead"/>
+                                    <a class="form-check-label" for="isRead" data-toggle="modal"
+                                       href="javascript:void(0)"
+                                       data-target="#welcomeModal">我已阅读并同意贵州国际商会会员须知</a>
+                                </div>
                             </div>
                             <div class="footer">
                                 <button type="button" class="btn"
-                                        data-bind="event: { click: setStepId.bind($data,2) }">下一步
+                                        data-bind="click:welcomeNext">下一步
                                 </button>
+                            </div>
+                            <!-- Modal -->
+                            <div class="modal fade" id="welcomeModal" tabindex="-1" role="dialog"
+                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body" style="overflow:auto; max-height: 600px">
+                                            <div class="container-fluid">
+                                                <h4 class="text-center"> 贵州国际商会官网-会员须知</h4>
+                                                <div class="row mb-2">
+                                                    <div class="col-md-12 font-weight-bold pl-0 mb-2">1、入会的条件</div>
+                                                    <div class="col-md-12 mb-1">(一)拥护贵州省国际商会章程，愿意履行会员义务；</div>
+                                                    <div class="col-md-12 mb-1">
+                                                        (二)根据中华人民共和国法律登记注册的企业法人、事业法人、社团法人、学术组织或其他机构；
+                                                    </div>
+                                                    <div class="col-md-12 mb-1">(三)企业在依法经营、诚实守信、保护环境、履行社会责任等方面无不良记录；
+                                                    </div>
+                                                    <div class="col-md-12 mb-1">
+                                                        (四)有参与国际化经营的意愿或经验；有从事国际化交流或国际商事研究等相关经验。
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-md-12 font-weight-bold pl-0 mb-2">2、会员权利</div>
+                                                    <div class="col-md-12 mb-1">(一)享有选举权、被选举权和表决权；</div>
+                                                    <div class="col-md-12 mb-1">
+                                                        (二)参加本会组织的各项活动；
+                                                    </div>
+                                                    <div class="col-md-12 mb-1">(三)获得本会服务的优先权；</div>
+                                                    <div class="col-md-12 mb-1">(四)对本会的工作提出建议并进行监督；</div>
+                                                    <div class="col-md-12 mb-1"> (五)入会自愿、退会自由。</div>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-md-12 font-weight-bold pl-0 mb-2"> 3、会员义务</div>
+                                                    <div class="col-md-12 mb-1"> (一)执行本会的决议；</div>
+                                                    <div class="col-md-12 mb-1">
+                                                        (二)维护本会的合法权益和声誉；
+                                                    </div>
+                                                    <div class="col-md-12 mb-1">(三)完成本会交办的工作；</div>
+                                                    <div class="col-md-12 mb-1">(四)向本会反映情况，提供有关资料。</div>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-md-12 font-weight-bold pl-0 mb-2"> 4、会员享受的服务项目</div>
+                                                    <div class="col-md-12 mb-1">(一) 免费参加本会与国（境）外机构在贵州举办的经贸合作、投资项目洽谈会。
+                                                    </div>
+                                                    <div class="col-md-12 mb-1">
+                                                        (二) 免费提供国内外展览、国际联络、出口产品原产地证出证认证业务咨询等服务。
+                                                    </div>
+                                                    <div class="col-md-12 mb-1"> (三) 及时为会员办理出证认证业务。</div>
+                                                    <div class="col-md-12 mb-1">(四)
+                                                        免费或优惠参加本会在贵州举办的专题研讨会、培训班、讲座及各种交流联谊活动。
+                                                    </div>
+                                                    <div class="col-md-12 mb-1"> (五) 优先办理外国工商界人士访问贵州邀请函的签发手续。</div>
+                                                    <div class="col-md-12 mb-1">(六) 优惠提供专题信息服务。</div>
+                                                    <div class="col-md-12 mb-1"> (七)
+                                                        优先或优惠参加本会主办或承办的国内外展(博)览会、产品促销及出国展览代理等活动。
+                                                    </div>
+                                                    <div class="col-md-12 mb-1">(八)
+                                                        优先安排参加本会组织的出国(境)经贸考察、出国(境)培训、招商洽谈等活动。
+                                                    </div>
+                                                    <div class="col-md-12 mb-1"> (九) 可在我会网站发布信息。</div>
+                                                    <div class="col-md-12 mb-1">(十)
+                                                        优先为会员企业开拓国际市场、招商引资、产品推广和开展进出口贸易提供服务。
+                                                    </div>
+                                                    <div class="col-md-12 mb-1">(十一)
+                                                        协助会员与国内外工商组织和经贸机构建立联系，开展经贸业务，有关服务视情况收费。
+                                                    </div>
+                                                    <div class="col-md-12 mb-1">(十二) 代表会员向政府及有关部门反映意见和建议。</div>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-md-12 font-weight-bold pl-0 mb-2"> 5、会费管理办法</div>
+                                                    <div class="col-md-12 mb-1">第一条、根据《章程》的有关规定，制定本办法。
+                                                    </div>
+                                                    <div class="col-md-12 mb-1">
+                                                        第二条、本办法适用于贵州国际商会全体会员。
+                                                    </div>
+                                                    <div class="col-md-12 mb-1"> 第三条、全体会员应自觉履行交纳会费的义务。</div>
+                                                    <div class="col-md-12 mb-1"> 第四条、会费按年度交纳，每年第N季度即为交费时间。也可选择5年一次性优惠缴纳。
+                                                    </div>
+                                                    <div class="col-md-12 mb-1">  第五条、会费标准：</div>
+                                                    <div class="col-md-12 mb-1 pl-4">   1、副会长单位：N元/年，N万元/5年。行业专家可申请免费</div>
+                                                    <div class="col-md-12 mb-1 pl-4">   2、常务理事单位：N元/年，N万元/5年。</div>
+                                                    <div class="col-md-12 mb-1 pl-4">   3、理事单位：N元/年，N万元/5年。</div>
+                                                    <div class="col-md-12 mb-1 pl-4">   4、会员单位：N元/年，N万元/5年.首年可申请免费</div>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-md-12 font-weight-bold pl-0 mb-2">6、入会手续</div>
+                                                    <div class="col-md-12 mb-1"> 填写《贵州国际商会申请入会登记表》、提交《企业法人营业执照》副本复印件和法人合法信息，经本会批准后成为贵州国际商会会员</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -283,7 +388,8 @@
                                                    data-bind="value:registeredAddress" maxlength="100">
                                         </div>
                                         <div class="form-row">
-                                            <label for="officedAddress" class="form-group col-md-12"><span class="required">*</span>企业办公地：</label>
+                                            <label for="officedAddress" class="form-group col-md-12"><span
+                                                    class="required">*</span>企业办公地：</label>
                                             <div class="form-group col-md-4">
                                                 <select class="form-control" id="state"
                                                         data-bind="options: locationList, value: state, optionsCaption: '省', optionsText: 'name',">
@@ -294,18 +400,22 @@
                                                 <select class="form-control" id="city"
                                                         data-bind="options: city, value: $parent.city, optionsCaption: '市', optionsText: 'name',">">
                                                 </select>
-                                                <div data-bind="validationMessage: $parent.city" class="error mt-2"></div>
+                                                <div data-bind="validationMessage: $parent.city"
+                                                     class="error mt-2"></div>
                                             </div>
                                             <div class="form-group col-md-4" data-bind="with:city">
                                                 <select class="form-control" id="region"
                                                         data-bind="options: area, value: $parent.region, optionsCaption: '区'">
                                                 </select>
-                                                <div data-bind="validationMessage: $parent.region" class="error mt-2"></div>
+                                                <div data-bind="validationMessage: $parent.region"
+                                                     class="error mt-2"></div>
                                             </div>
                                             <div class="form-group col-md-12">
                                                 <input type="text" class="form-control " id="officedAddress"
-                                                       data-bind="value:officedAddress" maxlength="100" placeholder="详细地址">
-                                                <div data-bind="validationMessage: officedAddress" class="error mt-2"></div>
+                                                       data-bind="value:officedAddress" maxlength="100"
+                                                       placeholder="详细地址">
+                                                <div data-bind="validationMessage: officedAddress"
+                                                     class="error mt-2"></div>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -316,17 +426,18 @@
                                         <div class="form-group">
                                             <label for="registeredCapital">注册资本(单位:万元)：</label>
                                             <input type="number" class="form-control" id="registeredCapital"
-                                                   data-bind="value:registeredCapital" maxlength="100">
+                                                   data-bind="value:registeredCapital" min="0">
                                         </div>
                                         <div class="form-group">
                                             <label for="fixedAssets">固定资产(单位:万元)：</label>
                                             <input type="number" class="form-control" id="fixedAssets"
-                                                   data-bind="value:fixedAssets" maxlength="20">
+                                                   data-bind="value:fixedAssets" min="0">
                                         </div>
                                         <div class="form-group">
-                                            <label for="turnover"><span class="required">*</span>年营业额(注册前一年)(单位:万元)：</label>
+                                            <label for="turnover"><span
+                                                    class="required">*</span>年营业额(注册前一年)(单位:万元)：</label>
                                             <input type="number" class="form-control" id="turnover"
-                                                   data-bind="value:turnover" maxlength="20">
+                                                   data-bind="value:turnover" min="0">
                                             <div data-bind="validationMessage: turnover" class="error mt-2"></div>
                                         </div>
                                         <div class="form-group">
@@ -351,7 +462,8 @@
                                                     class="required">*</span>法人代表：</label>
                                             <input type="text" class="form-control" id="legalRepresentative"
                                                    data-bind="value: legalRepresentative" maxlength="40">
-                                            <div data-bind="validationMessage: legalRepresentative" class="error mt-2"></div>
+                                            <div data-bind="validationMessage: legalRepresentative"
+                                                 class="error mt-2"></div>
                                         </div>
                                         <div class="form-group">
                                             <label for="legalPhone"><span class="required">*</span>法人手机号：</label>
