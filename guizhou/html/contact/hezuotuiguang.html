@@ -146,73 +146,31 @@
                             合作推广	
                         </h5>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body" id="auto-content">
                     <span class="title"><p><img src="../../img/point-Large.png">&nbsp;其他商会</p></span>
                       <div class="row mx-auto">
-                      <div class="col text-center">
-                     	  <img src="../../img/new-pic-4.png" class="rounded-circle" />
-                       <div class="row ">
-                       	    <span class="mx-auto">女企业家联合会</span>
-                       </div>	
-                       </div>
-                       <div class="col text-center ">
-                       	<img src="../../img/new-pic-4.png" class="rounded-circle" />
-                      
-                       	<div class="row">
-                       	<span class="mx-auto">房地产联合会</span>
-                       	</div>
-                       </div>
-                       <div class="col text-center">
-                       	    <img src="../../img/new-pic-4.png" class="rounded-circle" />                 	
-                       <div class="row">
-                       	    <span class="mx-auto">青年人才联合会</span>
-                       </div>	 
-                       </div>
-                       <div class="col text-center">
-                       		 <img src="../../img/new-pic-4.png" class="rounded-circle" />
-                       		 <div class="row">
-                        	 <span class="mx-auto">青年企业家协会</span>
-                        </div>
-                       	</div>
-                        <div class="col text-center">
-                       	    <img src="../../img/new-pic-4.png" class="rounded-circle" />
-                        <div class="row">
-                        	 <span class="mx-auto">法律委员会</span>
-                        </div>	
-                       </div>	
-                       <div class="col text-center">
-                       	    <img src="../../img/new-pic-4.png" class="rounded-circle " />
-                        <div class="row">
-                        	 <span class="mx-auto">金融委员会</span>
-                        </div>	
-                       </div>
+                          <div class="row" data-bind="foreach: link1().list()">
+                              <a data-bind="attr:{href:url}"><div class="col text-center">
+                                  <img data-bind="attr:{src:img}" class="rounded-circle" />
+                                   <div class="row">
+                                        <span class="mx-auto" data-bind="text:title"></span>
+                                   </div>
+                              </div></a>
+                          </div>
                       </div>
                        
                       <div class="panel-body-inner">
                       	   <span class="title"><p><img src="../../img/point-Large.png">&nbsp;分会入口</p></span>
                       </div> 
-                      <div class="row mx-auto">
-                      	<div class="col-md-2 text-center ">
-                      		<button class="btn btn-links col-md-10">遵义支会</button>
-                      	</div>
-                      	<div class="col-md-2 text-center">
-                      		<button class="btn btn-links  col-md-10">六盘水支会</button>
-                      	</div>
-                      	<div class="col-md-2 text-center">
-                      		<button class="btn btn-links col-md-10">毕节支会</button>
-                      	</div>
-                      	<div class="col-md-2 text-center">
-                      		 <button class="btn btn-links col-md-10">铜仁支会</button>
-                      	</div>
-                      	<div class="col-md-2 text-center">
-                      		 <button class="btn btn-links col-md-10">黔南支会</button>
-                      	</div>
-                      	<div class="col-md-2 text-center">
-                      		 <button class="btn btn-links col-md-10">黔东南支会</button>
-                      	</div>
-                      	
+                          <div class="row col-md-12 mx-auto">
+                          <div class="row" data-bind="foreach:link2().list()">
+                              <a data-bind="attr:{href:url}"><div class="col-md-12 text-center">
+                                <button class="btn btn-links col-md-12" data-bind="text:title"></button>
+                              </div></a>
+                          </div>
+
                       </div>
-                      <div class="row mx-auto panel-body-inner">
+                      <!--<div class="row mx-auto panel-body-inner">
                       	<div class="col-md-2 text-center ">
                       		<button class="btn btn-links col-md-10">黔西南支会</button>
                       	</div>
@@ -223,7 +181,7 @@
                       		<button class="btn btn-links col-md-10">贵阳支会</button>
                       	</div>
                       	
-                      </div>
+                      </div>-->
                     </div>
                 </div>
              </div>
@@ -257,8 +215,7 @@
 <script src="../../js/knockout/knockout-3.4.2.js"></script>
 <script src="../../js/knockout/knockout.mapping-latest.js"></script>
 <script src="../../js/common.js"></script>
-
 <script src="../../js/polyfill.js"></script>
-<script src="../../js/service/chuZheng.js" defer="defer"></script>
+<script src="../../js/contact/hezuotuiguang.js" defer="defer"></script>
 </body>
 </html>
