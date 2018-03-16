@@ -82,11 +82,6 @@ var getChuZhengList = new Promise(function (resolve, reject) {
                             return CommonTools.formatDate(options.data);
                         }
                     },
-                    'title': {
-                        create: function (options) {
-                            return CommonTools.formatText(options.data);
-                        }
-                    }
                 }
                 czModel.chuZhengList = ko.mapping.fromJS(returnData.data.list.data, mappingList);
             }
@@ -121,11 +116,6 @@ var updateNews = function () {
                             return CommonTools.formatDate(options.data);
                         }
                     },
-                    'title': {
-                        create: function (options) {
-                            return CommonTools.formatText(options.data);
-                        }
-                    }
                 }
                 ko.mapping.fromJS(returnData.data.list.data, mappingList, czModel.chuZhengList);
             }

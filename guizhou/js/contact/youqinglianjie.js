@@ -62,22 +62,15 @@ var linkViewModel = function () {
 
 var lvModel = new linkViewModel();
 
-var getLink = new Promise(function (resolve,reject) {
+var getLink = new Promise(function (resolve, reject) {
     var pageInfo = {
         limit: 8,
         page: lvModel.currentPage()
     };
-    $.get("http://192.168.0.191/home/content/link",pageInfo,function (returnData) {
-        if(returnData.code && returnData.code == '200'){
-            if(returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length>0){
-                var mappingList = {
-                    "title": {
-                        create: function (options) {
-                            return CommonTools.formatText(options.data);
-                        }
-                    }
-                }
-                lvModel.links = ko.mapping.fromJS(returnData.data.list.data,mappingList);
+    $.get("http://192.168.0.191/home/content/link", pageInfo, function (returnData) {
+        if (returnData.code && returnData.code == '200') {
+            if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
+                lvModel.links = ko.mapping.fromJS(returnData.data.list.data, {});
             }
             if (returnData.data && returnData.data.list && returnData.data.list.total) {
                 lvModel.totalPage(returnData.data.list.last_page);
@@ -85,7 +78,7 @@ var getLink = new Promise(function (resolve,reject) {
             }
             resolve("success");
         }
-        else{
+        else {
             console.log("友情链接获取有错误");
             reject("failed");
         }
@@ -98,23 +91,16 @@ var updateLinks = function () {
         limit: 8,
         page: lvModel.currentPage(),
     };
-    $.get('http://192.168.0.191/home/content/link',pageInfo,function (returnData) {
-        if(returnData.code && returnData.code == '200'){
+    $.get('http://192.168.0.191/home/content/link', pageInfo, function (returnData) {
+        if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.total) {
                 lvModel.totalPage(returnData.data.list.last_page);
                 lvModel.updatePages();
             }
-            if(returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0){
-                var mappingList = {
-                    "title": {
-                        create: function (options) {
-                            return CommonTools.formatText(options.data);
-                        }
-                    }
-                }
-                ko.mapping.fromJS(returnData.data.list.data,mappingList,lvModel.links);
+            if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
+                ko.mapping.fromJS(returnData.data.list.data, {}, lvModel.links);
             }
-        }else{
+        } else {
             console.log('友情链接获取有错误');
         }
 
@@ -125,7 +111,7 @@ var updateLinks = function () {
 $(function () {
     getLink.then(function () {
         ko.applyBindings(lvModel);
-       // CommonTools.getAutoHeight($('#auto-content'));
+        // CommonTools.getAutoHeight($('#auto-content'));
     })
 
 });
