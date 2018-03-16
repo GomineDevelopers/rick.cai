@@ -13,7 +13,16 @@ var joinModel = function () {
         $(window).scrollTop(0);
     }
 
-    self.token = ko.observable("");
+    // step1
+    self.isRead = ko.observable(false);
+    self.welcomeNext = function (stepId) {
+        if (!self.isRead()) {
+            alert("请阅读并同意贵州国际商会会员须知！");
+        }
+        else {
+            self.setStepId(2);
+        }
+    }
 
     // step2
     self.username = ko.observable("").extend({
@@ -48,7 +57,7 @@ var joinModel = function () {
                 data: {username: self.username(), password: self.password(), repassword: self.repassword()},
                 sCallback: function (res) {
                     if (res && res.code == 200) {
-                        self.token(res.token);
+                        CommonTools.setLocalStorage('token', res.token);
                         self.setStepId(3);
                     }
                     else {
@@ -166,9 +175,9 @@ var joinModel = function () {
         dailyName: self.dailyName,
         dailyPhone: self.dailyPhone,
         dailyEmail: self.dailyEmail,
-        state:self.state,
-        city: self.city ,
-        region:self.region,
+        state: self.state,
+        city: self.city,
+        region: self.region,
         officedAddress: self.officedAddress
     });
 
@@ -275,7 +284,7 @@ function initEasyUpload(div, txt) {
         url: 'http://192.168.0.191/home/user/avatar',//上传文件地址
         fileName: 'file',//文件filename配置参数
         formParam: {
-            token: jModel.token() == "" ? CommonTools.getLocalStorage('token') : jModel.token(),//不需要验证token时可以去掉
+            token: CommonTools.getLocalStorage('token'),//不需要验证token时可以去掉
             type: null
         },//文件filename以外的配置参数，格式：{key1:value1,key2:value2}
         timeout: 30000,//请求超时时间

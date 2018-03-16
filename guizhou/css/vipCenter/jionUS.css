@@ -8,19 +8,18 @@
     text-align: center;
 }
 
-.authen-block .authen-title{
+.authen-block .authen-title {
     color: #49649f;
-    margin: 1.5rem 2rem 1rem ;
+    margin: 1.5rem 2rem 1rem;
 }
 
-.authen-block .authen-body{
-   border-bottom: 1px solid #ddd ;
+.authen-block .authen-body {
+    border-bottom: 1px solid #ddd;
 }
 
-.authen-block .required{
+.authen-block .required {
     color: red;
 }
-
 
 @media (max-width: 768px) {
     .join-block .block-header {
@@ -220,8 +219,8 @@
     font-size: 14px;
     padding: 5px 10px;
     line-height: 1.8rem;
-    text-align:justify;
-    text-indent:2rem;
+    text-align: justify;
+    text-indent: 2rem;
 }
 
 .wrap .footer {
@@ -249,7 +248,7 @@
 .easy_upload-container {
     width: 100% !important;
     border: 1px dashed #7596D4 !important;
-    border-radius: .25rem ;
+    border-radius: .25rem;
     min-height: 20rem;
     position: relative;
 }
@@ -265,38 +264,39 @@
     border-radius: .25rem;
 }
 
-.easy_upload_queue_item{
+.easy_upload_queue_item {
     height: auto;
 }
 
-.easy_upload-head{
+.easy_upload-head {
     position: absolute;
     text-align: center;
-    left:0;
+    left: 0;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
 }
+
 .easy_upload_preview {
     width: 60% !important;
     margin: 0 auto !important;
     text-align: center;
 }
 
-.easy_upload_status{
+.easy_upload_status {
     width: 10%;
     margin: 0 auto !important;
     text-align: center;
 }
 
-.easy_upload_btn  {
+.easy_upload_btn {
     width: 30%;
     margin: 0 auto !important;
     text-align: center;
     max-width: 199px;
 }
 
-.easy_upload_btn .btn{
+.easy_upload_btn .btn {
     width: 100% !important;
     max-width: 100px;
 }
