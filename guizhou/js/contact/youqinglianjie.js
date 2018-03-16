@@ -85,7 +85,6 @@ var getLink = new Promise(function (resolve, reject) {
     });
 });
 
-
 var updateLinks = function () {
     var pageInfo = {
         limit: 8,
@@ -103,10 +102,8 @@ var updateLinks = function () {
         } else {
             console.log('友情链接获取有错误');
         }
-
     });
 }
-
 
 $(function () {
     getLink.then(function () {

@@ -24,12 +24,13 @@
                     <li class="nav-item">
                         <i class="fa fa-caret-right light-black"></i> <a href="#" class="light-black"> 中文</a>
                     </li>&nbsp;&nbsp;
-                    <li class="nav-item" id="isLogin">
+                    <li class="nav-item" id="isLogin" style="display: none">
                         <i class="fa fa-user-circle-o weak-light-black"></i>
                         <a href="../login.html" class="light-black"> 登陆</a><span class="light-black">&nbsp;|&nbsp;</span>
                         <a href="../vipCenter/joinUS.html" class="light-black">注册</a>
                     </li>
                     <li class="nav-item" id="isLogout" style="display: none">
+                        <a href="../vipCenter/home.html" class="light-black" id="vipName"></a><span class="light-black">&nbsp;|&nbsp;</span>
                         <a href="#" class="light-black" id="logout">退出</a>
                     </li>
                 </ul>
@@ -146,12 +147,13 @@
                         </h5>
                     </div>
                     <div class="panel-body">
-                        <div class="item-cover" data-bind="foreach: chuZhengList" id="auto-content">
-                            <div class="item">
-
-                             <a class="title" data-bind="attr:{ href : './chuZhengDetail.html?id='+id()}">
-                                 <span data-bind="text: title"></span></a>
-                                &nbsp;<span class="date pull-right" data-bind="text: create_time"></span>
+                        <div class="item-cover">
+                            <div data-bind="foreach: chuZhengList" id="auto-content">
+                                <div class="item">
+                                 <a data-bind="attr:{ href : './chuZhengDetail.html?id='+id()}">
+                                     <span data-bind="text: title"></span></a>
+                                    &nbsp;<span class="date" data-bind="text: create_time"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
