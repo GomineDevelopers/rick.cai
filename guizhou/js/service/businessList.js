@@ -86,11 +86,6 @@ var getBusinessList = new Promise(function (resolve, reject) {
                             return CommonTools.formatDate(options.data);
                         }
                     },
-                    "title": {
-                        create: function (options) {
-                            return CommonTools.formatText(options.data);
-                        }
-                    }
                 }
                 bclModel.businessList = ko.mapping.fromJS(returnData.data.list.data, mappingList)
             }
@@ -125,11 +120,6 @@ var updateBusinessCon = function () {
                             return CommonTools.formatDate(options.data);
                         }
                     },
-                    'title': {
-                        create: function (options) {
-                            return CommonTools.formatText(options.data);
-                        }
-                    }
                 }
                 ko.mapping.fromJS(returnData.data.list.data, mappingList, bclModel.businessList);
             }

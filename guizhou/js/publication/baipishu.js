@@ -81,11 +81,6 @@ var getBaipishuList = new Promise(function (resolve, reject) {
                             return CommonTools.formatDate(options.data);
                         }
                     },
-                    'title': {
-                        create: function (options) {
-                            return CommonTools.formatText(options.data);
-                        }
-                    }
                 }
                 bpsModel.baipishuList = ko.mapping.fromJS(returnData.data.list.data, mappingList);
             }
@@ -119,11 +114,6 @@ var updateBaipishuList = function () {
                             return CommonTools.formatDate(options.data);
                         }
                     },
-                    'title': {
-                        create: function (options) {
-                            return CommonTools.formatText(options.data);
-                        }
-                    }
                 }
                 ko.mapping.fromJS(returnData.data.list.data, mappingList, bpsModel.baipishuList);
             }

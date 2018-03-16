@@ -62,29 +62,22 @@ var vipCenterListViewModel = function () {
 
 var vclModel = new vipCenterListViewModel();
 
-var getVipCenterList = new Promise(function (resolve,reject) {
+var getVipCenterList = new Promise(function (resolve, reject) {
     var pageInfo = {
         limit: 8,
         page: vclModel.currentPage(),
     };
-    $.get('http://192.168.0.191/home/content/informationlist',pageInfo,function (returnData) {
-        if(returnData.code && returnData.code == '200'){
-            if(returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0){
-                var mappingList = {
-                    "title": {
-                        create: function (options) {
-                            return CommonTools.formatText(options.data);
-                        }
-                    }
-                }
-                vclModel.vipCenterList = ko.mapping.fromJS(returnData.data.list.data,mappingList);
+    $.get('http://192.168.0.191/home/content/informationlist', pageInfo, function (returnData) {
+        if (returnData.code && returnData.code == '200') {
+            if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
+                vclModel.vipCenterList = ko.mapping.fromJS(returnData.data.list.data, {});
             }
             if (returnData.data && returnData.data.list && returnData.data.list.total) {
                 vclModel.totalPage(returnData.data.list.last_page);
                 vclModel.updatePages();
             }
             resolve('success');
-        }else{
+        } else {
             console.log('获取会员风采列表失败');
             reject('failed');
         }
@@ -97,23 +90,16 @@ var updateVipCenterCon = function () {
         limit: 8,
         page: vclModel.currentPage(),
     };
-    $.get('http://192.168.0.191/home/content/informationlist',pageInfo,function (returnData) {
-        if(returnData.code && returnData.code == '200'){
+    $.get('http://192.168.0.191/home/content/informationlist', pageInfo, function (returnData) {
+        if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.total) {
                 vclModel.totalPage(returnData.data.list.last_page);
                 vclModel.updatePages();
             }
-            if(returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0){
-                var mappingList = {
-                    "title": {
-                        create: function (options) {
-                            return CommonTools.formatText(options.data);
-                        }
-                    }
-                }
-                ko.mapping.fromJS(returnData.data.list.data,mappingList,vclModel.vipCenterList);
+            if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
+                ko.mapping.fromJS(returnData.data.list.data, {}, vclModel.vipCenterList);
             }
-        }else{
+        } else {
             console.log('获取会员风采列表失败');
         }
 

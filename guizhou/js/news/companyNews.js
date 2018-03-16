@@ -84,11 +84,6 @@ var getCompanyNewsList = new Promise(function (resolve,reject) {
                             return CommonTools.formatDate(options.data);
                         }
                     },
-                    'title':{
-                        create:function (options) {
-                            return CommonTools.formatText(options.data);
-                        }
-                    }
                 }
                 cnModel.companyNewsList = ko.mapping.fromJS(returnData.data.list.data,mappingList);
             }
@@ -123,11 +118,6 @@ var updateCompanyNews = function () {
                             return CommonTools.formatDate(options.data);
                         }
                     },
-                    'title':{
-                        create:function (options) {
-                            return CommonTools.formatText(options.data);
-                        }
-                    }
                 }
                 ko.mapping.fromJS(returnData.data.list.data, mappingList, cnModel.companyNewsList);
             }

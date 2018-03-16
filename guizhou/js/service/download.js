@@ -78,11 +78,6 @@ var getdownloadList = new Promise(function (resolve, reject) {
                             return CommonTools.formatDate(options.data);
                         }
                     },
-                    'title': {
-                        create: function (options) {
-                            return CommonTools.formatText(options.data);
-                        }
-                    }
                 }
                 dModel.downloadList = ko.mapping.fromJS(returnData.data.list.data, mappingList);
             }
@@ -117,11 +112,6 @@ var updateDownloadList = function () {
                             return CommonTools.formatDate(options.data);
                         }
                     },
-                    'title': {
-                        create: function (options) {
-                            return CommonTools.formatText(options.data);
-                        }
-                    }
                 }
                 ko.mapping.fromJS(returnData.data.list.data, mappingList, dModel.downloadList);
             }

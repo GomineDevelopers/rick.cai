@@ -83,11 +83,6 @@ var getActivityReportList = new Promise(function (resolve,reject) {
                             return CommonTools.formatDate(options.data);
                         }
                     },
-                    'title':{
-                        create:function (options) {
-                            return CommonTools.formatText(options.data);
-                        }
-                    }
                 }
                 arModel.activityReportList = ko.mapping.fromJS(returnData.data.list.data,mappingList);
             }
@@ -122,11 +117,6 @@ var updateActivityRe = function () {
                             return CommonTools.formatDate(options.data);
                         }
                     },
-                    'title':{
-                        create:function (options) {
-                            return CommonTools.formatText(options.data);
-                        }
-                    }
                 }
                 ko.mapping.fromJS(returnData.data.list.data, mappingList, arModel.activityReportList);
             }

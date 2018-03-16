@@ -23,11 +23,6 @@ var getBusinessList = new Promise(function (resolve, reject) {
                             return CommonTools.formatDate(options.data);
                         }
                     },
-                    'title': {
-                        create: function (options) {
-                            return CommonTools.formatText(options.data);
-                        }
-                    }
                 }
                 for (var i = 0; i <= returnData.data.list.length; i++) {
                     ko.mapping.fromJS(returnData.data.list[i], mappingList, blModel.businessList()[i]);

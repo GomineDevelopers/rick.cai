@@ -19,11 +19,6 @@ var getLegalList = new Promise(function (resolve,reject) {
         if(returnData.code && returnData.code == '200'){
             if(returnData.data && returnData.data.list && returnData.data.list.length>0){
                 var mappingList = {
-                    'title':{
-                        create:function (options) {
-                            return CommonTools.formatText(options.data);
-                        }
-                    },
                     'create_time':{
                         create:function (options) {
                             return CommonTools.formatDate(options.data);
