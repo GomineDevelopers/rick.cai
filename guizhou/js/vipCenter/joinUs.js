@@ -74,10 +74,10 @@ var joinModel = function () {
     self.webSite = ko.observable();
     self.registeredAddress = ko.observable();
     self.locationList = [];
-    self.state = ko.observable(); //省
-    self.city = ko.observable(); //市
-    self.region = ko.observable();//区
-    self.officedAddress = ko.observable();
+    self.state = ko.observable().extend({required: {param: true, message: '省不能为空'}}); //省
+    self.city = ko.observable().extend({required: {param: true, message: '市不能为空'}});//市
+    self.region = ko.observable().extend({required: {param: true, message: '区不能为空'}});//区
+    self.officedAddress = ko.observable("").extend({required: {param: true, message: '详细地址不能为空'}});
     self.industryClassification = ko.observable();
     self.registeredCapital = ko.observable();
     self.fixedAssets = ko.observable();
@@ -165,7 +165,11 @@ var joinModel = function () {
         legalPhone: self.legalPhone,
         dailyName: self.dailyName,
         dailyPhone: self.dailyPhone,
-        dailyEmail: self.dailyEmail
+        dailyEmail: self.dailyEmail,
+        state:self.state,
+        city: self.city ,
+        region:self.region,
+        officedAddress: self.officedAddress
     });
 
     self.authenNext = function (stepId) {

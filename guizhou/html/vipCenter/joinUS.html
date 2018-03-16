@@ -288,20 +288,24 @@
                                                 <select class="form-control" id="state"
                                                         data-bind="options: locationList, value: state, optionsCaption: '省', optionsText: 'name',">
                                                 </select>
+                                                <div data-bind="validationMessage: state" class="error mt-2"></div>
                                             </div>
                                             <div class="form-group col-md-4" data-bind="with:state">
                                                 <select class="form-control" id="city"
                                                         data-bind="options: city, value: $parent.city, optionsCaption: '市', optionsText: 'name',">">
                                                 </select>
+                                                <div data-bind="validationMessage: $parent.city" class="error mt-2"></div>
                                             </div>
                                             <div class="form-group col-md-4" data-bind="with:city">
                                                 <select class="form-control" id="region"
                                                         data-bind="options: area, value: $parent.region, optionsCaption: '区'">
                                                 </select>
+                                                <div data-bind="validationMessage: $parent.region" class="error mt-2"></div>
                                             </div>
                                             <div class="form-group col-md-12">
                                                 <input type="text" class="form-control " id="officedAddress"
                                                        data-bind="value:officedAddress" maxlength="100" placeholder="详细地址">
+                                                <div data-bind="validationMessage: officedAddress" class="error mt-2"></div>
                                             </div>
                                         </div>
                                         <div class="form-group">
