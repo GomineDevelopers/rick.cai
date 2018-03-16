@@ -316,17 +316,17 @@
                                         <div class="form-group">
                                             <label for="registeredCapital">注册资本(单位:万元)：</label>
                                             <input type="number" class="form-control" id="registeredCapital"
-                                                   data-bind="value:registeredCapital" maxlength="100">
+                                                   data-bind="value:registeredCapital"  min="0">
                                         </div>
                                         <div class="form-group">
                                             <label for="fixedAssets">固定资产(单位:万元)：</label>
                                             <input type="number" class="form-control" id="fixedAssets"
-                                                   data-bind="value:fixedAssets" maxlength="20">
+                                                   data-bind="value:fixedAssets" min="0">
                                         </div>
                                         <div class="form-group">
                                             <label for="turnover"><span class="required">*</span>年营业额(注册前一年)(单位:万元)：</label>
                                             <input type="number" class="form-control" id="turnover"
-                                                   data-bind="value:turnover" maxlength="20">
+                                                   data-bind="value:turnover" min="0">
                                             <div data-bind="validationMessage: turnover" class="error mt-2"></div>
                                         </div>
                                         <div class="form-group">
