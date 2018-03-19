@@ -26,7 +26,8 @@
                     </li>&nbsp;&nbsp;
                     <li class="nav-item" id="isLogin" style="display: none">
                         <i class="fa fa-user-circle-o weak-light-black"></i>
-                        <a href="../login.html" class="light-black"> 登陆</a><span class="light-black">&nbsp;|&nbsp;</span>
+                        <a href="../login.html" class="light-black"> 登陆</a><span
+                            class="light-black">&nbsp;|&nbsp;</span>
                         <a href="../vipCenter/joinUS.html" class="light-black">注册</a>
                     </li>
                     <li class="nav-item" id="isLogout" style="display: none">
@@ -37,7 +38,7 @@
             </div>
         </div>
     </div>
-     <!--导航栏导航栏-->
+    <!--导航栏导航栏-->
     <nav class="navbar navbar-expand-sm  center-block header-menu">
         <!-- Toggler/collapsibe Button -->
         <div class="col-md-8 row mx-auto header-img">
@@ -143,61 +144,67 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h5 class="panel-title">
-                            合作推广	
+                            合作推广
                         </h5>
                     </div>
-                   <!-- <div class="panel-body" id="auto-content">
-                    <span class="title"><p><img src="../../img/point-Large.png">&nbsp;其他商会</p></span>
-                      <div class="row mx-auto">
-                          <div class="row" data-bind="foreach: link1().list()">
-                              &lt;!&ndash;<a data-bind="attr:{href:url}" target="_blank"><div class="col text-center">
-                                  <img data-bind="attr:{src:img}" class="rounded-circle" />
+                    <!-- <div class="panel-body" id="auto-content">
+                     <span class="title"><p><img src="../../img/point-Large.png">&nbsp;其他商会</p></span>
+                       <div class="row mx-auto">
+                           <div class="row" data-bind="foreach: link1().list()">
+                               &lt;!&ndash;<a data-bind="attr:{href:url}" target="_blank"><div class="col text-center">
+                                   <img data-bind="attr:{src:img}" class="rounded-circle" />
+                                    <div class="row">
+                                         <span class="mx-auto" data-bind="text:title"></span>
+                                    </div>
+                               </div></a>&ndash;&gt;
+                               <div class="col text-center">
+                                   <img data-bind="attr:{src:img}" class="rounded-circle" />
                                    <div class="row">
-                                        <span class="mx-auto" data-bind="text:title"></span>
+                                       <span class="mx-auto" data-bind="text:title"></span>
                                    </div>
-                              </div></a>&ndash;&gt;
-                              <div class="col text-center">
-                                  <img data-bind="attr:{src:img}" class="rounded-circle" />
-                                  <div class="row">
-                                      <span class="mx-auto" data-bind="text:title"></span>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
+                               </div>
+                           </div>
+                       </div>
 
-                      <div class="panel-body-inner">
-                      	   <span class="title"><p><img src="../../img/point-Large.png">&nbsp;分会入口</p></span>
-                      </div>
-                          <div class="row col-md-12 mx-auto">
-                          <div class="row" data-bind="foreach:link2().list()">
-                              <a data-bind="attr:{href:url}" target="_blank"><div class="col-md-12 text-center">
-                                <button class="btn btn-links col-md-12" data-bind="text:title"></button>
-                              </div></a>
-                          </div>
+                       <div class="panel-body-inner">
+                              <span class="title"><p><img src="../../img/point-Large.png">&nbsp;分会入口</p></span>
+                       </div>
+                           <div class="row col-md-12 mx-auto">
+                           <div class="row" data-bind="foreach:link2().list()">
+                               <a data-bind="attr:{href:url}" target="_blank"><div class="col-md-12 text-center">
+                                 <button class="btn btn-links col-md-12" data-bind="text:title"></button>
+                               </div></a>
+                           </div>
 
-                      </div>
-                    </div>-->
+                       </div>
+                     </div>-->
                     <div class="panel-body" id="auto-content">
-                        <span class="title"><p><img src="../../img/point-Large.png">&nbsp;其他商会</p></span>
-                        <div class="row mx-auto" data-bind="foreach: link1().list()">
-                            <div class="col-md-2 text-center">
-                                <img data-bind="attr:{src:img}" class="rounded-circle" />
-                                <p class="text-center"> <span class="mx-auto" data-bind="text:title"></span></p>
+                        <div class="row">
+                            <span class="title ml-4"><p><img src="../../img/point-Large.png">&nbsp;其他商会</p></span>
+                        </div>
+                        <div class="row">
+                            <div data-bind="foreach: link1().list()">
+                                <div class="pr-4 pl-4 text-center" style="float: left">
+                                    <img data-bind="attr:{src:img}" class="rounded-circle"/>
+                                    <p class="text-center"><span class="mx-auto" data-bind="text:title"></span></p>
+                                </div>
                             </div>
                         </div>
-
                         <div class="panel-body-inner">
-                            <span class="title"><p><img src="../../img/point-Large.png">&nbsp;分会入口</p></span>
-                        </div>
-                        <div class="row col-md-12 mx-auto" >
-                            <div class="col-md-12 row text-center" data-bind="foreach:link2().list()">
-                                <button class="btn btn-links col-md-2 ml-2" data-bind="text:title"></button>
+                            <div class="row">
+                                <span class="title ml-4"><p><img src="../../img/point-Large.png">&nbsp;分会入口</p></span>
+                            </div>
+                            <div class="row" data-bind="foreach:link2().list()">
+                                <div class="pr-2  text-center" style="float: left"
+                                     data-bind="css:{'pl-4':$index()==0,'pl-2':$index()!=0}">
+                                    <button class="btn btn-links " data-bind="text:title"></button>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                 </div>
-             </div>
+            </div>
         </div>
 
     </div>
@@ -216,7 +223,7 @@
             </ul>
         </div>
         <div class="col-md-2 text-center  nav-footer-item  mx-auto">
-                <img  src="../../img/erweima.png" />
+            <img src="../../img/erweima.png"/>
         </div>
     </div>
 </footer>
