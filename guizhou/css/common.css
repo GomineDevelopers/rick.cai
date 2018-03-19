@@ -211,3 +211,7 @@ html, body {
     color: red !important;
     font-size: 12px !important;
 }
+/*轮播图*/
+.carousel{
+    width: 100%;
+}
