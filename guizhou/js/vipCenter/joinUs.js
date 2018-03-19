@@ -48,7 +48,9 @@ var joinModel = function () {
             message: '两次密码输入不一致,请重试',
         }
     });
+
     self.errors1 = ko.validation.group({username: self.username, password: self.password, repassword: self.repassword});
+
     self.registerNext = function (stepId) {
         if (jModel.errors1().length == 0) {
             var params = {
@@ -58,6 +60,9 @@ var joinModel = function () {
                 sCallback: function (res) {
                     if (res && res.code == 200) {
                         CommonTools.setLocalStorage('token', res.token);
+                        initEasyUpload($('#file1'), '点击上传营业执照');
+                        initEasyUpload($('#file2'), '点击上传身份证');
+                        initEasyUpload($('#file3'), '点击上传身份证');
                         self.setStepId(3);
                     }
                     else {
@@ -72,7 +77,6 @@ var joinModel = function () {
         } else {
             jModel.errors1.showAllMessages();
         }
-
     }
 
     // step3-1
@@ -108,7 +112,6 @@ var joinModel = function () {
             },
             message: '请输入合法的手机号码，以“1”开头的11位数字，不要加“086”前缀',
         }
-
     });
     self.legalEmail = ko.observable().extend({
         validation: {
@@ -118,7 +121,7 @@ var joinModel = function () {
             message: '邮箱格式不对哦',
         }
     });
-    ;
+
     self.fax = ko.observable();
     self.dailyName = ko.observable().extend({required: {param: true, message: '日常联系人姓名不能为空'}});
     self.dailyPhone = ko.observable().extend({
@@ -183,9 +186,6 @@ var joinModel = function () {
 
     self.authenNext = function (stepId) {
         if (jModel.errors2().length == 0) {
-            initEasyUpload($('#file1'), '点击上传营业执照');
-            initEasyUpload($('#file2'), '点击上传身份证');
-            initEasyUpload($('#file3'), '点击上传身份证');
             var params = {
                 url: 'home/user/enterprise.html',
                 type: 'post',
@@ -334,6 +334,5 @@ $(function () {
         ko.applyBindings(jModel);
         CommonTools.getAutoHeight($('#auto-content'));
     })
-
 });
 
