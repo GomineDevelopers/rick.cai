@@ -206,6 +206,14 @@ html, body {
     width: 100%;
 }
 
+#auto-content .self-html{
+    width: 100%;
+    display: block;
+    clear: both;
+}
+
+
+
 /*验证*/
 .error {
     color: red !important;
