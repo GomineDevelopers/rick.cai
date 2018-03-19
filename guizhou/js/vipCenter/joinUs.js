@@ -237,7 +237,7 @@ var joinModel = function () {
     }
 
     self.authenExit = function (stepId) {
-        window.location.href = "/guizhou/html/login.html";
+        window.location.href = "../../html/login.html";
     }
 
     // step4
