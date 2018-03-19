@@ -57,6 +57,7 @@ var joinModel = function () {
                 url: 'register.html',
                 type: 'post',
                 data: {username: self.username(), password: self.password(), repassword: self.repassword()},
+                tokenFlag:true,
                 sCallback: function (res) {
                     if (res && res.code == 200) {
                         CommonTools.setLocalStorage('token', res.token);
