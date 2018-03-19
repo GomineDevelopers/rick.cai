@@ -148,7 +148,7 @@
                                                                                data-bind="text:username"> </span></div>
                         <div class="mb-1"><span class="label">注册时间：</span><span class="pl-2"
                                                                                 data-bind="text:date"> </span></div>
-                        <div class="mb-1"><a  data-toggle="modal"
+                        <div class="mb-1"><a data-toggle="modal"
                                              href="javascript:void(0)"
                                              data-target="#passwordModal">修改密码</a></div>
                     </div>
@@ -204,15 +204,36 @@
 
 <div class="modal fade" id="passwordModal" tabindex="-1" role="dialog"
      aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-dialog modal-dialog-centered " role="document">
         <div class="modal-content">
             <div class="modal-header">
+                <h5 class="modal-title">修改密码</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body" style="overflow:auto; max-height: 600px">
-
+            <div class="modal-body">
+                <form  data-bind="validationOptions:{insertMessages:false}">
+                    <div class="form-group">
+                        <label for="old-paswword" class="col-form-label">原密码:</label>
+                        <input type="password" class="form-control" id="old-paswword" data-bind="value:oldPassword">
+                        <div data-bind="validationMessage: oldPassword" class="error mt-2"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password" class="col-form-label">新密码:</label>
+                        <input type="password" class="form-control" id="new-password" data-bind="value:newPassword">
+                        <div data-bind="validationMessage: newPassword" class="error mt-2"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-repassword" class="col-form-label">确认密码:</label>
+                        <input type="password" class="form-control" id="new-repassword" data-bind="value:newRePassword">
+                        <div data-bind="validationMessage: newRePassword" class="error mt-2"></div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" data-bind="click:post">提交</button>
             </div>
         </div>
     </div>
