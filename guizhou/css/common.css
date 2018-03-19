@@ -214,4 +214,5 @@ html, body {
 /*轮播图*/
 .carousel{
     width: 100%;
+   height: auto;
 }

@@ -68,7 +68,6 @@
 
 .panel-body .item .title{
     color: #000000 !important;
-    padding-left: 0.1rem;
     overflow: hidden;
     text-overflow: ellipsis;
     width: 100%;
@@ -107,8 +106,7 @@
 }
 
 .item-cover >.item{
-    font-size: 14px;
-    padding: 5px 0;
+    font-size: 16px;
     white-space: nowrap;
 }
 
@@ -128,3 +126,4 @@
 .text-muted{
     font-size:12px;
 }
+
