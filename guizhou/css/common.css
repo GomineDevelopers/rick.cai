@@ -227,3 +227,12 @@ html, body {
     width: 100%;
    height: auto;
 }
+/*分页颜色字体变化*/
+.page-item.active .page-link{
+    background-color:#49649f;
+    border-color:#49649f;
+}
+.page-link{
+    color: #49649f;
+    font-size: 14px;
+}

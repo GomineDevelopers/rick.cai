@@ -126,4 +126,13 @@
 .text-muted{
     font-size:12px;
 }
-
+.panel-body .list-items  {
+    height: 3rem;
+    line-height: 1rem;
+    font-size: 14px;
+    padding: 1rem 0.5rem 1rem 0.2rem;
+    border-bottom: 1px dashed rgba(0, 0, 0, .125);
+    white-space: nowrap;
+    display: flex;
+    width: 100%
+}

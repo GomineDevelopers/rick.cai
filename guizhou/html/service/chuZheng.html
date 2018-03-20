@@ -149,10 +149,13 @@
                     <div class="panel-body">
                         <div class="item-cover">
                             <div data-bind="foreach: chuZhengList" id="auto-content">
-                                <div class="item">
-                                 <a data-bind="attr:{ href : './chuZhengDetail.html?id='+id()}">
-                                     <span data-bind="text: title"></span></a>
-                                    &nbsp;<span class="date" data-bind="text: create_time"></span>
+                                <div class="item list-items">
+                                    <span class="title">
+                                        <i class="fa fa-thumb-tack weak-light-black"></i>
+                                        <a data-bind="attr:{ href : './chuZhengDetail.html?id='+id()}" >
+                                        <span data-bind="text: title"></span></a>
+                                    &nbsp;   <span class="date" data-bind="text: create_time"></span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
