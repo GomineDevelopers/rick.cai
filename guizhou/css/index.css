@@ -145,7 +145,8 @@
 
 .news-block .item .date {
     color: #999999;
-
+    width:20%;
+    text-align:right;
 }
 
 /*商会介绍*/
@@ -232,6 +233,8 @@
 .announce-block .item .date {
     color: #999999;
     /*padding-right: 0.5rem;*/
+    width:20%;
+    text-align:right;
     float: right;
 }
 

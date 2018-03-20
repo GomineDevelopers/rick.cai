@@ -267,7 +267,7 @@ var joinModel = function () {
 
     // step5
     self.finish = function () {
-        window.location.href = "/guizhou/html/login.html";
+        window.location.href = "../login.html";
     }
 }
 
