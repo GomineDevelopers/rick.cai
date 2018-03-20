@@ -10,12 +10,16 @@
 /*.nd-header {
     margin-top: 1.5rem;
 }*/
+
 .mt-self{
     background-color:#f5f5f5;
 }
 .card{
     border-radius: 0;
     overflow: hidden;
+    border: none !important;
+    background: none;
+    margin-bottom: 2rem;
 }
 .card-img-top {
     width: 100%;

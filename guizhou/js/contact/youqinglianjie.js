@@ -108,7 +108,7 @@ var updateLinks = function () {
 $(function () {
     getLink.then(function () {
         ko.applyBindings(lvModel);
-        CommonTools.getAutoHeight($('#auto-content'));
+          CommonTools.getAutoHeight($('.mt-self'));
     })
 
 });
