@@ -67,7 +67,7 @@ var getVipCenterList = new Promise(function (resolve, reject) {
         limit: 8,
         page: vclModel.currentPage(),
     };
-    $.get('http://192.168.0.191/home/content/informationlist', pageInfo, function (returnData) {
+    $.get(g_restUrl+'home/content/informationlist', pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
                 vclModel.vipCenterList = ko.mapping.fromJS(returnData.data.list.data, {});
@@ -90,7 +90,7 @@ var updateVipCenterCon = function () {
         limit: 8,
         page: vclModel.currentPage(),
     };
-    $.get('http://192.168.0.191/home/content/informationlist', pageInfo, function (returnData) {
+    $.get(g_restUrl+'home/content/informationlist', pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.total) {
                 vclModel.totalPage(returnData.data.list.last_page);

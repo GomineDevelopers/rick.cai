@@ -15,7 +15,7 @@ var legalListViewModel = function () {
 var leModel = new legalListViewModel();
 
 var getLegalList = new Promise(function (resolve,reject) {
-    $.get('http://192.168.0.191/home/content/serviceslist',function (returnData) {
+    $.get(g_restUrl+'home/content/serviceslist',function (returnData) {
         if(returnData.code && returnData.code == '200'){
             if(returnData.data && returnData.data.list && returnData.data.list.length>0){
                 var mappingList = {

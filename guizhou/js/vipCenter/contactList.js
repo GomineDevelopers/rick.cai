@@ -69,7 +69,7 @@ var getContactList = new Promise(function (resolve,reject) {
         page: clModel.currentPage()
     };
     
-    $.get('http://192.168.0.191/home/content/communi',pageInfo,function (returnData){
+    $.get(g_restUrl+'home/content/communi',pageInfo,function (returnData){
         if(returnData.code && returnData.code=='200') {
             if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
                 clModel.contactList = ko.mapping.fromJS(returnData.data.list.data);
@@ -91,7 +91,7 @@ var updateContactList = function () {
         limit: 5,
         page: clModel.currentPage()
     };
-    $.get('http://192.168.0.191/home/content/communi',pageInfo,function (returnData){
+    $.get(g_restUrl+'home/content/communi',pageInfo,function (returnData){
         if(returnData.code && returnData.code=='200') {
             if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
                 ko.mapping.fromJS(returnData.data.list.data,clModel.contactList);

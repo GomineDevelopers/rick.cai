@@ -75,7 +75,7 @@ var getCommerceDynamicList = new Promise(function (resolve,reject) {
         page: cdModel.currentPage(),
         category: 3
     };
-    $.get('http://192.168.0.191/home/content/newlists',pageInfo,function (returnData) {
+    $.get(g_restUrl+'home/content/newlists',pageInfo,function (returnData) {
         if(returnData.code && returnData.code == '200'){
             if(returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0){
                 var mappingList = {

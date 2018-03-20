@@ -282,7 +282,7 @@ function initEasyUpload(div, txt) {
         showNote: true,//是否展示文件上传说明
         note: '',//文件上传说明
         showPreview: true,//是否显示文件预览
-        url: 'http://192.168.0.191/home/user/avatar',//上传文件地址
+        url: g_restUrl+'home/user/avatar',//上传文件地址
         fileName: 'file',//文件filename配置参数
         formParam: {
             token: CommonTools.getLocalStorage('token'),//不需要验证token时可以去掉

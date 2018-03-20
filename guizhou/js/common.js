@@ -1,5 +1,5 @@
 var CommonTools = {};
-//const g_restUrl = 'http://192.168.0.191/';
+//const g_restUrl =  'http://192.168.0.191/';
 const g_restUrl = 'http://icampaign.com.cn/guizhou/useradmin/';
 
 CommonTools.formatDate = function (date, showDetail) {

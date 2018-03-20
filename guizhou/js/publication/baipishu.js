@@ -72,7 +72,7 @@ var getBaipishuList = new Promise(function (resolve, reject) {
         limit: 10,
         page: bpsModel.currentPage()
     }
-    $.get('http://192.168.0.191/home/content/paperlist', pageInfo, function (returnData) {
+    $.get(g_restUrl+'home/content/paperlist', pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
                 var mappingList = {
