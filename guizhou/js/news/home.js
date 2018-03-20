@@ -82,7 +82,7 @@ var getNews = new Promise(function (resolve, reject) {
         category: 2
     };
 
-    $.get("http://192.168.0.191/home/content/newlists", pageInfo, function (returnData) {
+    $.get(g_restUrl+"home/content/newlists", pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
                 var mappingList = {
@@ -123,7 +123,7 @@ var updateNews = function () {
         page: iModel.currentPage(),
         category: 2
     };
-    $.get("http://192.168.0.191/home/content/newlists", pageInfo, function (returnData) {
+    $.get(g_restUrl+"home/content/newlists", pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.total) {
                 iModel.totalPage(returnData.data.list.last_page);

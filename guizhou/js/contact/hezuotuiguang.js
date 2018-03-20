@@ -8,13 +8,13 @@ var hezuotuiguangViewModel = function () {
 var hztgModel = new hezuotuiguangViewModel();
 
 var getLink = new Promise(function (resolve,reject) {
-    $.get("http://192.168.0.191/home/content/cooperation", function (returnData) {
+    $.get(g_restUrl+"home/content/cooperation", function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.length > 0) {
                 var mappingList = {
                     'img': {
                         create: function (options) {
-                            return 'http://192.168.0.191'+options.data;
+                            return g_restUrl+options.data;
                         }
                     }
                 }

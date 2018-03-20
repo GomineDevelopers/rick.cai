@@ -35,7 +35,7 @@ var iModel = new indexViewModel();
 
 //获取轮播图片
 var getCarousel = new Promise(function (resolve, reject) {
-    $.get("http://192.168.0.191/home/content/banner", function (returnData) {
+    $.get(g_restUrl+"home/content/banner", function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.length > 0) {
                 iModel.carousel = ko.mapping.fromJS(returnData.data.list);
@@ -56,7 +56,7 @@ var getNewsSH = new Promise(function (resolve, reject) {
         page: 1,
         category: 2
     };
-    $.get("http://192.168.0.191/home/content/newlists", pageInfo, function (returnData) {
+    $.get(g_restUrl+"home/content/newlists", pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.cate && returnData.data.cate.length > 0) {
                 iModel.cates = ko.mapping.fromJS(returnData.data.cate);
@@ -87,7 +87,7 @@ var getNewsZH = new Promise(function (resolve, reject) {
         page: 1,
         category: 3
     };
-    $.get("http://192.168.0.191/home/content/newlists", pageInfo, function (returnData) {
+    $.get(g_restUrl+"home/content/newlists", pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
                 var mappingList = {
@@ -115,7 +115,7 @@ var getNewsQY = new Promise(function (resolve, reject) {
         page: 1,
         category: 27
     };
-    $.get("http://192.168.0.191/home/content/newlists", pageInfo, function (returnData) {
+    $.get(g_restUrl+"home/content/newlists", pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
                 var mappingList = {
@@ -143,7 +143,7 @@ var getNewsHD = new Promise(function (resolve, reject) {
         page: 1,
         category: 28
     };
-    $.get("http://192.168.0.191/home/content/newlists", pageInfo, function (returnData) {
+    $.get(g_restUrl+"home/content/newlists", pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
                 var mappingList = {
@@ -166,7 +166,7 @@ var getNewsHD = new Promise(function (resolve, reject) {
 
 //获取最新公告
 var getAnnounce = new Promise(function (resolve, reject) {
-    $.get("http://192.168.0.191/home/content/announlists", function (returnData) {
+    $.get(g_restUrl+"home/content/announlists", function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.length > 0) {
                 var mappingList = {

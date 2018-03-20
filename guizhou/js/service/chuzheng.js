@@ -73,7 +73,7 @@ var getChuZhengList = new Promise(function (resolve, reject) {
         page: czModel.currentPage(),
     };
 
-    $.get("http://192.168.0.191/home/content/certiflist", pageInfo, function (returnData) {
+    $.get(g_restUrl+"home/content/certiflist", pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
                 var mappingList = {
@@ -103,7 +103,7 @@ var updateNews = function () {
         limit: 5,
         page: czModel.currentPage(),
     };
-    $.get("http://192.168.0.191/home/content/certiflist", pageInfo, function (returnData) {
+    $.get(g_restUrl+"home/content/certiflist", pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.total) {
                 czModel.totalPage(returnData.data.list.last_page);

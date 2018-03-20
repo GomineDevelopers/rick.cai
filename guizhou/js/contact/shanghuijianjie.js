@@ -6,7 +6,7 @@ var summaryViewModel = function () {
 var svModel = new summaryViewModel();
 
 var getSummary = new Promise(function (resolve, reject){
-    $.get("http://192.168.0.191/home/content/page/id/1", function (returnData) {
+    $.get(g_restUrl+"home/content/page/id/1", function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.data) {
                 svModel = ko.mapping.fromJS(returnData.data.data);

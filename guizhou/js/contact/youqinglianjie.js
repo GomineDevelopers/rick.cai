@@ -67,7 +67,7 @@ var getLink = new Promise(function (resolve, reject) {
         limit: 8,
         page: lvModel.currentPage()
     };
-    $.get("http://192.168.0.191/home/content/link", pageInfo, function (returnData) {
+    $.get(g_restUrl+"home/content/link", pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
                 lvModel.links = ko.mapping.fromJS(returnData.data.list.data, {});
@@ -90,7 +90,7 @@ var updateLinks = function () {
         limit: 8,
         page: lvModel.currentPage(),
     };
-    $.get('http://192.168.0.191/home/content/link', pageInfo, function (returnData) {
+    $.get(g_restUrl+'home/content/link', pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.total) {
                 lvModel.totalPage(returnData.data.list.last_page);

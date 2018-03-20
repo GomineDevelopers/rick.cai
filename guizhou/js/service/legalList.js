@@ -101,7 +101,7 @@ var updateLegalCon = function () {
         limit: 10,
         page: llModel.currentPage(),
     };
-    $.get("http://192.168.0.191/home/content/servicesscate/category/18" , pageInfo, function (returnData) {
+    $.get(g_restUrl+"home/content/servicesscate/category/18" , pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.total) {
                 llModel.totalPage(returnData.data.list.last_page);

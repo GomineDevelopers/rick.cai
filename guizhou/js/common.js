@@ -1,5 +1,5 @@
 var CommonTools = {};
-var g_restUrl = 'http://192.168.0.191/';
+const g_restUrl = 'http://192.168.0.191/';
 
 CommonTools.formatDate = function (date, showDetail) {
     var isShow = showDetail || false;

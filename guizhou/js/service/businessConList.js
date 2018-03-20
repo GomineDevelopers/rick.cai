@@ -76,7 +76,7 @@ var getBusinessConList = new Promise(function (resolve, reject) {
     };
 
 
-    $.get("http://192.168.0.191/home/content/businesscate/category/" + categoryId, pageInfo, function (returnData) {
+    $.get(g_restUrl+"home/content/businesscate/category/" + categoryId, pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
                 var mappingList = {
@@ -105,7 +105,7 @@ var updateBusinessCon = function () {
         limit: 10,
         page: bclModel.currentPage(),
     };
-    $.get("http://192.168.0.191/home/content/businesscate/category/" + categoryId , pageInfo, function (returnData) {
+    $.get(g_restUrl+"home/content/businesscate/category/" + categoryId , pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.total) {
                 bclModel.totalPage(returnData.data.list.last_page);

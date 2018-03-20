@@ -69,7 +69,7 @@ var getdownloadList = new Promise(function (resolve, reject) {
         page: dModel.currentPage(),
     };
 
-    $.get("http://192.168.0.191/home/content/downloadlist", pageInfo, function (returnData) {
+    $.get(g_restUrl+"home/content/downloadlist", pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
                 var mappingList = {
@@ -99,7 +99,7 @@ var updateDownloadList = function () {
         limit: 10,
         page: dModel.currentPage(),
     };
-    $.get("http://192.168.0.191/home/content/downloadlist", pageInfo, function (returnData) {
+    $.get(g_restUrl+"home/content/downloadlist", pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.total) {
                 dModel.totalPage(returnData.data.list.last_page);
@@ -126,7 +126,7 @@ var updateView = function () {
     var updateId = this.id()
     var postData = {id: updateId};
     window.open(this.url());
-    $.post("http://192.168.0.191/home/content/setdownload", postData, function (returnData) {
+    $.post(g_restUrl+"home/content/setdownload", postData, function (returnData) {
         if (returnData.code && returnData.code == '200') {
             for (var i = 0; i < dModel.downloadList().length; i++) {
                 if (dModel.downloadList()[i].id() == updateId) {

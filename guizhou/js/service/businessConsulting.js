@@ -14,7 +14,7 @@ var businessListViewModel = function () {
 var blModel = new businessListViewModel();
 
 var getBusinessList = new Promise(function (resolve, reject) {
-    $.get("http://192.168.0.191/home/content/businesslist", function (returnData) {
+    $.get(g_restUrl+"home/content/businesslist", function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.length > 0) {
                 var mappingList = {

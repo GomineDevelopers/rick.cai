@@ -10,7 +10,7 @@ var czdModel = new chuzhengDetailViewModel();
 
 //出证入证具体详情页
 var getChuzhengDetail = new Promise(function (resolve,reject) {
-    var url = "http://192.168.0.191/home/content/certifdetail/id/" + CommonTools.getQueryVariable("id");
+    var url = g_restUrl+"home/content/certifdetail/id/" + CommonTools.getQueryVariable("id");
     $.get(url,function (returnData) {
         if(returnData.code && returnData.code == '200'){
             if(returnData.data && returnData.data.data){

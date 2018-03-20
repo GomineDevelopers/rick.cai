@@ -77,7 +77,7 @@ var getBusinessList = new Promise(function (resolve, reject) {
     };
 
 
-    $.get("http://192.168.0.191/home/content/tradecate", pageInfo, function (returnData) {
+    $.get(g_restUrl+"home/content/tradecate", pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
                 var mappingList = {
@@ -107,7 +107,7 @@ var updateBusinessCon = function () {
         page: bclModel.currentPage(),
         categoryId: categoryId
     };
-    $.get("http://192.168.0.191/home/content/tradecate" , pageInfo, function (returnData) {
+    $.get(g_restUrl+"home/content/tradecate" , pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.total) {
                 bclModel.totalPage(returnData.data.list.last_page);

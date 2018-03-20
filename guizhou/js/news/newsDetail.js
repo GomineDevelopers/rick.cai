@@ -7,7 +7,7 @@ var ndModel = new newsDetailModel();
 var categoryName = decodeURIComponent(CommonTools.getQueryVariable("categoryName"));
 
 var getNewsDetail = new Promise(function (resolve, reject) {
-    var url = "http://192.168.0.191/home/content/newdetail/id/" + CommonTools.getQueryVariable("newsid")
+    var url = g_restUrl+"home/content/newdetail/id/" + CommonTools.getQueryVariable("newsid")
     $.get(url, function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.data) {

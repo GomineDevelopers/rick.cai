@@ -3,7 +3,7 @@ var categoryName = decodeURIComponent(CommonTools.getQueryVariable("categoryName
 var ldModel = {};
 
 var getLegalDetail = new Promise(function (resolve, reject) {
-    var url = "http://192.168.0.191/home/content/servicesdetail";
+    var url = g_restUrl+"home/content/servicesdetail";
     postData = {
         id: CommonTools.getQueryVariable('id')
     }
