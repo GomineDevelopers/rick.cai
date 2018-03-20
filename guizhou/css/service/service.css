@@ -136,3 +136,6 @@
     display: flex;
     width: 100%
 }
+.no-list-items-border-bottom {
+    border-bottom: none !important;
+}
