@@ -209,7 +209,9 @@
 .announce-block .item-cover {
     padding-left: 0.8rem;
 }
-
+.item-cover:last-child{
+	border-bottom: hidden !important;
+}
 .announce-block .item {
     height: 3rem;
     line-height: 1rem;
