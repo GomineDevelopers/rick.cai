@@ -25,7 +25,7 @@ var getNewsDetail = new Promise(function (resolve, reject) {
                         ndModel.url("../news/activityReport.html");
                         break;
                     default:
-                        ndModel.url("./news/home.html");
+                        ndModel.url("../news/home.html");
                 }
                 var mappingList = {
                     'create_time': {
