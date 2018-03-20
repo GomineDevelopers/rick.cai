@@ -220,12 +220,13 @@ var joinModel = function () {
                     'provide': self.selectedServices()
                 },
                 sCallback: function (res) {
-                    if (res && res.code == 200) {
+                   /* if (res && res.code == 200) {
                         self.setStepId(4);
                     }
                     else {
                         alert(res.msg);
-                    }
+                    }*/
+                    self.setStepId(4);
                 },
                 eCallback: function (e) {
                     console.log("注册错误");
