@@ -234,11 +234,29 @@
 
 .announce-block .item .date {
     color: #999999;
-    /*padding-right: 0.5rem;*/
     width:20%;
     text-align:right;
     float: right;
 }
+
+@media (max-width: 768px) {
+    .announce-block .item .date {
+        width:35% ;
+    }
+    .announce-block .item .title {
+        width: 65%;
+    }
+
+    .news-block .item .title {
+        width: 65%;
+    }
+
+    .news-block .item .date {
+        width:35% ;
+    }
+}
+
+
 
 /*商贸服务*/
 .service-block .row {
