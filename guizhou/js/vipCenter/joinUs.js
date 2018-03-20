@@ -186,6 +186,7 @@ var joinModel = function () {
             var params = {
                 url: 'home/user/enterprise.html',
                 type: 'post',
+                tokenFlag: true,
                 data: {
                     'account_name': self.companyName(),
                     'account_name_en': self.companyEnName(),
@@ -216,13 +217,12 @@ var joinModel = function () {
                     'provide': self.selectedServices()
                 },
                 sCallback: function (res) {
-                    /* if (res && res.code == 200) {
-                         self.setStepId(4);
-                     }
-                     else {
-                         alert(res.msg);
-                     }*/
-                    self.setStepId(4);
+                    if (res && res.code == 200) {
+                        self.setStepId(4);
+                    }
+                    else {
+                        alert(res.msg);
+                    }
                 },
                 eCallback: function (e) {
                     console.log("注册错误");

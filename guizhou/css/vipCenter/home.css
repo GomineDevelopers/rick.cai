@@ -28,6 +28,15 @@
     }
 }
 
+.progress-line h5{
+    color: #cccccc;
+}
+
+.progress-line button{
+    color: #ffffff;
+    background: #49649f;
+}
+
 .progress-line .grey {
     color: #999999;
 }

@@ -156,7 +156,12 @@
                 <div class="col-md-12 border-bottom pb-4">
                     <div class="font-weight-bold mt-2 pb-4">审核状态</div>
                     <div class="text-center home-status col-md-8 col-sm-12 mx-auto">
-                        <div class="progress-line">
+                        <div class="progress-line" data-bind="visible:type()==0" style="display: none">
+                            <h5 class="mb-4">您还没有进行企业认证，无法查看审核状态～</h5>
+                            <button type="button" class="btn" data-bind="click:goJoinUs">立即认证
+                            </button>
+                        </div>
+                        <div class="progress-line" data-bind="visible:type()!=0" style="display: none">
                             <span class="point point1 blue-point"></span>
                             <span class="text text1 blue">材料提交</span>
                             <span class="line2"
@@ -213,7 +218,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form  data-bind="validationOptions:{insertMessages:false}">
+                <form data-bind="validationOptions:{insertMessages:false}">
                     <div class="form-group">
                         <label for="old-paswword" class="col-form-label">原密码:</label>
                         <input type="password" class="form-control" id="old-paswword" data-bind="value:oldPassword">
