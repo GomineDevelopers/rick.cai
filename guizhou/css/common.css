@@ -1,5 +1,5 @@
 html, body {
-    font-family: "Arial";
+    font-family: "Microsoft Yahei, Times New Roman, arial,verdana, geneva, helvetica, sans-serif,Georgia,Serif";
     font-style: normal;
     height: 100%;
     padding: 0;
@@ -23,6 +23,7 @@ html, body {
 /*头部*/
 .header-style {
     background-color: #FFFFFF;
+    box-shadow: 0px 4px 18px 0px rgba(230, 230, 230, 0.004);
 }
 
 .header-style a {
@@ -48,6 +49,7 @@ html, body {
 
 .social-icons {
     margin-right: 1.5rem;
+    font-size: 14px;
 }
 
 .nav-footer {

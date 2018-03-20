@@ -41,8 +41,8 @@
     <nav class="navbar navbar-expand-sm  center-block header-menu">
         <!-- Toggler/collapsibe Button -->
         <div class="col-md-8 row mx-auto header-img">
-            <img src="../img/brand.png" alt="Logo">
-            <img src="../img/world-trade.png" alt="Logo">
+           <a href="./index.html"><img src="../img/brand.png" alt="Logo"></a>
+           <a href="./index.html"><img src="../img/world-trade.png" alt="Logo"></a> 
             <button class="navbar-toggler bg-default" type="button" data-toggle="collapse"
                     data-target="#collapsibleNavbar">
                 <span class="fa fa-bars"></span>
@@ -163,7 +163,7 @@
                         </div>
                         <div class=" right-list">
                             <div data-bind="foreach: newsSH , visible:2 == selectedNewsId()">
-                                <div class="item" data-bind="css:{ 'no-border-bottom':$index()==5}">
+                                <div class="item" data-bind="css:{ 'no-border-bottom':$index()==$parent.newsSH.data().length-1}">
                                     <span class="title">
                                         <img src="../img/point-icon.png"></img>
                                         <a data-bind="attr:{href:'./news/newsDetail.html?newsid='+id()+'&categoryName=新闻资讯'}"><span data-bind="text: title"></span></a>
@@ -211,7 +211,7 @@
                     </div>
                     <div class="block-body">
                         <div class="item-cover" data-bind="foreach: announces">
-                            <div class="item">
+                            <div class="item" data-bind="css:{ 'no-border-bottom':$index()==$parent.announces().length-1}">
                             <span class="title">
                                 <img src="../img/point-icon.png"></img>
                                 <span data-bind="text: title"></span>
