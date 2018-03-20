@@ -26,7 +26,7 @@ var joinModel = function () {
 // step2
     self.username = ko.observable("").extend({
         required: {params: true, message: "用户名不能为空"},
-        minLength: {params: 6, message: "用户名不能少于6位字符"},
+        minLength: {params: 2, message: "用户名不能少于2位字符"},
         maxLength: {params: 50, message: "用户名不能多于50位字符"},
     });
     self.password = ko.observable("").extend({
