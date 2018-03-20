@@ -9,11 +9,10 @@ var joinModel = function () {
     }
 
     self.setStepId = function (stepId) {
-        self.stepId(stepId);
-        $(window).scrollTop(0);
+        window.location.href = CommonTools.changeURLArg(window.location.href, 'stepId', stepId)
     }
 
-    // step1
+// step1
     self.isRead = ko.observable(false);
     self.welcomeNext = function (stepId) {
         if (!self.isRead()) {
@@ -24,7 +23,7 @@ var joinModel = function () {
         }
     }
 
-    // step2
+// step2
     self.username = ko.observable("").extend({
         required: {params: true, message: "用户名不能为空"},
         minLength: {params: 6, message: "用户名不能少于6位字符"},
@@ -57,13 +56,10 @@ var joinModel = function () {
                 url: 'register.html',
                 type: 'post',
                 data: {username: self.username(), password: self.password(), repassword: self.repassword()},
-                tokenFlag:true,
+                tokenFlag: true,
                 sCallback: function (res) {
                     if (res && res.code == 200) {
                         CommonTools.setLocalStorage('token', res.token);
-                        initEasyUpload($('#file1'), '点击上传营业执照');
-                        initEasyUpload($('#file2'), '点击上传身份证');
-                        initEasyUpload($('#file3'), '点击上传身份证');
                         self.setStepId(3);
                     }
                     else {
@@ -80,7 +76,7 @@ var joinModel = function () {
         }
     }
 
-    // step3-1
+// step3-1
     self.companyName = ko.observable("").extend({required: {param: true, message: '企业名称不能为空'}});
     self.companyEnName = ko.observable();
     self.creditCode = ko.observable("").extend({required: {param: true, message: '统一信用代码/注册号不能为空'}});
@@ -103,7 +99,7 @@ var joinModel = function () {
     self.introduction = ko.observable();
 
 
-    //step3-2
+//step3-2
     self.legalRepresentative = ko.observable().extend({required: {param: true, message: '法人代表不能为空'}});
     self.legalPhone = ko.observable().extend({
         required: {param: true, message: '法人代表手机号不能为空'},
@@ -144,7 +140,7 @@ var joinModel = function () {
         }
     });
 
-    //step3-3
+//step3-3
     self.intentions = [' 副会长单位', '常务理事单位', '理事单位', '会员单位'];
     self.selectedIntention = ko.observable();
     self.services = [
@@ -220,12 +216,12 @@ var joinModel = function () {
                     'provide': self.selectedServices()
                 },
                 sCallback: function (res) {
-                   /* if (res && res.code == 200) {
-                        self.setStepId(4);
-                    }
-                    else {
-                        alert(res.msg);
-                    }*/
+                    /* if (res && res.code == 200) {
+                         self.setStepId(4);
+                     }
+                     else {
+                         alert(res.msg);
+                     }*/
                     self.setStepId(4);
                 },
                 eCallback: function (e) {
@@ -242,7 +238,7 @@ var joinModel = function () {
         window.location.href = "../../html/login.html";
     }
 
-    // step4
+// step4
     self.file1 = ko.observable("").extend({
         required: {params: true, message: "请上传营业执照"},
     });
@@ -266,7 +262,7 @@ var joinModel = function () {
         self.setStepId(3);
     }
 
-    // step5
+// step5
     self.finish = function () {
         window.location.href = "../login.html";
     }
@@ -283,7 +279,7 @@ function initEasyUpload(div, txt) {
         showNote: true,//是否展示文件上传说明
         note: '',//文件上传说明
         showPreview: true,//是否显示文件预览
-        url: g_restUrl+'home/user/avatar',//上传文件地址
+        url: g_restUrl + 'home/user/avatar',//上传文件地址
         fileName: 'file',//文件filename配置参数
         formParam: {
             token: CommonTools.getLocalStorage('token'),//不需要验证token时可以去掉
@@ -332,6 +328,9 @@ var initLocation = new Promise(function (resolve, reject) {
 });
 
 $(function () {
+    initEasyUpload($('#file1'), '点击上传营业执照');
+    initEasyUpload($('#file2'), '点击上传身份证');
+    initEasyUpload($('#file3'), '点击上传身份证');
     initLocation.then(function () {
         ko.applyBindings(jModel);
         CommonTools.getAutoHeight($('#auto-content'));

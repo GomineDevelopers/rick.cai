@@ -1,5 +1,5 @@
 var CommonTools = {};
-//const g_restUrl =  'http://192.168.0.191/';
+//const g_restUrl = 'http://192.168.0.191/';
 const g_restUrl = 'http://icampaign.com.cn/guizhou/useradmin/';
 
 CommonTools.formatDate = function (date, showDetail) {
@@ -122,6 +122,22 @@ CommonTools.checkRegex = function (type, value, rule) {
     }
     else {
         return false
+    }
+}
+
+CommonTools.changeURLArg = function (url, arg, arg_val) {
+    var pattern = arg + '=([^&]*)';
+    var replaceText = arg + '=' + arg_val;
+    if (url.match(pattern)) {
+        var tmp = '/(' + arg + '=)([^&]*)/gi';
+        tmp = url.replace(eval(tmp), replaceText);
+        return tmp;
+    } else {
+        if (url.match('[\?]')) {
+            return url + '&' + replaceText;
+        } else {
+            return url + '?' + replaceText;
+        }
     }
 }
 

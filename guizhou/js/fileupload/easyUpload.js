@@ -195,6 +195,7 @@ https://github.com/funnyque
                         var preview;
                         var f = file.file;
                         var fileType = f.name.split('.').pop();
+
                         if (fileType == 'bmp' || fileType == 'jpg' || fileType == 'jpeg' || fileType == 'png' || fileType == 'gif') {
                             var imgSrc = URL.createObjectURL(f);
                             preview = '<img class="easy_upload_img" src="' + imgSrc + '" />';
@@ -211,9 +212,9 @@ https://github.com/funnyque
                         sHtml += '<p class="status status5">上传成功</p>';
                         var $html = '';
                         $html += '<li class="easy_upload_queue_item" data-index="' + file.index + '">';
-                        $html += option.showPreview ? '<div class="easy_upload_preview queue_item-section">' + preview + '</div>' : '';
+                        $html += option.showPreview &&  file.allow? '<div class="easy_upload_preview queue_item-section">' + preview + '</div>' : '';
                         $html += '<div class="easy_upload_status queue_item-section">';
-                        $html += file.allow ? sHtml : '<p class="status status6">文件不允许</p>';
+                        $html += file.allow ? sHtml : '<p class="status status6" >图片格式错误，只允许*.jpg *.png *.gif </p>';
                         $html += '</div>';
                         $html += '<div class="easy_upload_btn queue_item-section">';
                         $html += file.allow ? '<p class="easy_upload_upbtn btn noselect">上传</p>' : '';
@@ -269,10 +270,10 @@ https://github.com/funnyque
                 _uploadFile: function (target) {
                     var _this = this;
                     this._setStatus2(target);
-                    if(target.parent().parent().data().type)
-                    {
-                        option.formParam.type=target.parent().parent().data().type;
+                    if (target.parent().parent().data().type) {
+                        option.formParam.type = target.parent().parent().data().type;
                     }
+
                     function controlUp() {
                         if (postedNum < allowFiles.length) {
                             upFiniehed = false;
@@ -444,6 +445,9 @@ https://github.com/funnyque
                         var qItem = _this._findEle(item, target);
                         if (qItem.upStatus == '2') deleAllowFiles(item);
                     });
+                    if (target.parent().parent().data().type) {
+                        option.formParam.type = target.parent().parent().data().type;
+                    }
                     option.deleteFunc && option.deleteFunc(response);
                 },
                 _handleFailed: function (param) {

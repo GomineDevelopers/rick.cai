@@ -60,79 +60,67 @@
     position: relative;
 }
 
-.progress-line .line1 {
-    width: 15%;
+.progress-line .line {
+    width: 16.66%;
     position: absolute;
-    left: 0;
-    top: 1rem
+    top: 1rem;
+}
+
+.progress-line .line1 {
+    left: 0%
 }
 
 .progress-line .line2 {
-    width: 15%;
-    position: absolute;
-    left: 16%;
-    top: 1rem
+    left: 16.66%;
 }
 
 .progress-line .line3 {
-    width: 15%;
-    position: absolute;
-    left: 31%;
-    top: 1rem
+    left: 33.33%;
 }
 
 .progress-line .line4 {
-    width: 15%;
-    position: absolute;
-    left: 46%;
-    top: 1rem
+    left: 50%;
 }
 
 .progress-line .line5 {
-    width: 15%;
-    position: absolute;
-    left: 61%;
-    top: 1rem
+    left: 66.67%;
 }
 
 .progress-line .line6 {
-    width: 15%;
-    position: absolute;
-    left: 76%;
-    top: 1rem
+    left: 83.3%;
 }
 
 .progress-line .point1 {
     position: absolute;
-    left: 15%;
+    left: 16.66%;
     top: 0.65rem;
     z-index: 1;
 }
 
 .progress-line .point2 {
     position: absolute;
-    left: 30%;
+    left: 33.33%;
     top: 0.65rem;
     z-index: 1;
 }
 
 .progress-line .point3 {
     position: absolute;
-    left: 45%;
+    left: 50%;
     top: 0.65rem;
     z-index: 1;
 }
 
 .progress-line .point4 {
     position: absolute;
-    left: 60%;
+    left: 66.67%;
     top: 0.65rem;
     z-index: 1;
 }
 
 .progress-line .point5 {
     position: absolute;
-    left: 75%;
+    left: 83.3%;
     top: 0.65rem;
     z-index: 1;
 }
@@ -145,27 +133,27 @@
 }
 
 .progress-line .text1 {
-    left: 15%;
+    left: 16.66%;
     margin-left: -3.5%;
 }
 
 .progress-line .text2 {
-    left: 30%;
+    left: 33.33%;
     margin-left: -3.5%;
 }
 
 .progress-line .text3 {
-    left: 45%;
+    left: 50%;
     margin-left: -3.5%;
 }
 
 .progress-line .text4 {
-    left: 60%;
+    left: 66.67%;
     margin-left: -3.5%;
 }
 
 .progress-line .text5 {
-    left: 75%;
+    left: 83.3%;
     margin-left: -3.5%;
 }
 
@@ -284,9 +272,12 @@
 }
 
 .easy_upload_status {
-    width: 10%;
     margin: 0 auto !important;
     text-align: center;
+}
+
+.easy_upload-container .easy_upload_queue .easy_upload_queue_item .easy_upload_status .status{
+    width: 100%;
 }
 
 .easy_upload_btn {
@@ -299,4 +290,13 @@
 .easy_upload_btn .btn {
     width: 100% !important;
     max-width: 100px;
+}
+
+.easy_upload-container .easy_upload-head .easy_upload_select{
+    background: #49649f;
+}
+
+.easy_upload-container .easy_upload_queue .easy_upload_queue_item .easy_upload_btn .easy_upload_upbtn{
+    background: #49649f;
+    color:white;
 }
