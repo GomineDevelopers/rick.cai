@@ -204,6 +204,7 @@ html, body {
 
 #auto-content {
     width: 100%;
+    text-align: justify;
 }
 
 #auto-content .self-html{
@@ -212,7 +213,9 @@ html, body {
     clear: both;
 }
 
-
+#auto-content img{
+    max-width: 100%;
+}
 
 /*验证*/
 .error {
