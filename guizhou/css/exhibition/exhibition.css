@@ -1,3 +1,11 @@
+.body-background {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 0 0.75rem 2rem;
+}
 .block-body {
     width: 100%;
 }
@@ -141,7 +149,8 @@
     width: 80%;
     overflow: hidden;
     text-overflow: ellipsis;
-}
+    cursor: pointer;
+    }
 
 .panel-body a, .panel-body a:hover {
     color: black;
@@ -150,4 +159,11 @@
 .panel-body .item .date {
     color: #999999;
     float: right;
+}
+/*详情页*/
+.nd-header{
+    margin-top: 1.5rem;
+}
+.text-muted{
+    font-size:12px;
 }
