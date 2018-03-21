@@ -150,7 +150,8 @@
                             <div data-bind="foreach: chuZhengList" id="auto-content">
                                 <div class="item list-items" data-bind="css:{ 'no-list-items-border-bottom':$index()==$parent.chuZhengList().length-1}">
                                     <span class="title">
-                                        <i class="fa fa-thumb-tack weak-light-black"></i>
+                                        <!--<i class="fa fa-thumb-tack weak-light-black"></i>-->
+                                        <img src="../../img/point-Large.png"/>
                                         <a data-bind="attr:{ href : './chuZhengDetail.html?id='+id()}" >
                                         <span data-bind="text: title"></span></a>
                                     &nbsp;   <span class="date" data-bind="text: create_time"></span>
