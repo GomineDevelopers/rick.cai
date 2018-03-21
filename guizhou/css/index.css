@@ -91,11 +91,13 @@
 .news-block .left-list {
     width: 20%;
     float: left;
+  
 }
 
 .news-block .right-list {
     width: 80%;
     float: left;
+    border-left: 1px solid #ddd;
 }
 
 .news-block nav a.active {
