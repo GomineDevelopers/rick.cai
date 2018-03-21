@@ -128,6 +128,10 @@
     height: auto;
 }
 /*轮播右侧*/
+.panel-body {
+    padding: 0.9375rem;
+    position: relative;
+}
 .panel-body .list-items {
     height: 3rem;
     line-height: 1rem;
@@ -160,10 +164,28 @@
     color: #999999;
     float: right;
 }
+.pagination {
+	margin-bottom: -0.5rem;
+}
 /*详情页*/
 .nd-header{
     margin-top: 1.5rem;
 }
 .text-muted{
     font-size:12px;
+}
+.w-100{
+	height: 100%;
+}
+.carousel-item{
+	height: 100%;
+}
+.carousel-inner{
+	height: 100%;
+}
+.carousel{
+	height: 100%;
+}
+.no-list-items-border-bottom {
+    border-bottom: none !important;
 }
