@@ -34,10 +34,17 @@ html, body {
     background: white;
 }
 
+.header-style ul li {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
 .header-top-label {
     margin-top: 0.5rem;
     margin-bottom: 1px;
 }
+
+
 
 .light-black {
     color: #717171 !important;

@@ -264,7 +264,11 @@ var joinModel = function () {
 
 // step5
     self.finish = function () {
-        window.location.href = "../login.html";
+        if (CommonTools.getLocalStorage("token"))
+            window.location.href = "../index.html";
+        else
+            window.location.href = "../login.html";
+
     }
 }
 
