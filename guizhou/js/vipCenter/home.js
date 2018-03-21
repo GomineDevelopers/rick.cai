@@ -4,7 +4,6 @@ var vipHomeViewModel = function () {
     var self = this;
     self.username = ko.observable(userData.username);
     self.date = ko.observable(CommonTools.formatDate(userData.reg_time));
-    self.type = ko.observable(userData.review_status);
     self.oldPassword = ko.observable("").extend({
         required: {params: true, message: "原密码不能为空"},
     });
@@ -27,9 +26,14 @@ var vipHomeViewModel = function () {
             message: '两次密码输入不一致,请重试',
         }
     });
+    self.type = ko.observable();
 
     self.goJoinUs = function () {
-        window.location.href = "./joinUs.html?stepId=3"
+        if (self.type() == 0)
+            window.location.href = "./joinUs.html?stepId=3"
+        else {
+            window.location.href = "./joinUs.html?stepId=4"
+        }
     }
 
     self.post = function (stepId) {
@@ -68,10 +72,41 @@ $('#passwordModal').on('hidden.bs.modal', function (e) {
     vhModel.errors.showAllMessages(false);
 })
 
+
 $(function () {
     if (!userData) {
         window.location.href = '../login.html';
     }
-    vhModel.errors = ko.validation.group(vhModel);
-    ko.applyBindings(vhModel);
+    else {
+        var getType = new Promise(function (resolve, reject) {
+            {
+                var params = {
+                    url: 'home/user/getreviewstatus',
+                    type: 'get',
+                    tokenFlag: true,
+                    sCallback: function (res) {
+                        if (res && res.code == 200) {
+                            vhModel.type(res.data.data.review_status);
+                            resolve('success');
+                        }
+                        else {
+                            alert("登陆已过期，请重新登陆");
+                            CommonTools.logout();
+                            reject('failed');
+                        }
+                    },
+                    eCallback: function (e) {
+                        alert("服务端有错误");
+                        reject('failed');
+                    }
+                };
+                CommonTools.getData(params);
+            }
+        });
+
+        getType.then(function () {
+            vhModel.errors = ko.validation.group(vhModel);
+            ko.applyBindings(vhModel);
+        })
+    }
 });

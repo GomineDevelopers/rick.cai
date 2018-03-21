@@ -141,6 +141,12 @@ CommonTools.changeURLArg = function (url, arg, arg_val) {
     }
 }
 
+CommonTools.logout= function () {
+    CommonTools.deleteLocalStorage('token');
+    CommonTools.deleteLocalStorage('userData');
+    window.location.reload();
+};
+
 $(function () {
     if (CommonTools.getLocalStorage('token') && CommonTools.getLocalStorage('userData')) {
         $("#isLogin").remove();
@@ -154,9 +160,7 @@ $(function () {
 
     if ($("#logout")) {
         $("#logout").click(function () {
-            CommonTools.deleteLocalStorage('token');
-            CommonTools.deleteLocalStorage('userData');
-            window.location.reload();
+          CommonTools.logout();
         });
     }
 

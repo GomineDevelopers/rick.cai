@@ -252,7 +252,28 @@ var joinModel = function () {
 
     self.uploadNext = function (stepId) {
         if (jModel.errors3().length == 0) {
-            self.setStepId(5);
+            var params = {
+                url: 'home/user/credentials',
+                type: 'post',
+                tokenFlag: true,
+                data: {
+                    'file1': self.file1(),
+                    'file2': self.file2(),
+                    'file3': self.file3(),
+                },
+                sCallback: function (res) {
+                    if (res && res.code == 200) {
+                        self.setStepId(5);
+                    }
+                    else {
+                        alert(res.msg);
+                    }
+                },
+                eCallback: function (e) {
+                    console.log("保存错误");
+                }
+            };
+            CommonTools.getData(params);
         } else {
             jModel.errors3.showAllMessages();
         }
@@ -293,13 +314,13 @@ function initEasyUpload(div, txt) {
         okCode: 200,//与后端返回数据code值一致时执行成功回调，不配置默认200
         successFunc: function (res) {
             if (this.formParam.type == 1) {
-                jModel.file1("valid");
+                jModel.file1(res.data.SaveName);
             }
             else if (this.formParam.type == 2) {
-                jModel.file2("valid");
+                jModel.file2(res.data.SaveName);
             }
             else if (this.formParam.type == 3) {
-                jModel.file3("valid");
+                jModel.file3(res.data.SaveName);
             }
             console.log('成功回调', res);
         },//上传成功回调函数

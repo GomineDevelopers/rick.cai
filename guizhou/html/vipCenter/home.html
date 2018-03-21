@@ -160,27 +160,33 @@
                             <button type="button" class="btn" data-bind="click:goJoinUs">立即认证
                             </button>
                         </div>
-                        <div class="progress-line" data-bind="visible:type()!=0" style="display: none">
+                        <div class="progress-line" data-bind="visible:type()==1" style="display: none">
+                            <h5 class="mb-4">您还没有上传资料，无法查看审核状态～</h5>
+                            <button type="button" class="btn" data-bind="click:goJoinUs">立即上传资料
+                            </button>
+                        </div>
+
+                        <div class="progress-line" data-bind="visible:type()>1" style="display: none">
                             <span class="point point1 blue-point"></span>
                             <span class="text text1 blue">材料提交</span>
                             <span class="line2"
-                                  data-bind="css:{ 'blue-line' :type()>1 , 'grey-line':type()<=1  }"></span>
+                                  data-bind="css:{ 'blue-line' :type()>2, 'grey-line':type()<=2  }"></span>
                             <span class="point point2"
-                                  data-bind="css:{ 'blue-point' :type()>1 , 'grey-point':type()<=1  }"></span>
-                            <span class="text text2"
-                                  data-bind="css:{   'blue' :type()>1,'grey' :type()<=1  }">文本审核通过</span>
-                            <span class="line3"
-                                  data-bind="css:{ 'blue-line' :type()>2 , 'grey-line':type()<=2  }"></span>
-                            <span class=" point point3"
                                   data-bind="css:{ 'blue-point' :type()>2 , 'grey-point':type()<=2  }"></span>
-                            <span class="text text3"
-                                  data-bind="css:{   'blue' :type()>2,'grey' :type()<=2  }">财务审核通过</span>
-                            <span class="line4"
+                            <span class="text text2"
+                                  data-bind="css:{   'blue' :type()>2,'grey' :type()<=2  }">文本审核通过</span>
+                            <span class="line3"
                                   data-bind="css:{ 'blue-line' :type()>3 , 'grey-line':type()<=3  }"></span>
-                            <span class=" point point4"
+                            <span class=" point point3"
                                   data-bind="css:{ 'blue-point' :type()>3 , 'grey-point':type()<=3  }"></span>
+                            <span class="text text3"
+                                  data-bind="css:{   'blue' :type()>3,'grey' :type()<=3  }">财务审核通过</span>
+                            <span class="line4"
+                                  data-bind="css:{ 'blue-line' :type()>4 , 'grey-line':type()<=4  }"></span>
+                            <span class=" point point4"
+                                  data-bind="css:{ 'blue-point' :type()>4 , 'grey-point':type()<=4  }"></span>
                             <span class="text text4"
-                                  data-bind="css:{   'blue' :type()>3,'grey' :type()<=3  }">审核完成</span>
+                                  data-bind="css:{   'blue' :type()>4,'grey' :type()<=4  }">审核完成</span>
                         </div>
                     </div>
                 </div>
