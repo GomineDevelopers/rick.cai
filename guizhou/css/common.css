@@ -112,7 +112,7 @@ html, body {
     color: white;
     text-align: center;
     list-style: none;
-    background-color: rgba(73,100,159);
+    background-color: rgb(73,100,159);
     background-clip: padding-box;
     border: none;
     width: 6rem;
