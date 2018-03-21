@@ -156,10 +156,10 @@
     cursor: pointer;
     }
 
-.panel-body a, .panel-body a:hover {
+/*.panel-body a, .panel-body a:hover {
     color: black;
     text-decoration: none;
-}
+}*/
 .panel-body .item .date {
     color: #999999;
     float: right;
