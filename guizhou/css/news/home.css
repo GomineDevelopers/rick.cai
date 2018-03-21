@@ -26,6 +26,7 @@
 .media img {
     width: 180px;
     height: 100px;
+    border: 1px solid #dee2e6;
 }
 
 .block{
@@ -109,4 +110,12 @@
 .clearpadding{
 	padding-left: 0px !important;
 	padding-right: 0px !important;
+}
+.img-thumbnail {
+    /* padding: .25rem; */
+    background-color: #fff;
+     border: 1px solid #dee2e6;
+    /* border-radius: .25rem; */
+    max-width: 100%;
+    height: auto;
 }
