@@ -117,7 +117,7 @@ var updateGnRec = function () {
         limit: 3,
         page: gnModel.pages1.currentPage(),
     };
-    $.get(g_restUrl + "home/content/forward", pageInfo, function (returnData) {
+    $.get(g_restUrl + "home/content/recent", pageInfo, function (returnData) {
         if (returnData.code && returnData.code == '200') {
             if (returnData.data && returnData.data.list && returnData.data.list.total) {
                 gnModel.pages1.totalPage(returnData.data.list.last_page,gnModel.pages1);
