@@ -64,6 +64,7 @@
     width: 80%;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: 14px;
 }
 
 .panel-body .item .title{

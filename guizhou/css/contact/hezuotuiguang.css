@@ -130,6 +130,9 @@
     width: 120px;
     margin-top: 5px;
 }
+.rounded-circle:hover{
+	box-shadow: 0px 20px 24px 0px rgba(191, 191, 191 );
+}
 .panel-body-inner{
 	margin-top: 0.9375rem;
 }

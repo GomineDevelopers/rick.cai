@@ -169,4 +169,13 @@
     margin-left: -3.5%;
 }
 
-
+.user-center{
+	border-left: 3px solid #49649f;
+	font-size: 1.125rem;
+	padding-left:0.75rem;
+	
+}
+/*边框颜色*/
+.border-bottom{
+	border-bottom-color: #e6e6e6 !important;
+}

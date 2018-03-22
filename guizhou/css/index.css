@@ -59,9 +59,9 @@
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
-    right: 2rem;
+    right: 1rem;
     color: #999999;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .block .block-header a img {
@@ -202,8 +202,8 @@
 
 .introduction-block .list a {
     color: #999999;
-    font-size: 15px;
-    padding: 1rem 2rem;
+    font-size: 14px;
+    padding: 1rem 1rem;
 }
 
 /*最新公告*/
@@ -282,3 +282,8 @@
     padding-left: 5px;
 }
 
+.fa-lg {
+    font-size: 1.33333333em;
+    line-height: 0.5em;
+    vertical-align: -15%;
+}

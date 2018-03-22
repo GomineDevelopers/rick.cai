@@ -253,3 +253,6 @@ html, body {
     color: #49649f;
     font-size: 14px;
 }
+.panel-title{
+	font-size:1.125rem;
+}
