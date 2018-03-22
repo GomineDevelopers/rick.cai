@@ -51,4 +51,6 @@
 #auto-content a:hover{
     text-decoration: none;
 }
-
+.card-img-top:hover{
+box-shadow: 0px 20px 24px 0px rgba(191, 191, 191 );
+}
