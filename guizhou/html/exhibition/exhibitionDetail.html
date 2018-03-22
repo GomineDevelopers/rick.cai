@@ -2,19 +2,16 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <!-- Required meta tags -->
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../../css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/bootstrap/bootstrap-grid.min.css">
     <link rel="stylesheet" href="../../css/bootstrap/bootstrap-reboot.min.css">
-
     <link rel="stylesheet" href="../../css/font-awesome.min.css">
     <link rel="stylesheet" href="../../css/common.css">
-    <link rel="stylesheet" href="../../css/contact/shanghuijianjie.css">
+    <link rel="stylesheet" href="../../css/exhibition/exhibition.css">
 
-    <title>商会简介</title>
+    <title>展会详情</title>
 </head>
 <body>
 <!--顶部-->
@@ -39,7 +36,7 @@
             </div>
         </div>
     </div>
-     <!--导航栏导航栏-->
+    <!--导航栏导航栏-->
     <nav class="navbar navbar-expand-sm  center-block header-menu">
         <!-- Toggler/collapsibe Button -->
         <div class="col-md-8 row mx-auto header-img">
@@ -81,14 +78,14 @@
                     </li>
                     <!-- Dropdown -->
                     <li class="nav-item dropdown" role="presentation">
-								<a class="nav-link dropdown" href="#" data-toggle="dropdown">
-									展会
-								</a>
-								<div class="dropdown-menu">
-									<a class="dropdown-item" href="../exhibition/exhibitionCN.html">国内展会</a>
-									<a class="dropdown-item" href="../exhibition/exhibitionIN.html">国际展会</a>
-								</div>
-							</li>
+                        <a class="nav-link dropdown active" href="#" data-toggle="dropdown">
+                            展会
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../exhibition/exhibitionCN.html">国内展会</a>
+                            <a class="dropdown-item" href="../exhibition/exhibitionIN.html">国际展会</a>
+                        </div>
+                    </li>
                     <!-- Dropdown -->
                     <li class="nav-item dropdown " role="presentation">
                         <a class="nav-link dropdown" href="#" data-toggle="dropdown">
@@ -110,7 +107,7 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown active" href="#" data-toggle="dropdown">
+                        <a class="nav-link dropdown" href="#" data-toggle="dropdown">
                             联系我们
                         </a>
                         <div class="dropdown-menu">
@@ -125,25 +122,38 @@
     </nav>
     <!--导航栏导航栏-->
 </header>
+
 <!--内容-->
-<div class="mt-self" style="padding-top: 134px;">
-    <div class="container-fluid  content-warp body-background">
+<div class="mt-self">
+    <div class="container-fluid  body-background">
         <div class="row col-md-8 mx-auto">
             <div>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a href="#">联系我们</a>
+                        <a href="#">商贸服务</a>
+                    </li>
+                    <li class="breadcrumb-item ">
+                        <a data-bind="text: categoryName,attr:{href:url_a}"></a>
                     </li>
                     <li class="breadcrumb-item active">
-                        <a href="#">商会简介</a>
+                        <a href="#">正文</a>
                     </li>
                 </ol>
             </div>
         </div>
-        
-        <div class="row col-md-8 mx-auto bg-white intro-text-detail ">
-            <img src="../../img/intropic.png"class="embed-responsive mx-auto img-position" />
-            <div data-bind="html:content" id="auto-content"></div>
+        <div class="row col-md-8 mx-auto bg-white intro-text-detail " data-bind="with:list">
+            <div class="container">
+                <h4 class="text-center nd-header" data-bind="text:title"></h4>
+            </div>
+            <div class="container ">
+                <h5 class="text-center text-muted">
+                    <span data-bind="text:username"></span>&emsp;&emsp;<span data-bind="text:create_time"></span> &nbsp;&nbsp;&nbsp;<span data-bind="text:source"></span>
+                </h5>
+            </div>
+           <div class="container">
+           	    <div data-bind="html:content" id="auto-content" >
+           </div> 
+            </div>
         </div>
     </div>
 </div>
@@ -167,6 +177,7 @@
     </div>
 </footer>
 
+<!-- Optional JavaScript -->
 <script src="../../js/jquery/jquery-3.3.1.min.js"></script>
 <script src="../../js/bootstrap/popper.min.js"></script>
 <script src="../../js/bootstrap/bootstrap.min.js"></script>
@@ -174,6 +185,6 @@
 <script src="../../js/knockout/knockout.mapping-latest.js"></script>
 <script src="../../js/common.js"></script>
 <script src="../../js/polyfill.js"></script>
-<script src="../../js/contact/shanghuijianjie.js" defer="defer"></script>
+<script src="../../js/exhibition/exhibitionDetail.js" defer="defer"></script>
 </body>
 </html>

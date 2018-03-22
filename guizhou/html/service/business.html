@@ -79,10 +79,14 @@
                     </li>
                     <!-- Dropdown -->
                     <li class="nav-item dropdown" role="presentation">
-                        <a class="nav-link dropdown" href="#" data-toggle="dropdown">
-                            展会
-                        </a>
-                    </li>
+								<a class="nav-link dropdown" href="#" data-toggle="dropdown">
+									展会
+								</a>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="../exhibition/exhibitionCN.html">国内展会</a>
+									<a class="dropdown-item" href="../exhibition/exhibitionIN.html">国际展会</a>
+								</div>
+							</li>
                     <!-- Dropdown -->
                     <li class="nav-item dropdown " role="presentation">
                         <a class="nav-link dropdown" href="#" data-toggle="dropdown">
@@ -144,7 +148,7 @@
                     <div class="panel-body auto-content" class="">
                         <div class="item-cover">
                             <div data-bind="foreach: businessList1().list()">
-                                <div class="item">
+                                <div class="item list-items">
                                     <a data-bind="attr:{href:'./businessDetail.html?id='+id()+'&categoryName='+$parent.businessList1().category_name()}"><span
                                             class="title" data-bind="text:title"></span></a>
                                     &nbsp;<span class="date" data-bind="text:create_time"></span>
@@ -166,7 +170,7 @@
                     <div class="panel-body auto-content" id="auto-content">
                         <div class="item-cover">
                             <div data-bind="foreach: businessList2().list()">
-                                <div class="item">
+                                <div class="item list-items">
                                     <a data-bind="attr:{href:'./businessDetail.html?id='+id()+'&categoryName='+$parent.businessList2().category_name()}"><span
                                             class="title" data-bind="text:title"></span></a>
                                     &nbsp;<span class="date" data-bind="text:create_time"></span>
