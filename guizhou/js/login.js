@@ -59,6 +59,7 @@ var loginModel = function () {
                         else if (res.code == 401) {
                             alert(res.msg);
                             createCode();
+                            lModel.errors.showAllMessages(false);
                         }
                     },
                     eCallback: function (e) {
