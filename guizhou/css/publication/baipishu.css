@@ -115,5 +115,8 @@
     background-color: #49649f;
     color: white;
 }
-
+.lead {
+    font-size: 1.125rem !important;
+    font-weight: 300;
+}
 
