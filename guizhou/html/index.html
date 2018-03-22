@@ -177,7 +177,7 @@
                                 </div>
                             </div>
                             <div data-bind="foreach: newsZH,visible:3 == selectedNewsId()">
-                                <div class="item">
+                                <div class="item" data-bind="css:{ 'no-border-bottom':$index()==$parent.newsZH.data().length-1}">
                                 <span class="title">
                                     <img src="../img/point-icon.png"></img>
                                     <a data-bind="attr:{href:'./news/newsDetail.html?newsid='+id()+'&categoryName=商会动态'}"><span data-bind="text: title"></span></a>
@@ -186,7 +186,7 @@
                                 </div>
                             </div>
                             <div data-bind="foreach: newsQY , visible:27 == selectedNewsId()">
-                                <div class="item">
+                                <div class="item" data-bind="css:{ 'no-border-bottom':$index()==$parent.newsQY.data().length-1}">
                                     <span class="title">
                                         <img src="../img/point-icon.png"></img>
                                         <a data-bind="attr:{href:'./news/newsDetail.html?newsid='+id()+'&categoryName=企业资讯'}"><span data-bind="text: title"></span></a>
@@ -195,7 +195,7 @@
                                 </div>
                             </div>
                             <div data-bind="foreach: newsHD , visible:28 == selectedNewsId()">
-                                <div class="item">
+                                <div class="item"  data-bind="css:{ 'no-border-bottom':$index()==$parent.newsHD.data().length-1}">
                                     <span class="title">
                                         <img src="../img/point-icon.png"></img>
                                         <a data-bind="attr:{href:'./news/newsDetail.html?newsid='+id()+'&categoryName=活动快报'}"><span data-bind="text: title"></span></a>
