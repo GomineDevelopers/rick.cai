@@ -186,19 +186,20 @@
 												</div>
 											</div>
 											<div class="col pull-right mt-5">
-												<div class="panel-footer" >
+												<div class="panel-footer" data-bind="visible:pages1.pages().length>0 && pages1.maxPage()>1">
 													<nav aria-label="Page navigation example" class="pull-right">
-														<ul class="pagination">
+														<ul class="pagination" data-bind="foreach: pages1.pages">
 															<li><span data-bind="pageNumber()"></span></li>
-															<li class="page-item " >
-																<a class="page-link" href="#">&lt;</a>
+															<li class="page-item "
+																data-bind="click:$parent.decreasePage.bind($data,$parent.pages1),visible:pageNumber()==$parent.pages1.minPage(),css:{disabled :$parent.pages1.currentPage()==1 }">
+																<a class="page-link" href="#">&lt;</a></li>
+															<li class="page-item"
+																data-bind="event: { click: $parent.setCurrentPage.bind($data, pageNumber(),$parent.pages1) },css:{active:pageNumber()== $parent.pages1.currentPage()}">
+																<a class="page-link" href="#"><span data-bind="text:pageNumber"></span></a>
 															</li>
-															<li class="page-item active" >
-																<a class="page-link" href="#"><span>1</span></a>
-															</li>
-															<li class="page-item">
-																<a class="page-link" href="#">&gt;</a>
-															</li>
+															<li class="page-item"
+																data-bind="click:$parent.increasePage.bind($data,$parent.pages1) ,visible:pageNumber()==$parent.pages1.maxPage(),css:{disabled :$parent.pages1.currentPage()==$parent.pages1.totalPage()}">
+																<a class="page-link" href="#">&gt;</a></li>
 														</ul>
 													</nav>
 												</div>
@@ -234,19 +235,19 @@
 								</div>
 							</div>
 						</div>
-						<div class="panel-footer" data-bind="visible:pages().length>0 && maxPage()>1">
+						<div class="panel-footer" data-bind="visible:pages2.pages().length>0 && pages2.maxPage()>1">
 							<nav aria-label="Page navigation example" class="pull-right">
-								<ul class="pagination" data-bind="foreach: pages">
+								<ul class="pagination" data-bind="foreach: pages2.pages">
 									<li><span data-bind="pageNumber()"></span></li>
 									<li class="page-item "
-										data-bind="click:$parent.decreasePage,visible:pageNumber()==$parent.minPage(),css:{disabled :$parent.currentPage()==1 }">
+										data-bind="click:$parent.decreasePage.bind($data,$parent.pages2),visible:pageNumber()==$parent.pages2.minPage(),css:{disabled :$parent.pages2.currentPage()==1 }">
 										<a class="page-link" href="#">&lt;</a></li>
 									<li class="page-item"
-										data-bind="event: { click: $parent.setCurrentPage.bind($data, pageNumber()) },css:{active:pageNumber()== $parent.currentPage()}">
+										data-bind="event: { click: $parent.setCurrentPage.bind($data, pageNumber(),$parent.pages2) },css:{active:pageNumber()== $parent.pages2.currentPage()}">
 										<a class="page-link" href="#"><span data-bind="text:pageNumber"></span></a>
 									</li>
 									<li class="page-item"
-										data-bind="click:$parent.increasePage ,visible:pageNumber()==$parent.maxPage(),css:{disabled :$parent.currentPage()==$parent.totalPage()}">
+										data-bind="click:$parent.increasePage.bind($data,$parent.pages2) ,visible:pageNumber()==$parent.pages2.maxPage(),css:{disabled :$parent.pages2.currentPage()==$parent.pages2.totalPage()}">
 										<a class="page-link" href="#">&gt;</a></li>
 								</ul>
 							</nav>
