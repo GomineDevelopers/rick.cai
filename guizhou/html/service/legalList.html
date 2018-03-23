@@ -153,10 +153,13 @@
                     </div>
                     <div class="panel-body">
                         <div class="item-cover" data-bind="foreach: legalList" id="auto-content">
-                            <div class="item">
+                            <div class="item list-items">
+                            	<span class="title">
+                            	<img src="../../img/point-icon.png" />
                                 <a data-bind="attr:{ href : './legalDetail.html?id='+id()+'&categoryName='+categoryName}">
                                     <span data-bind="text: title"></span></a>
                                 &nbsp;<span class="date pull-right" data-bind="text: create_time"></span>
+                                </span>
                             </div>
                         </div>
                     </div>
