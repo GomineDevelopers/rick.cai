@@ -32,163 +32,136 @@ var indexViewModel = function () {
 }
 
 var iModel = new indexViewModel();
+ko.applyBindings(iModel);
 
 //获取轮播图片
-var getCarousel = new Promise(function (resolve, reject) {
-    $.get(g_restUrl+"home/content/banner", function (returnData) {
-        if (returnData.code && returnData.code == '200') {
-            if (returnData.data && returnData.data.list && returnData.data.list.length > 0) {
-                iModel.carousel = ko.mapping.fromJS(returnData.data.list);
-            }
-            resolve("success");
+$.get(g_restUrl + "home/content/banner", function (returnData) {
+    if (returnData.code && returnData.code == '200') {
+        if (returnData.data && returnData.data.list && returnData.data.list.length > 0) {
+            ko.mapping.fromJS(returnData.data.list, {}, iModel.carousel);
         }
-        else {
-            reject("failed");
-            console.log("轮播图片获取有错误");
-        }
-    });
+    }
+    else {
+        console.log("轮播图片获取有错误");
+    }
 });
 
 //获取新闻中心-商会动态
-var getNewsSH = new Promise(function (resolve, reject) {
-    var pageInfo = {
-        limit: 6,
-        page: 1,
-        category: 2
-    };
-    $.get(g_restUrl+"home/content/newlists", pageInfo, function (returnData) {
-        if (returnData.code && returnData.code == '200') {
-            if (returnData.data && returnData.data.cate && returnData.data.cate.length > 0) {
-                iModel.cates = ko.mapping.fromJS(returnData.data.cate);
-            }
-            if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
-                var mappingList = {
-                    'create_time': {
-                        create: function (options) {
-                            return CommonTools.formatDate(options.data);
-                        }
-                    },
-                }
-                iModel.newsSH = ko.mapping.fromJS(returnData.data.list, mappingList);
-            }
-            resolve("success");
+var pageInfoSH = {
+    limit: 6,
+    page: 1,
+    category: 2
+};
+$.get(g_restUrl + "home/content/newlists", pageInfoSH, function (returnData) {
+    if (returnData.code && returnData.code == '200') {
+        if (returnData.data && returnData.data.cate && returnData.data.cate.length > 0) {
+            ko.mapping.fromJS(returnData.data.cate, {}, iModel.cates);
         }
-        else {
-            reject("failed");
-            console.log("新闻中心获取有错误");
+        if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
+            var mappingList = {
+                'create_time': {
+                    create: function (options) {
+                        return CommonTools.formatDate(options.data);
+                    }
+                },
+            }
+            ko.mapping.fromJS(returnData.data.list.data, mappingList, iModel.newsSH);
         }
-    });
+    }
+    else {
+        console.log("新闻中心获取有错误");
+    }
 });
 
 //获取新闻中心-展会动态
-var getNewsZH = new Promise(function (resolve, reject) {
-    var pageInfo = {
-        limit: 6,
-        page: 1,
-        category: 3
-    };
-    $.get(g_restUrl+"home/content/newlists", pageInfo, function (returnData) {
-        if (returnData.code && returnData.code == '200') {
-            if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
-                var mappingList = {
-                    'create_time': {
-                        create: function (options) {
-                            return CommonTools.formatDate(options.data);
-                        }
-                    },
-                }
-                iModel.newsZH = ko.mapping.fromJS(returnData.data.list, mappingList);
+var pageInfoZH = {
+    limit: 6,
+    page: 1,
+    category: 3
+};
+
+$.get(g_restUrl + "home/content/newlists", pageInfoZH, function (returnData) {
+    if (returnData.code && returnData.code == '200') {
+        if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
+            var mappingList = {
+                'create_time': {
+                    create: function (options) {
+                        return CommonTools.formatDate(options.data);
+                    }
+                },
             }
-            resolve("success");
+            ko.mapping.fromJS(returnData.data.list.data, mappingList, iModel.newsZH);
         }
-        else {
-            reject("failed");
-            console.log("新闻中心获取有错误");
-        }
-    });
+    }
+    else {
+        console.log("新闻中心获取有错误");
+    }
 });
 
 //获取新闻中心-企业资讯
-var getNewsQY = new Promise(function (resolve, reject) {
-    var pageInfo = {
-        limit: 6,
-        page: 1,
-        category: 27
-    };
-    $.get(g_restUrl+"home/content/newlists", pageInfo, function (returnData) {
-        if (returnData.code && returnData.code == '200') {
-            if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
-                var mappingList = {
-                    'create_time': {
-                        create: function (options) {
-                            return CommonTools.formatDate(options.data);
-                        }
-                    },
-                }
-                iModel.newsQY = ko.mapping.fromJS(returnData.data.list, mappingList);
+var pageInfoQY = {
+    limit: 6,
+    page: 1,
+    category: 27
+};
+$.get(g_restUrl + "home/content/newlists", pageInfoQY, function (returnData) {
+    if (returnData.code && returnData.code == '200') {
+        if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
+            var mappingList = {
+                'create_time': {
+                    create: function (options) {
+                        return CommonTools.formatDate(options.data);
+                    }
+                },
             }
-            resolve("success");
+            ko.mapping.fromJS(returnData.data.list.data, mappingList, iModel.newsQY);
         }
-        else {
-            reject("failed");
-            console.log("企业资讯获取有错误");
-        }
-    });
+    }
+    else {
+        console.log("企业资讯获取有错误");
+    }
 });
 
+
 //获取新闻中心-活动快报
-var getNewsHD = new Promise(function (resolve, reject) {
-    var pageInfo = {
-        limit: 6,
-        page: 1,
-        category: 28
-    };
-    $.get(g_restUrl+"home/content/newlists", pageInfo, function (returnData) {
-        if (returnData.code && returnData.code == '200') {
-            if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
-                var mappingList = {
-                    'create_time': {
-                        create: function (options) {
-                            return CommonTools.formatDate(options.data);
-                        }
-                    },
-                }
-                iModel.newsHD = ko.mapping.fromJS(returnData.data.list, mappingList);
+var pageInfoHD = {
+    limit: 6,
+    page: 1,
+    category: 28
+};
+$.get(g_restUrl + "home/content/newlists", pageInfoHD, function (returnData) {
+    if (returnData.code && returnData.code == '200') {
+        if (returnData.data && returnData.data.list && returnData.data.list.data && returnData.data.list.data.length > 0) {
+            var mappingList = {
+                'create_time': {
+                    create: function (options) {
+                        return CommonTools.formatDate(options.data);
+                    }
+                },
             }
-            resolve("success");
+            ko.mapping.fromJS(returnData.data.list.data, mappingList, iModel.newsHD);
         }
-        else {
-            reject("failed");
-            console.log("活动快报获取有错误");
-        }
-    });
+    }
+    else {
+        console.log("活动快报获取有错误");
+    }
 });
 
 //获取最新公告
-var getAnnounce = new Promise(function (resolve, reject) {
-    $.get(g_restUrl+"home/content/announlists", function (returnData) {
-        if (returnData.code && returnData.code == '200') {
-            if (returnData.data && returnData.data.list && returnData.data.list.length > 0) {
-                var mappingList = {
-                    'create_time': {
-                        create: function (options) {
-                            return CommonTools.formatDate(options.data);
-                        }
-                    },
-                }
-                iModel.announces = ko.mapping.fromJS(returnData.data.list, mappingList);
+$.get(g_restUrl + "home/content/announlists", function (returnData) {
+    if (returnData.code && returnData.code == '200') {
+        if (returnData.data && returnData.data.list && returnData.data.list.length > 0) {
+            var mappingList = {
+                'create_time': {
+                    create: function (options) {
+                        return CommonTools.formatDate(options.data);
+                    }
+                },
             }
-            resolve("success");
+            ko.mapping.fromJS(returnData.data.list, mappingList, iModel.announces);
         }
-        else {
-            reject("failed");
-            console.log("最新公告获取有错误");
-        }
-    });
-});
-
-$(function () {
-    Promise.all([getCarousel, getNewsSH, getNewsZH, getNewsQY, getNewsHD, getAnnounce]).then(function () {
-        ko.applyBindings(iModel);
-    });
+    }
+    else {
+        console.log("最新公告获取有错误");
+    }
 });
