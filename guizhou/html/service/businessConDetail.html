@@ -150,12 +150,20 @@
                     <div class="panel-body">
                         <div class="item-cover" id="auto-content">
                             <div class="item  mx-auto">
-                                <span class="title">问： <span data-bind="text: title"></span>
-                                <span class="date pull-right mr-4" data-bind="text: create_time"></span>
-                                </span>
+                                <h5 class="title"><span data-bind="text: title"></span>
+                                <span class="date pull-right " data-bind="text: create_time"></span>
+                                </h5>
+                               
                             </div>
-                            <div class="row mx-auto"><span class="self-html">答：<span
-                                    data-bind="html:content" class="text-justify"></span></span></div>
+                            <div class="row mx-auto pt-3 border-top">
+                            	<div class="self-html title">
+                            		
+                                  <span  data-bind="html:content" class="text-justify">  </span>
+                                  <span class="date pull-right " data-bind="text: create_time"></span>
+                                  
+                                </div>
+                                  
+                            </div>
                         </div>
                     </div>
                 </div>
