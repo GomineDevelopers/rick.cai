@@ -1,6 +1,10 @@
 var CommonTools = {};
-//var g_restUrl = 'http://192.168.0.191/';
-var g_restUrl = 'http://icampaign.com.cn/guizhou/useradmin/';
+var g_restUrl = "";
+
+if (window.location.host == "icampaign.com.cn")
+    var g_restUrl = 'http://icampaign.com.cn/guizhou/useradmin/';
+else
+    g_restUrl = 'http://192.168.0.191/';
 
 CommonTools.formatDate = function (date, showDetail) {
     var isShow = showDetail || false;
@@ -149,8 +153,6 @@ CommonTools.logout = function () {
 
 
 $(function () {
-    CommonTools.detectBrowser();
-
     if (CommonTools.getLocalStorage('token') && CommonTools.getLocalStorage('userData')) {
         $("#isLogin").remove();
         $("#vipName").text(CommonTools.getLocalStorage('userData').username);
