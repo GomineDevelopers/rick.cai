@@ -78,6 +78,7 @@
 .panel-body .item .date{
     color: #999999;
     float: right;
+    font-size: 1rem;
 }
 
 .panel-body a, .panel-body a:hover{
