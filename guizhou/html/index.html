@@ -41,8 +41,8 @@
     <nav class="navbar navbar-expand-sm  center-block header-menu">
         <!-- Toggler/collapsibe Button -->
         <div class="col-md-8 row mx-auto header-img">
-           <a href="./index.html"><img src="../img/brand.png" alt="Logo"></a>
-           <!--<a href="./index.html"><img src="../img/world-trade.png" alt="Logo"></a> -->
+            <a href="./index.html"><img src="../img/brand.png" alt="Logo"></a>
+            <!--<a href="./index.html"><img src="../img/world-trade.png" alt="Logo"></a> -->
             <button class="navbar-toggler bg-default" type="button" data-toggle="collapse"
                     data-target="#collapsibleNavbar">
                 <span class="fa fa-bars"></span>
@@ -81,14 +81,14 @@
                     <!-- Dropdown -->
                     <!-- Dropdown -->
                     <li class="nav-item dropdown" role="presentation">
-								<a class="nav-link dropdown" href="#" data-toggle="dropdown">
-									展会
-								</a>
-								<div class="dropdown-menu">
-									<a class="dropdown-item" href="./exhibition/exhibitionCN.html">国内展会</a>
-									<a class="dropdown-item" href="./exhibition/exhibitionIN.html">国际展会</a>
-								</div>
-							</li>
+                        <a class="nav-link dropdown" href="#" data-toggle="dropdown">
+                            展会
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="./exhibition/exhibitionCN.html">国内展会</a>
+                            <a class="dropdown-item" href="./exhibition/exhibitionIN.html">国际展会</a>
+                        </div>
+                    </li>
                     <!-- Dropdown -->
                     <li class="nav-item dropdown " role="presentation">
                         <a class="nav-link dropdown" href="#" data-toggle="dropdown">
@@ -131,10 +131,10 @@
     <div id="indexCarousel" class="carousel slide " data-ride="carousel">
         <div class="carousel-inner">
             <div data-bind="foreach: carousel">
-            <div class="carousel-item" data-bind="css:{'active':$index()==0}">
-                <a data-bind="attr: { href: url }">
-                    <img class="d-block w-100" data-bind="attr: { src: img, alt: title }"></a>
-            </div>
+                <div class="carousel-item" data-bind="css:{'active':$index()==0}">
+                    <a data-bind="attr: { href: url }">
+                        <img class="d-block w-100" data-bind="attr: { src: img, alt: title }"></a>
+                </div>
             </div>
         </div>
         <a class="carousel-control-prev" href="#indexCarousel" role="button" data-slide="prev">
@@ -148,14 +148,14 @@
     </div>
     <!--主页四块-->
     <div class="container-fluid main ">
-        <div class="row col-md-8 mx-auto index-div" >
+        <div class="row col-md-8 mx-auto index-div">
 
             <div class="col-md-7  top-row">
                 <div class="block news-block">
                     <div class="block-header">
                         <img src="../img/news-icon.png" class="icon">
                         <span>新闻中心</span>
-                        <a data-bind="attr:{href:url()}">更多<i class="fa fa-angle-double-right fa-lg fa-fw" ></i></a>
+                        <a data-bind="attr:{href:url()}">更多<i class="fa fa-angle-double-right fa-lg fa-fw"></i></a>
                     </div>
                     <div class="block-body">
                         <div class="left-list">
@@ -168,37 +168,45 @@
                         </div>
                         <div class=" right-list">
                             <div data-bind="foreach: newsSH , visible:2 == selectedNewsId()">
-                                <div class="item" data-bind="css:{ 'no-border-bottom':$index()==$parent.newsSH.data().length-1}">
+                                <div class="item"
+                                     data-bind="css:{ 'no-border-bottom':$index()==$parent.newsSH.data().length-1}">
                                     <span class="title">
                                         <img src="../img/point-icon.png"></img>
-                                        <a data-bind="attr:{href:'./news/newsDetail.html?newsid='+id()+'&categoryName=新闻资讯'}"><span data-bind="text: title"></span></a>
+                                        <a data-bind="attr:{href:'./news/newsDetail.html?newsid='+id()+'&categoryName=新闻资讯'}"><span
+                                                data-bind="text: title"></span></a>
                                     </span>
-                                &nbsp;<span class="date pull-right" data-bind="text: create_time"></span>
+                                    &nbsp;<span class="date pull-right" data-bind="text: create_time"></span>
                                 </div>
                             </div>
                             <div data-bind="foreach: newsZH,visible:3 == selectedNewsId()">
-                                <div class="item" data-bind="css:{ 'no-border-bottom':$index()==$parent.newsZH.data().length-1}">
+                                <div class="item"
+                                     data-bind="css:{ 'no-border-bottom':$index()==$parent.newsZH.data().length-1}">
                                 <span class="title">
                                     <img src="../img/point-icon.png"></img>
-                                    <a data-bind="attr:{href:'./news/newsDetail.html?newsid='+id()+'&categoryName=商会动态'}"><span data-bind="text: title"></span></a>
+                                    <a data-bind="attr:{href:'./news/newsDetail.html?newsid='+id()+'&categoryName=商会动态'}"><span
+                                            data-bind="text: title"></span></a>
                                 </span>
                                     &nbsp;<span class="date pull-right" data-bind="text: create_time"></span>
                                 </div>
                             </div>
                             <div data-bind="foreach: newsQY , visible:27 == selectedNewsId()">
-                                <div class="item" data-bind="css:{ 'no-border-bottom':$index()==$parent.newsQY.data().length-1}">
+                                <div class="item"
+                                     data-bind="css:{ 'no-border-bottom':$index()==$parent.newsQY.data().length-1}">
                                     <span class="title">
                                         <img src="../img/point-icon.png"></img>
-                                        <a data-bind="attr:{href:'./news/newsDetail.html?newsid='+id()+'&categoryName=企业资讯'}"><span data-bind="text: title"></span></a>
+                                        <a data-bind="attr:{href:'./news/newsDetail.html?newsid='+id()+'&categoryName=企业资讯'}"><span
+                                                data-bind="text: title"></span></a>
                                     </span>
                                     &nbsp;<span class="date pull-right" data-bind="text: create_time"></span>
                                 </div>
                             </div>
                             <div data-bind="foreach: newsHD , visible:28 == selectedNewsId()">
-                                <div class="item"  data-bind="css:{ 'no-border-bottom':$index()==$parent.newsHD.data().length-1}">
+                                <div class="item"
+                                     data-bind="css:{ 'no-border-bottom':$index()==$parent.newsHD.data().length-1}">
                                     <span class="title">
                                         <img src="../img/point-icon.png"></img>
-                                        <a data-bind="attr:{href:'./news/newsDetail.html?newsid='+id()+'&categoryName=活动快报'}"><span data-bind="text: title"></span></a>
+                                        <a data-bind="attr:{href:'./news/newsDetail.html?newsid='+id()+'&categoryName=活动快报'}"><span
+                                                data-bind="text: title"></span></a>
                                     </span>
                                     &nbsp;<span class="date pull-right" data-bind="text: create_time"></span>
                                 </div>
@@ -212,11 +220,12 @@
                     <div class="block-header">
                         <img src="../img/broadcast-icon.png" class="icon">
                         <span>最新公告</span>
-                        <a href="#">更多<i class="fa fa-angle-double-right fa-lg fa-fw" ></i></a>
+                        <a href="#">更多<i class="fa fa-angle-double-right fa-lg fa-fw"></i></a>
                     </div>
                     <div class="block-body">
                         <div class="item-cover" data-bind="foreach: announces">
-                            <div class="item" data-bind="css:{ 'no-border-bottom':$index()==$parent.announces().length-1}">
+                            <div class="item"
+                                 data-bind="css:{ 'no-border-bottom':$index()==$parent.announces().length-1}">
                             <span class="title">
                                 <img src="../img/point-icon.png"></img>
                                 <span data-bind="text: title"></span>
@@ -229,7 +238,7 @@
             </div>
 
         </div>
-        <div class="row col-md-8 mx-auto index-div" >
+        <div class="row col-md-8 mx-auto index-div">
             <div class="col-md-7 bottom-row">
                 <div class="block introduction-block">
                     <div class="block-header">
@@ -250,7 +259,8 @@
                             <div class="intro-text"><strong>致力于为会员企业创建交流平台、寻求商贸合作机会；弘扬贵州文化与贵商精神；</strong></div>
                         </div>
                         <div class="list">
-                            <a class="pull-right" data-bind="attr:{href:'./contact/shanghuijianjie.html'}">更多<i class="fa fa-angle-double-right fa-lg fa-fw" ></i></a>
+                            <a class="pull-right" data-bind="attr:{href:'./contact/shanghuijianjie.html'}">更多<i
+                                    class="fa fa-angle-double-right fa-lg fa-fw"></i></a>
                         </div>
                     </div>
                 </div>
@@ -278,7 +288,8 @@
                         </div>
                         <div class="row mx-auto">
                             <div class="col-md-6 col-sm-12 ">
-                                <div class="text-nowrap item" onclick="window.open('./service/businessConsulting.html','_self')">
+                                <div class="text-nowrap item"
+                                     onclick="window.open('./service/businessConsulting.html','_self')">
                                     <img class="imgSty" src="../img/news-pic-2.png"/>
                                     <span class="title">业务咨询</span>
                                 </div>
@@ -292,7 +303,8 @@
                         </div>
                         <div class="row mx-auto">
                             <div class="col-md-6 col-sm-12 ">
-                                <div class="text-nowrap item no-border-bottom" onclick="window.open('./service/download.html','_self')">
+                                <div class="text-nowrap item no-border-bottom"
+                                     onclick="window.open('./service/download.html','_self')">
                                     <img class="imgSty" src="../img/news-pic-5.png"/>
                                     <span class="title">下载区</span>
                                 </div>
@@ -323,12 +335,34 @@
             </ul>
         </div>
         <div class="col-md-2 text-center  nav-footer-item  mx-auto">
-                <img  src="../img/erweima.png" />
+            <img src="../img/erweima.png"/>
         </div>
     </div>
 </footer>
 
 <!-- Optional JavaScript -->
+<script>
+    var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+    var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器
+    var isEdge = userAgent.indexOf("Edge") > -1 && !isIE; //判断是否IE的Edge浏览器
+    var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
+    var showMessage = false;
+    if (isIE) {
+        var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+        reIE.test(userAgent);
+        var fIEVersion = parseFloat(RegExp["$1"]);
+        if (fIEVersion < 10) {
+            showMessage = true;
+        } else if (fIEVersion == 10) {
+            showMessage = false;
+        } else {
+            showMessage = true;//IE版本<=7
+        }
+    }
+    if (showMessage) {
+        alert("您当前使用的IE浏览器版本过低，请升级到IE10及以上版本")
+    }
+</script>
 <script src="../js/jquery/jquery-3.3.1.min.js"></script>
 <script src="../js/bootstrap/popper.min.js"></script>
 <script src="../js/bootstrap/bootstrap.min.js"></script>

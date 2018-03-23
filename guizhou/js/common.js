@@ -1,6 +1,6 @@
 var CommonTools = {};
-const g_restUrl = 'http://192.168.0.191/';
-//const g_restUrl = 'http://icampaign.com.cn/guizhou/useradmin/';
+//var g_restUrl = 'http://192.168.0.191/';
+var g_restUrl = 'http://icampaign.com.cn/guizhou/useradmin/';
 
 CommonTools.formatDate = function (date, showDetail) {
     var isShow = showDetail || false;
@@ -141,13 +141,16 @@ CommonTools.changeURLArg = function (url, arg, arg_val) {
     }
 }
 
-CommonTools.logout= function () {
+CommonTools.logout = function () {
     CommonTools.deleteLocalStorage('token');
     CommonTools.deleteLocalStorage('userData');
     window.location.reload();
 };
 
+
 $(function () {
+    CommonTools.detectBrowser();
+
     if (CommonTools.getLocalStorage('token') && CommonTools.getLocalStorage('userData')) {
         $("#isLogin").remove();
         $("#vipName").text(CommonTools.getLocalStorage('userData').username);
@@ -160,7 +163,7 @@ $(function () {
 
     if ($("#logout")) {
         $("#logout").click(function () {
-          CommonTools.logout();
+            CommonTools.logout();
         });
     }
 
