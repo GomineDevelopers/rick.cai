@@ -175,7 +175,7 @@ CommonTools.setPages = function (self, ko, method) {
     }
 
     self.setCurrentPage = function (pageNumber) {
-        if (pageNumber >= 1 && pageNumber <= self.totalPage()) {
+        if (pageNumber >= 1 && pageNumber <= self.totalPage() && pageNumber!=self.currentPage()) {
             self.currentPage(pageNumber);
             method();
         }
