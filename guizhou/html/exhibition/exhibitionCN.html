@@ -191,14 +191,14 @@
 														<ul class="pagination" data-bind="foreach: pages1.pages">
 															<li><span data-bind="pageNumber()"></span></li>
 															<li class="page-item "
-																data-bind="click:$parent.decreasePage.bind($data,$parent.pages1),visible:pageNumber()==$parent.pages1.minPage(),css:{disabled :$parent.pages1.currentPage()==1 }">
+																data-bind="click:$parent.pages1.decreasePage.bind($data,$parent.pages1),visible:pageNumber()==$parent.pages1.minPage(),css:{disabled :$parent.pages1.currentPage()==1 }">
 																<a class="page-link" href="#">&lt;</a></li>
 															<li class="page-item"
-																data-bind="event: { click: $parent.setCurrentPage.bind($data, pageNumber(),$parent.pages1) },css:{active:pageNumber()== $parent.pages1.currentPage()}">
+																data-bind="event: { click: $parent.pages1.setCurrentPage.bind($data, pageNumber(),$parent.pages1) },css:{active:pageNumber()== $parent.pages1.currentPage()}">
 																<a class="page-link" href="#"><span data-bind="text:pageNumber"></span></a>
 															</li>
 															<li class="page-item"
-																data-bind="click:$parent.increasePage.bind($data,$parent.pages1) ,visible:pageNumber()==$parent.pages1.maxPage(),css:{disabled :$parent.pages1.currentPage()==$parent.pages1.totalPage()}">
+																data-bind="click:$parent.pages1.increasePage.bind($data,$parent.pages1) ,visible:pageNumber()==$parent.pages1.maxPage(),css:{disabled :$parent.pages1.currentPage()==$parent.pages1.totalPage()}">
 																<a class="page-link" href="#">&gt;</a></li>
 														</ul>
 													</nav>
@@ -240,14 +240,14 @@
 								<ul class="pagination" data-bind="foreach: pages2.pages">
 									<li><span data-bind="pageNumber()"></span></li>
 									<li class="page-item "
-										data-bind="click:$parent.decreasePage.bind($data,$parent.pages2),visible:pageNumber()==$parent.pages2.minPage(),css:{disabled :$parent.pages2.currentPage()==1 }">
+										data-bind="click:$parent.pages2.decreasePage.bind($data,$parent.pages2),visible:pageNumber()==$parent.pages2.minPage(),css:{disabled :$parent.pages2.currentPage()==1 }">
 										<a class="page-link" href="#">&lt;</a></li>
 									<li class="page-item"
-										data-bind="event: { click: $parent.setCurrentPage.bind($data, pageNumber(),$parent.pages2) },css:{active:pageNumber()== $parent.pages2.currentPage()}">
+										data-bind="event: { click: $parent.pages2.setCurrentPage.bind($data, pageNumber(),$parent.pages2) },css:{active:pageNumber()== $parent.pages2.currentPage()}">
 										<a class="page-link" href="#"><span data-bind="text:pageNumber"></span></a>
 									</li>
 									<li class="page-item"
-										data-bind="click:$parent.increasePage.bind($data,$parent.pages2) ,visible:pageNumber()==$parent.pages2.maxPage(),css:{disabled :$parent.pages2.currentPage()==$parent.pages2.totalPage()}">
+										data-bind="click:$parent.pages2.increasePage.bind($data,$parent.pages2) ,visible:pageNumber()==$parent.pages2.maxPage(),css:{disabled :$parent.pages2.currentPage()==$parent.pages2.totalPage()}">
 										<a class="page-link" href="#">&gt;</a></li>
 								</ul>
 							</nav>
