@@ -186,7 +186,7 @@
                             <span class="title ml-4"><p><img src="../../img/point-Large.png">&nbsp;其他商会</p></span>
                         </div>
                         <div class="row">
-                            <div data-bind="foreach: link1().list()">
+                            <div data-bind="foreach: link1">
                                 <a data-bind="attr:{href:url}" target="_blank"><div class="pr-4 pl-4 text-center" style="float: left">
                                     <img data-bind="attr:{src:img}" class="rounded-circle"/>
                                     <p class="text-center"><span class="mx-auto" data-bind="text:title"></span></p>
@@ -197,7 +197,7 @@
                             <div class="row col-md-12">
                                 <span class="title ml-4"><p><img src="../../img/point-Large.png">&nbsp;分会入口</p></span>
                             </div>
-                            <div class="row" data-bind="foreach:link2().list()">
+                            <div class="row" data-bind="foreach:link2">
                                 <div class="pr-2  text-center" style="float: left" data-bind="css:{'pl-4':$index()==0,'pl-2':$index()!=0}">
                                     <a data-bind="attr:{href:url}" target="_blank"><button class="btn btn-links " data-bind="text:title"></button></a>
                                 </div>
@@ -232,12 +232,10 @@
 
 <!-- Optional JavaScript -->
 <script src="../../js/jquery/jquery-3.3.1.min.js"></script>
-<script src="../../js/bootstrap/popper.min.js"></script>
 <script src="../../js/bootstrap/bootstrap.min.js"></script>
 <script src="../../js/knockout/knockout-3.4.2.js"></script>
 <script src="../../js/knockout/knockout.mapping-latest.js"></script>
 <script src="../../js/common.js"></script>
-<script src="../../js/polyfill.js"></script>
 <script src="../../js/contact/hezuotuiguang.js" defer="defer"></script>
 </body>
 </html>
