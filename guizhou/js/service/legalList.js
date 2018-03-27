@@ -3,7 +3,7 @@ var categoryName = decodeURIComponent(CommonTools.getQueryVariable("categoryName
 
 var getLegalList = function () {
     var pageInfo = {
-        limit: 1,
+        limit: 5,
         page: llModel.currentPage(),
     };
     $.get(g_restUrl+'home/content/servicesscate/category/'+categoryId,pageInfo,function (returnData) {
