@@ -18,7 +18,6 @@ var exhibitionDetailViewModel = function () {
 
 var exdModel = new exhibitionDetailViewModel();
 
-
 var getExDetail = new Promise(function (resolve, reject) {
     var url = g_restUrl + "home/content/activitydetail/id/" + CommonTools.getQueryVariable("id");
     $.get(url, function (returnData) {
@@ -62,7 +61,6 @@ var getExDetail = new Promise(function (resolve, reject) {
         }
     });
 });
-
 
 $(function () {
     getExDetail.then(function () {
