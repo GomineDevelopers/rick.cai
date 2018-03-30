@@ -115,7 +115,7 @@ CommonTools.checkRegex = function (type, value, rule) {
         re = /\w@\w*\.\w/;
     }
     else if (type == "phone") {
-        re = /^(0|86)?((1[358][0-9]|14[57]|17[678])[0-9]{8})|(170[059][0-9]{7})$/;
+        re = /^((1[3,5,8][0-9])|(14[5,7])|(17[0,6,7,8])|(19[7]))\d{8}$/;
     }
     else {
         re = rule;
